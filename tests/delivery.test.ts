@@ -1,0 +1,77 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { buyerIdFor, normalizeEmail } from "@/lib/buyers";
+import { createDownloadToken, downloadPath, verifyDownloadToken } from "@/lib/download-token";
+import { deliveryMessage } from "@/lib/delivery";
+
+beforeEach(() => vi.stubEnv("DOWNLOAD_TOKEN_SECRET", "test-secret-for-download-tokens"));
+afterEach(() => vi.unstubAllEnvs());
+
+describe("buyers", () => {
+  it("derives one stable id per email, ignoring case and spaces", () => {
+    const id = buyerIdFor("Buyer@Example.com");
+    expect(id).toMatch(/^b_[0-9a-f]{24}$/);
+    expect(buyerIdFor("  buyer@example.com ")).toBe(id);
+    expect(buyerIdFor("other@example.com")).not.toBe(id);
+    expect(normalizeEmail(" A@B.CO ")).toBe("a@b.co");
+  });
+});
+
+describe("download tokens", () => {
+  const buyer = buyerIdFor("buyer@example.com");
+
+  it("round-trips a valid token", () => {
+    expect(verifyDownloadToken(createDownloadToken(buyer))).toBe(buyer);
+  });
+  it("rejects tampered, expired, malformed and foreign tokens", () => {
+    const token = createDownloadToken(buyer);
+    const last = token.slice(-1);
+    expect(verifyDownloadToken(token.slice(0, -1) + (last === "A" ? "B" : "A"))).toBeNull();
+    expect(verifyDownloadToken(token.replace(buyer, buyerIdFor("thief@example.com")))).toBeNull();
+    expect(verifyDownloadToken(createDownloadToken(buyer, 30, Date.now() - 31 * 86400 * 1000))).toBeNull();
+    expect(verifyDownloadToken("v2" + token.slice(2))).toBeNull();
+    expect(verifyDownloadToken("not-a-token")).toBeNull();
+    vi.stubEnv("DOWNLOAD_TOKEN_SECRET", "another-secret");
+    expect(verifyDownloadToken(token)).toBeNull();
+  });
+  it("builds a same-origin download path", () => {
+    expect(downloadPath("v1.x.y.z", "read")).toBe("/api/library/file?mode=read&ed=en&t=v1.x.y.z");
+    expect(downloadPath("v1.x.y.z", "download", "ja")).toBe("/api/library/file?mode=download&ed=ja&t=v1.x.y.z");
+  });
+});
+
+describe("delivery email", () => {
+  const links = {
+    en: "https://humanlantern.com/api/library/file?mode=download&ed=en&t=v1.a.b.c",
+    de: "https://humanlantern.com/api/library/file?mode=download&ed=de&t=v1.a.b.c",
+    ja: "https://humanlantern.com/api/library/file?mode=download&ed=ja&t=v1.a.b.c",
+  };
+  it("carries every edition's link, the order reference and the refund window", () => {
+    const m = deliveryMessage({ ref: "HL-ABCD1234", lang: "en", links, pages: 120, waiver: false });
+    expect(m.subject).toContain("What AI Can’t Take From You");
+    for (const body of [m.text, m.html]) {
+      expect(body).toContain("HL-ABCD1234");
+      expect(body).toContain("7 days");
+      expect(body).toContain("/download");
+    }
+    expect(m.text).toContain(links.en);
+    expect(m.text).toContain(links.ja);
+    expect(m.html).toContain("mode=download&amp;ed=de&amp;t=v1.a.b.c"); // escaped inside the HTML attribute
+    expect(m.text).not.toContain("immediate access");
+  });
+  it("speaks the buyer's language and confirms the withdrawal waiver when given", () => {
+    const de = deliveryMessage({ ref: "HL-X", lang: "de", links, pages: 120, waiver: true });
+    expect(de.subject).toContain("Was KI dir nicht nehmen kann");
+    expect(de.text).toContain("sofortigen Zugang");
+    const ja = deliveryMessage({ ref: "HL-X", lang: "ja", links, pages: 120, waiver: false });
+    expect(ja.subject).toContain("AIがあなたから奪えないもの");
+    expect(ja.html).toContain('lang="ja"');
+  });
+});
+
+describe("delivery deadline", () => {
+  it("rejects a send that runs past the deadline and passes through a fast one", async () => {
+    const { withDeadline } = await import("@/lib/delivery");
+    await expect(withDeadline(new Promise(() => {}), 30, "delivery email")).rejects.toThrow(/longer than/);
+    await expect(withDeadline(Promise.resolve("sent"), 1000, "delivery email")).resolves.toBe("sent");
+  });
+});

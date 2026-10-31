@@ -1,0 +1,1404 @@
+{
+  "lang": "en",
+  "title": "What AI Can’t Take From You",
+  "subtitle": "A field manual for your work, your income, and your mind in the age of AI",
+  "edition": "First edition, 2026",
+  "pages": 122,
+  "bytes": 2077885,
+  "cover": {
+    "image": "/book-art/en/cover.webp",
+    "png": "/book-art/en/cover.png",
+    "width": 1200,
+    "height": 1800
+  },
+  "coverCopy": {
+    "kicker": "The career playbook nobody handed you",
+    "promises": [
+      "Which parts of your work AI takes first, and which it can’t",
+      "How to turn AI into leverage instead of a threat",
+      "Where the new openings are, and how to get hired into them",
+      "How to quiet the 2 a.m. panic and make your next move"
+    ],
+    "tagline": "No hype. No doom. Just how this shift actually works, and how to move with it.",
+    "chat": [
+      {
+        "from": "you",
+        "text": "be honest. are you going to take my job?"
+      },
+      {
+        "from": "ai",
+        "text": "some of the tasks in it, yes."
+      },
+      {
+        "from": "you",
+        "text": "ok. so what do i do now?"
+      }
+    ]
+  },
+  "backCover": {
+    "lead": "Most advice about AI and your career is written to scare you or to sell you something. This book is neither.",
+    "body": "It’s a field manual for the questions that keep you up at night, from “will AI take my job?” to “what do I do on Monday?”, and a clear-headed guide to what stays valuable when machines can draft almost anything. Every chapter fits on one page. Every number comes from research you can look up. Every script sounds like a real person.",
+    "bullets": [
+      "88 chapters, each solving a single problem",
+      "A Situation Finder that maps 36 real worries to the right page",
+      "Ready-to-paste AI prompts and word-for-word scripts for bosses, recruiters and clients",
+      "What the best studies actually show about AI, jobs and beginners",
+      "A 30-day plan and a 12-month map"
+    ]
+  },
+  "labels": {
+    "layers": {
+      "clear": "The Clear Head",
+      "field": "The Field Manual"
+    },
+    "part": "Part {n}",
+    "chapter": "Chapter {id}",
+    "truth": "The truth"
+  },
+  "readFirst": {
+    "title": "The fear is reasonable. The panic isn’t.",
+    "page": 4,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "It’s 2 a.m. and you’re still scrolling. Every post says AI now writes the code, drafts the contract, designs the logo, answers the customer. Somewhere in the feed, a quieter question takes shape: if a machine can do my work, what am I for?"
+      },
+      {
+        "type": "p",
+        "text": "That fear isn’t irrational, and this book won’t pretend it is. Stanford economists studying payroll data on millions of U.S. workers found no sign of economy-wide job loss from AI. But by mid-2026, employment of 22- to 25-year-olds in AI-exposed jobs stood 19% below where it would have been had it kept pace with less-exposed peers. Experienced workers showed no such gap. The authors call it an early warning, not proof of cause. Still, the first rung of the ladder moved, and it moved under people your age."
+      },
+      {
+        "type": "p",
+        "text": "So here’s what you won’t find in these pages. No hype promising AI will make you rich by spring. No doom announcing it’s already over. No get-rich scheme dressed up as a course, and no promise of income. Hype and doom are both selling something. This book sells something plainer: ==a clear view of how the shift actually works==, what stays valuable, and what to do next."
+      },
+      {
+        "type": "p",
+        "text": "It comes in two layers. **The Field Manual** (Parts 4-10) is the doing: working with AI, building skills that compound, finding opportunity, getting hired, earning beyond one paycheck, and keeping enough runway to choose. **The Clear Head** (Parts 1-3, 11-12) is the thinking: what’s actually true, what stays human, and how to stay steady while the noise gets louder."
+      },
+      {
+        "type": "p",
+        "text": "Read it in any order. Every chapter fits on one page and solves one problem, so start with the one keeping you up tonight. The Situation Finder will point you there. Then do what the chapter asks before you turn the page. A chapter you act on beats ten you agree with."
+      },
+      {
+        "type": "truth",
+        "text": "AI can take tasks. It can’t take your judgment, the people who trust you, or your next move."
+      }
+    ]
+  },
+  "howToUse": {
+    "title": "How to use this book",
+    "intro": "Every chapter fits on one page and solves one problem; six recurring tools do the heavy lifting.",
+    "tools": [
+      {
+        "type": "evidence",
+        "name": "The evidence",
+        "text": "A real, checkable study, report or case, with the author, year and source named. If a famous finding is disputed or failed to replicate, the box says so. No invented numbers, ever."
+      },
+      {
+        "type": "prompt",
+        "name": "Prompt",
+        "text": "A ready-to-paste instruction for any AI assistant. Fill the [brackets] with your own details, leave out anything private, then question the answer. Treat the reply as a fast intern’s first draft, not a verdict."
+      },
+      {
+        "type": "say",
+        "name": "Say this",
+        "text": "The exact words for a hard conversation with a boss, recruiter, interviewer or client, including what to say when they push back. Adapt them to your voice. Having the first sentence ready is half the nerve."
+      },
+      {
+        "type": "drill",
+        "name": "Field drill",
+        "text": "One concrete action you can finish today in under 30 minutes. Reading changes how you feel. Drills change what happens next."
+      },
+      {
+        "type": "mistake",
+        "name": "Mistake",
+        "text": "The common self-sabotage, named precisely so you can catch yourself mid-move. Most are things smart, anxious people do with good intentions. Spotting one early can save you months."
+      },
+      {
+        "type": "truth",
+        "name": "The truth",
+        "text": "The one line to remember if you forget everything else on the page. Copy the ones that land, and put them where you’ll see them."
+      }
+    ],
+    "layers": [
+      {
+        "name": "The Field Manual",
+        "parts": "Parts 4-10",
+        "text": "What to do. Working with AI, skills that compound, finding opportunity, getting hired, moves inside your career, income beyond one paycheck, and money that buys you time. Open it when you need a next step, not a pep talk."
+      },
+      {
+        "name": "The Clear Head",
+        "parts": "Parts 1-3, 11-12",
+        "text": "How to think. What’s actually true about AI and work, how to stay steady in a loud decade, what stays human, and how to protect your mind and body for the long game. Open it when fear is doing the driving."
+      }
+    ],
+    "hurry": "In a hurry? The Situation Finder maps 36 real worries to the chapter that answers each one. Examples are composites, not real people. Prompts and scripts are starting points: make them yours. Nothing here is financial, legal or medical advice.",
+    "page": 5
+  },
+  "finder": {
+    "title": "The Situation Finder",
+    "intro": "Find the thought that’s keeping you up, then turn to the chapter beside it.",
+    "page": 10,
+    "groups": [
+      {
+        "name": "The big fear",
+        "items": [
+          {
+            "thought": "Will AI take my job in the next few years?",
+            "chapter": "1.1"
+          },
+          {
+            "thought": "Entry-level jobs are drying up. Is there still a way in?",
+            "chapter": "1.3"
+          },
+          {
+            "thought": "If anyone can produce my work with AI, why pay me?",
+            "chapter": "1.6"
+          },
+          {
+            "thought": "A coworker who’s great with AI is pulling ahead of me.",
+            "chapter": "1.7"
+          },
+          {
+            "thought": "The experts all disagree. Who am I supposed to believe?",
+            "chapter": "1.8"
+          },
+          {
+            "thought": "Is there anything I do that a machine can’t?",
+            "chapter": "3.1"
+          }
+        ]
+      },
+      {
+        "name": "My job right now",
+        "items": [
+          {
+            "thought": "My company just announced an AI transformation. Am I next?",
+            "chapter": "8.4"
+          },
+          {
+            "thought": "I just got laid off. What do I do first?",
+            "chapter": "8.5"
+          },
+          {
+            "thought": "Should I switch fields before mine gets automated?",
+            "chapter": "8.1"
+          },
+          {
+            "thought": "I use AI all day and feel like I’m getting worse.",
+            "chapter": "4.5"
+          },
+          {
+            "thought": "AI sounds so confident, and I can’t tell when it’s wrong.",
+            "chapter": "4.3"
+          },
+          {
+            "thought": "Nobody at my work uses AI. Is that a dead end?",
+            "chapter": "6.4"
+          }
+        ]
+      },
+      {
+        "name": "Getting hired",
+        "items": [
+          {
+            "thought": "I’ve sent two hundred applications and heard nothing back.",
+            "chapter": "7.1"
+          },
+          {
+            "thought": "Is software rejecting my résumé before a human ever sees it?",
+            "chapter": "7.2"
+          },
+          {
+            "thought": "Every job wants experience. How do I get any?",
+            "chapter": "7.4"
+          },
+          {
+            "thought": "I don’t know anyone who works where I want to.",
+            "chapter": "6.7"
+          },
+          {
+            "thought": "They made me an offer. Will negotiating make them pull it?",
+            "chapter": "7.7"
+          }
+        ]
+      },
+      {
+        "name": "What to learn, where to look",
+        "items": [
+          {
+            "thought": "There’s too much to learn. Where do I even start?",
+            "chapter": "5.1"
+          },
+          {
+            "thought": "Should I learn to code, or is that pointless now?",
+            "chapter": "8.3"
+          },
+          {
+            "thought": "Is my degree a waste of time and money now?",
+            "chapter": "8.2"
+          },
+          {
+            "thought": "I studied something non-technical. Am I already obsolete?",
+            "chapter": "5.5"
+          },
+          {
+            "thought": "Why learn to write when AI writes better than me?",
+            "chapter": "5.2"
+          },
+          {
+            "thought": "I can’t see where the real opportunities are anymore.",
+            "chapter": "6.1"
+          }
+        ]
+      },
+      {
+        "name": "Money and income",
+        "items": [
+          {
+            "thought": "One paycheck feels fragile. What if it disappears tomorrow?",
+            "chapter": "9.1"
+          },
+          {
+            "thought": "Can I still freelance, or is AI eating that too?",
+            "chapter": "9.2"
+          },
+          {
+            "thought": "Everyone online is getting rich with AI. Am I missing out?",
+            "chapter": "9.5"
+          },
+          {
+            "thought": "I have almost no savings. How long could I last?",
+            "chapter": "10.1"
+          },
+          {
+            "thought": "Should I put my savings into the next hot AI stock?",
+            "chapter": "10.4"
+          },
+          {
+            "thought": "Rent eats everything, and I feel completely stuck.",
+            "chapter": "10.2"
+          }
+        ]
+      },
+      {
+        "name": "My head",
+        "items": [
+          {
+            "thought": "I can’t stop reading AI news, and it makes everything worse.",
+            "chapter": "2.2"
+          },
+          {
+            "thought": "Everyone my age seems further ahead than me.",
+            "chapter": "2.5"
+          },
+          {
+            "thought": "If my job disappears, who am I without it?",
+            "chapter": "2.6"
+          },
+          {
+            "thought": "I can’t focus on anything for more than ten minutes.",
+            "chapter": "11.1"
+          },
+          {
+            "thought": "Some days the worry is so heavy I can’t function.",
+            "chapter": "11.5"
+          },
+          {
+            "thought": "I keep starting big plans and quitting after a week.",
+            "chapter": "12.1"
+          },
+          {
+            "thought": "Okay, I’m ready. What do I actually do this month?",
+            "chapter": "12.4"
+          }
+        ]
+      }
+    ]
+  },
+  "parts": [
+    {
+      "n": 1,
+      "title": "The truths nobody told you",
+      "layer": "clear",
+      "intro": "Most of what you’ve heard about AI and work comes in two flavors: hype and panic. Both skip the evidence. This part is the evidence: what the best studies actually show about jobs, tasks, beginners, experts and the future. Some of it is reassuring. Some of it isn’t. **All of it is more useful than fear.**",
+      "page": 12,
+      "chapters": [
+        {
+          "id": "1.1",
+          "title": "AI doesn’t take jobs.\nIt takes tasks.",
+          "dek": "Your job is a bundle of tasks, and AI reaches into some of them, rarely all, so the useful question is which parts of your week will change.",
+          "truth": "Nobody hires a job title. They hire someone to get tasks done, and the task list is changing.",
+          "page": 13
+        },
+        {
+          "id": "1.2",
+          "title": "Every machine age\nhad its panic",
+          "dek": "Automation panics are old, and the record is consistent: work changes shape instead of vanishing, though the transition still hurts specific people.",
+          "truth": "Work has always outlived the machines. Careers outlive them by moving before they’re pushed.",
+          "page": 14
+        },
+        {
+          "id": "1.3",
+          "title": "The first rung\nis the one that moved",
+          "dek": "The clearest AI damage so far isn’t mass layoffs but fewer entry-level hires in exposed fields, so you need a new way to get experience.",
+          "truth": "If nobody will pay you to learn on simple tasks, learn on real ones, where people can see.",
+          "page": 15
+        },
+        {
+          "id": "1.4",
+          "title": "The jagged frontier",
+          "dek": "AI is excellent at some tasks and confidently wrong at neighbors that look identical, and knowing where that edge runs is now a core skill.",
+          "truth": "The skill isn’t using AI. It’s knowing where to stop trusting it.",
+          "page": 16
+        },
+        {
+          "id": "1.5",
+          "title": "AI lifts the bottom\nfaster than the top",
+          "dek": "In several of the best studies so far, AI helps beginners most and top performers least, so average work gets cheap and the premium moves above it.",
+          "truth": "AI hands everyone a decent floor. Your career gets built on what you stack on top of it.",
+          "page": 17
+        },
+        {
+          "id": "1.6",
+          "title": "When output gets cheap,\njudgment gets expensive",
+          "dek": "When something becomes cheap, whatever completes it rises in value: AI makes drafts and predictions cheap, which makes choosing between them valuable.",
+          "truth": "Generating is cheap now. Choosing well, and owning the choice, is the job.",
+          "page": 18
+        },
+        {
+          "id": "1.7",
+          "title": "You’re not competing with AI.\nYou’re competing with people who use it well.",
+          "dek": "The realistic threat isn’t a robot but a peer who does your job with AI, faster and better, and employers say they already hire with that in mind.",
+          "truth": "Nobody needs you to be an AI expert. They need you to be better at your job because of it.",
+          "page": 19
+        },
+        {
+          "id": "1.8",
+          "title": "Nobody knows the future,\nincluding the experts",
+          "dek": "Expert forecasts have a poor track record, including on technology and jobs, so stop betting on one prediction and build a plan that survives being wrong.",
+          "truth": "You can’t pick the future. You can pick a plan that survives most of them.",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "A clear head in a loud decade",
+      "layer": "clear",
+      "intro": "The noise around AI is loud, and much of it is built to keep you scrolling. A clear head isn’t a personality trait. It’s a set of habits: how you handle fear, what you read, who you compare yourself to, how you decide and how you rest. **This part gives you those habits.**",
+      "page": 21,
+      "chapters": [
+        {
+          "id": "2.1",
+          "title": "Anxiety is a signal,\nnot a plan",
+          "dek": "Worry about AI points at something you care about, but it only shrinks when you turn it into a specific next step.",
+          "truth": "Fear asks for a move, not more news. Give it the smallest move you can make today.",
+          "page": 22
+        },
+        {
+          "id": "2.2",
+          "title": "Doomscrolling\nis not research",
+          "dek": "Endless AI news feels like staying informed, but heavy exposure to alarming coverage is linked to more stress, not more clarity, so put your information on a diet.",
+          "truth": "If the feed is choosing your questions, you’re not researching. You’re being steered.",
+          "page": 23
+        },
+        {
+          "id": "2.3",
+          "title": "Hype and doom\nare both selling something",
+          "dek": "The loudest AI voices profit from your attention, whether they promise riches or ruin, so judge every claim by its evidence and its incentives.",
+          "truth": "Every confident AI prediction has a business model behind it. Find it before you believe it.",
+          "page": 24
+        },
+        {
+          "id": "2.4",
+          "title": "Control what\nyou can touch",
+          "dek": "Under prolonged stress, passivity is the default, and the way out isn’t optimism but noticing and using the control you actually have, again and again.",
+          "truth": "Control isn’t a feeling you wait for. It’s evidence you collect, one small action at a time.",
+          "page": 25
+        },
+        {
+          "id": "2.5",
+          "title": "The comparison trap",
+          "dek": "Viral success stories show you the winners and hide the denominator, so the only comparison worth making is with who you were three months ago.",
+          "truth": "You see the winners, never the denominator. Measure yourself against who you were three months ago.",
+          "page": 26
+        },
+        {
+          "id": "2.6",
+          "title": "You are not\nyour job title",
+          "dek": "A title is a role you hold, not who you are, and people who change careers well discover their next identity by acting, not by planning.",
+          "truth": "Titles expire. What you can do, and who trusts you to do it, comes with you.",
+          "page": 27
+        },
+        {
+          "id": "2.7",
+          "title": "Small bets\nbeat grand plans",
+          "dek": "In a decade nobody can forecast, cheap experiments with a clear question and a deadline teach you more than any five-year plan.",
+          "truth": "Plans assume you can predict. Bets assume you can learn. This decade rewards learning.",
+          "page": 28
+        },
+        {
+          "id": "2.8",
+          "title": "Rest isn’t a reward.\nIt’s equipment.",
+          "dek": "Your edge in the AI era is judgment, and judgment is the first thing short sleep quietly erodes, usually without you noticing.",
+          "truth": "Your judgment is your edge. Sleep is where it gets sharpened, so stop treating it as optional.",
+          "page": 29
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "title": "What stays human",
+      "layer": "clear",
+      "intro": "When machines can write, draw, code and summarize on demand, what’s left for you? More than you think, though not what most people guess. This part maps the human work that gains value as output gets cheap: choosing, vouching, caring, framing, working with your hands, and knowing what nobody wrote down. **That is where your leverage lives.**",
+      "page": 30,
+      "chapters": [
+        {
+          "id": "3.1",
+          "title": "Judgment: knowing\nwhat good looks like",
+          "dek": "When anyone can generate a draft in seconds, the scarce skill is knowing which draft is good, what to fix, and when to say no.",
+          "truth": "Options are cheap now. Knowing which one to ship is what gets you trusted.",
+          "page": 31
+        },
+        {
+          "id": "3.2",
+          "title": "Taste is a skill,\nand you can train it",
+          "dek": "Taste is trained preference that predicts what others will value, and as AI floods every channel with competent sameness, the people who have it stand out.",
+          "truth": "Taste isn’t a talent you wait for. It’s a muscle you train, one honest comparison at a time.",
+          "page": 32
+        },
+        {
+          "id": "3.3",
+          "title": "Trust still\nruns on people",
+          "dek": "People often forgive humans for mistakes they won’t forgive in a machine, so a trusted, accountable person stays valuable even when the software is more accurate.",
+          "truth": "Accuracy can be automated. A track record can’t. Build yours one kept promise at a time.",
+          "page": 33
+        },
+        {
+          "id": "3.4",
+          "title": "Someone has to\nsign their name",
+          "dek": "AI can draft almost anything, but courts and customers keep holding a person or a company responsible for the result, and responsibility is where the pay sits.",
+          "truth": "AI can write the document. The person who signs it, and is right, is the one who gets paid.",
+          "page": 34
+        },
+        {
+          "id": "3.5",
+          "title": "The physical world\nis stubborn",
+          "dek": "What feels effortless to people, like seeing, grasping and moving through a messy room, is among the hardest things for machines, which keeps hands-on skill underrated.",
+          "truth": "What’s effortless for you is still hard for robots. Hands-on skill is an asset, not a fallback.",
+          "page": 35
+        },
+        {
+          "id": "3.6",
+          "title": "The right question\nis the scarce part",
+          "dek": "AI will answer whatever you ask, quickly and confidently, so the value moves upstream: choosing which problem is worth solving, for whom, and why now.",
+          "truth": "A brilliant answer to the wrong question is still wrong. Spend your best thinking before the first prompt.",
+          "page": 36
+        },
+        {
+          "id": "3.7",
+          "title": "Being heard by a human\nstill matters",
+          "dek": "AI can write replies that sound kinder than a busy professional’s, yet people feel less heard once they know a machine wrote them. Real attention keeps its value.",
+          "truth": "Words can be generated. Attention can only be given. Give it where it counts.",
+          "page": 37
+        },
+        {
+          "id": "3.8",
+          "title": "Context is your moat",
+          "dek": "Models learned from what the world wrote down, while the unwritten rules of your team, customers and industry never made it into the data. That gap is your advantage.",
+          "truth": "AI knows what the world wrote down. Your edge is what you know that nobody has written yet.",
+          "page": 38
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Working with AI",
+      "layer": "field",
+      "intro": "This is the practical part. No magic prompts, no secret tools: just the working habits that make AI useful, the checks that keep it from embarrassing you, and the traps that quietly make you worse. Think of it like learning to drive. **Most of the skill is knowing when to brake.**",
+      "page": 39,
+      "chapters": [
+        {
+          "id": "4.1",
+          "title": "Treat it like a brilliant\nintern with no context",
+          "dek": "AI is fast, well-read and eager, but knows nothing about your situation: give it context, check its work, and never let it sign off.",
+          "truth": "Give AI the context you’d give a smart new hire. Then check its work as if its mistakes were yours. They are.",
+          "page": 40
+        },
+        {
+          "id": "4.2",
+          "title": "A good prompt is\njust clear thinking",
+          "dek": "Prompting isn’t a secret language. It’s explaining a task clearly, and if you can’t explain it to a colleague, you can’t explain it to a model.",
+          "truth": "Unclear prompts come from unclear thinking. Fix the thinking, and the prompt nearly writes itself.",
+          "page": 41
+        },
+        {
+          "id": "4.3",
+          "title": "Check anything\nthat matters",
+          "dek": "AI errors rarely look like errors. They arrive fluent, confident and plausible, so anything with consequences needs a verification routine you run every time.",
+          "truth": "Fluent is not the same as true. If it matters, open the source.",
+          "page": 42
+        },
+        {
+          "id": "4.4",
+          "title": "Build your personal\nAI workflow",
+          "dek": "Random chatting gives random results. A small system of recurring tasks, saved prompts, templates and a review step turns AI into a tool you can rely on.",
+          "truth": "A good prompt used once is a trick. A good prompt saved and improved is a system.",
+          "page": 43
+        },
+        {
+          "id": "4.5",
+          "title": "Where AI quietly\nmakes you worse",
+          "dek": "The better AI looks, the easier it is to stop paying attention, and the skills you stop using are the ones you quietly lose.",
+          "truth": "If AI does all your thinking, you’re not saving effort. You’re spending skill.",
+          "page": 44
+        },
+        {
+          "id": "4.6",
+          "title": "What never to paste\ninto a chatbot",
+          "dek": "Whatever you paste into an AI tool may leave your control, so treat the chat box as semi-public unless your employer has approved the tool.",
+          "truth": "If you wouldn’t email it to a stranger, don’t paste it into a chatbot.",
+          "page": 45
+        },
+        {
+          "id": "4.7",
+          "title": "Learn faster with AI\nwithout fooling yourself",
+          "dek": "AI can make you learn faster or just feel like you are. The difference is whether it questions you or simply hands you answers.",
+          "truth": "If the AI is doing the thinking, you’re not learning. Make it ask the questions.",
+          "page": 46
+        },
+        {
+          "id": "4.8",
+          "title": "Ten tasks to hand off\nthis week",
+          "dek": "Start small: ten everyday tasks AI handles well, each paired with the one step that must stay yours, so you save time without giving up judgment.",
+          "truth": "Hand off the typing. Keep the judging.",
+          "page": 47
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Skills that compound",
+      "layer": "field",
+      "intro": "Tools change every year. The skills that make you good with any tool barely change at all. This part covers eight of them: learning, writing, numbers, range, domain depth, persuasion, building, and stacking. None requires genius. Each gets more valuable the longer you practice it, and **each makes the next one easier to learn.**",
+      "page": 48,
+      "chapters": [
+        {
+          "id": "5.1",
+          "title": "Learn how to learn",
+          "dek": "When your field changes every year, the fastest learner wins, and the fastest learners test themselves instead of rereading.",
+          "truth": "Rereading feels like learning. Pulling it out of your own head is learning.",
+          "page": 49
+        },
+        {
+          "id": "5.2",
+          "title": "Writing is thinking\nyou can see",
+          "dek": "AI can polish your sentences but can’t decide what you believe, so writing first is how you find out what you actually think.",
+          "truth": "If you can’t write it plainly, you don’t understand it yet. **AI can’t fix that part.**",
+          "page": 50
+        },
+        {
+          "id": "5.3",
+          "title": "Numbers keep you\nfrom being fooled",
+          "dek": "You don’t need advanced math to read AI news clearly; a few basic distinctions catch most of the misleading headlines.",
+          "truth": "Before you panic about a number, ask what it counted.",
+          "page": 51
+        },
+        {
+          "id": "5.4",
+          "title": "Depth plus range",
+          "dek": "Go deep enough in one area to be trusted, and wide enough to notice what specialists and machines both miss.",
+          "truth": "Depth makes you trusted. Range makes you useful in rooms nobody trained you for.",
+          "page": 52
+        },
+        {
+          "id": "5.5",
+          "title": "Your field plus AI\nbeats AI alone",
+          "dek": "Your experience isn’t obsolete; it’s the judgment that decides whether AI’s output helps you or quietly hurts you.",
+          "truth": "AI multiplies whatever judgment you bring. Bring more.",
+          "page": 53
+        },
+        {
+          "id": "5.6",
+          "title": "Speak so people act",
+          "dek": "Busy people act on messages that lead with the point, ask for one thing, and make the next step easy.",
+          "truth": "Lead with the point. Ask for one thing. Name the next step.",
+          "page": 54
+        },
+        {
+          "id": "5.7",
+          "title": "From user to builder",
+          "dek": "You don’t need to become a programmer to build small tools; you need one annoying manual task and the patience to iterate.",
+          "truth": "The jump from user to builder is one small, boring tool that works.",
+          "page": 55
+        },
+        {
+          "id": "5.8",
+          "title": "Build a skill stack,\nnot a single skill",
+          "dek": "Being world-class at one thing is rare and fragile; being good at three things that rarely meet is achievable and hard to copy.",
+          "truth": "You don’t need to be the best at one thing. **Be the only one with your combination.**",
+          "page": 56
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Finding the opportunity",
+      "layer": "field",
+      "intro": "Opportunity rarely announces itself as “AI opportunity.” It shows up as a complaint, a backlog, a budget line, a stranger’s question. This part trains your eye to spot it in places others ignore, and shows you how to make sure the right people know you can help. **Seeing it is half the work; being seen is the other half.**",
+      "page": 57,
+      "chapters": [
+        {
+          "id": "6.1",
+          "title": "Opportunity hides\nin friction",
+          "dek": "Wherever people wait, complain, copy and paste, or pay someone to do boring work, there is a problem worth solving.",
+          "truth": "Every complaint is a job description nobody has written yet.",
+          "page": 58
+        },
+        {
+          "id": "6.2",
+          "title": "Follow the money\nand the pain",
+          "dek": "The best opportunities sit where a painful problem meets a budget that is already moving, and right now many budgets are moving toward AI.",
+          "truth": "Find the pain people already pay for, then stand where the budget is heading.",
+          "page": 59
+        },
+        {
+          "id": "6.3",
+          "title": "Boring industries,\nwide-open doors",
+          "dek": "The sectors slowest to adopt AI have the least competition for people who understand it, and often the most paperwork to fix.",
+          "truth": "Glamorous industries have crowds. Boring industries have problems, budgets, and open doors.",
+          "page": 60
+        },
+        {
+          "id": "6.4",
+          "title": "Be the AI person\nin a non-AI room",
+          "dek": "In most teams, one person who uses AI well becomes the go-to, and you earn that role by solving problems, not by preaching.",
+          "truth": "Don’t talk about AI. Quietly fix something, then show people how.",
+          "page": 61
+        },
+        {
+          "id": "6.5",
+          "title": "Proof beats credentials",
+          "dek": "Employers say they hire for skills, but most still default to degrees, so your proof must be visible, specific, and easy to check.",
+          "truth": "Credentials get you considered. Proof gets you chosen. **Make your proof impossible to miss.**",
+          "page": 62
+        },
+        {
+          "id": "6.6",
+          "title": "Widen your\nluck surface",
+          "dek": "Luck is partly chance, but you can raise the odds: do interesting things, then let more people know about them.",
+          "truth": "Luck favors the visible. Do the work, then let people see it.",
+          "page": 63
+        },
+        {
+          "id": "6.7",
+          "title": "Weak ties open\nstrong doors",
+          "dek": "Your next opportunity often comes from an acquaintance rather than a close friend, because acquaintances hear about worlds you don’t.",
+          "truth": "Close ties give you support. Weak ties give you news. You need both.",
+          "page": 64
+        },
+        {
+          "id": "6.8",
+          "title": "Read the signals early",
+          "dek": "A calm 20-minute scan once a month tells you more about where your field is heading than an hour of daily panic scrolling.",
+          "truth": "Scan once a month, act on one signal, and stop doomscrolling daily.",
+          "page": 65
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Getting hired now",
+      "layer": "field",
+      "intro": "Hiring has turned into an arms race: candidates use AI to apply everywhere, and employers use software to filter everything. In that noise, a clear signal is rare and valuable. This part shows you how to be that signal, from the first application to your first quarter in the job. **Volume is cheap now. Credibility isn’t.**",
+      "page": 66,
+      "chapters": [
+        {
+          "id": "7.1",
+          "title": "The application flood,\nand how to step out of it",
+          "dek": "When applying costs nothing, applications stop meaning anything, so the way out is fewer, sharper, warmer applications a human actually wants to read.",
+          "truth": "When everyone can apply everywhere, the scarce thing is a reason to read yours.",
+          "page": 67
+        },
+        {
+          "id": "7.2",
+          "title": "A résumé that survives\nsoftware and a human",
+          "dek": "Robots aren’t secretly binning your résumé; rigid filters and rushed humans are, so write for both: the right words first, then real results.",
+          "truth": "Write so the filter finds you and a tired human believes you at a glance.",
+          "page": 68
+        },
+        {
+          "id": "7.3",
+          "title": "Referrals still win",
+          "dek": "A referral doesn’t bypass merit but gets it read, and you earn one through curiosity, not by asking strangers for favors.",
+          "truth": "Don’t ask a stranger for a referral. Stop being a stranger, then ask.",
+          "page": 69
+        },
+        {
+          "id": "7.4",
+          "title": "The portfolio project\nthat gets replies",
+          "dek": "One small project that solves a real problem for the company you want beats a wall of certificates, because it shows you can do the work.",
+          "truth": "Don’t tell them you can do the work. ==Hand them a sample of it.==",
+          "page": 70
+        },
+        {
+          "id": "7.5",
+          "title": "What interviews test now",
+          "dek": "When AI can draft any answer, good interviewers stop testing what you know and start testing how you think, decide and own outcomes.",
+          "truth": "Interviews now test what AI can’t fake for you: how you think when the answer isn’t written down.",
+          "page": 71
+        },
+        {
+          "id": "7.6",
+          "title": "Use AI in your search\nwithout faking it",
+          "dek": "AI is a legitimate coach, researcher and editor for your job search; you cross the line the moment it invents who you are or speaks for you live.",
+          "truth": "Let AI sharpen the real you. ==Never let it invent a fake one.==",
+          "page": 72
+        },
+        {
+          "id": "7.7",
+          "title": "Negotiate the first offer",
+          "dek": "Most people accept the first number they hear, yet a polite, prepared ask rarely costs much and the gain follows you into every future raise.",
+          "truth": "The first offer is an opening line. Asking politely is part of the process, not a threat to it.",
+          "page": 73
+        },
+        {
+          "id": "7.8",
+          "title": "Your first 90 days",
+          "dek": "Your first three months write the story people tell about you, so spend them learning the unwritten rules, landing one visible win and making your manager’s life easier.",
+          "truth": "In your first 90 days, being easy to manage beats being impressive.",
+          "page": 74
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "title": "Moves inside your career",
+      "layer": "field",
+      "intro": "Once you’re in, the questions get harder. Should you switch fields? Is the degree worth it? Do you need to code? What do you do when your company goes all in on AI, or lets you go? This part swaps panic for simple tests and concrete moves. **Every career move is a bet, so place it with open eyes.**",
+      "page": 75,
+      "chapters": [
+        {
+          "id": "8.1",
+          "title": "Should you switch fields?\nA decision test",
+          "dek": "Before you blow up your career, check whether the pain is the field or just this job, then test the new path cheaply.",
+          "truth": "Switch toward something you’ve tested, ==never just away from something you fear.==",
+          "page": 76
+        },
+        {
+          "id": "8.2",
+          "title": "Is a degree still worth it?",
+          "dek": "On average a degree still pays well, but averages don’t pay your tuition: the answer turns on the field, the cost and whether you finish.",
+          "truth": "A degree is a bet on ==one program at one price==. Judge that bet, not the national average.",
+          "page": 77
+        },
+        {
+          "id": "8.3",
+          "title": "Should you learn to code?",
+          "dek": "Learn enough code to think precisely and automate your own work; becoming a professional developer is a separate, harder bet than it was a few years ago.",
+          "truth": "Code is literacy for thinking clearly with machines. ==A coding career is a different decision.==",
+          "page": 78
+        },
+        {
+          "id": "8.4",
+          "title": "When your company announces\n“AI transformation”",
+          "dek": "The announcement usually means experiments, budget shifts and fuzzy goals, and the people who move early, learn the tools and show results get to shape what comes next.",
+          "truth": "In a vague transformation, the person with real results gets to help write the plan.",
+          "page": 79
+        },
+        {
+          "id": "8.5",
+          "title": "The first week after a layoff",
+          "dek": "A layoff is a shock, not a verdict: spend week one protecting your money, options and sleep, not panic-applying everywhere.",
+          "truth": "Protect your money and your mind first. The search goes better from steady ground.",
+          "page": 80
+        },
+        {
+          "id": "8.6",
+          "title": "Climbing when AI\nflattens the ladder",
+          "dek": "If AI eats the junior tasks that once taught you the job, you have to collect experience on purpose: ownership, customers, cross-team work and real mentors.",
+          "truth": "When the ladder loses rungs, stop waiting your turn. Volunteer for the work that teaches judgment.",
+          "page": 81
+        },
+        {
+          "id": "8.7",
+          "title": "Hard to replace,\nwithout burning out",
+          "dek": "You become hard to replace through trust and context nobody else has, not through endless hours, and protecting your energy is part of doing the job well.",
+          "truth": "Be trusted, not exhausted. ==Boundaries are part of performance.==",
+          "page": 82
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Income beyond one paycheck",
+      "layer": "field",
+      "intro": "A paycheck feels safe because it arrives on schedule. But it rests on one employer, one manager and one budget line. This part shows how to build a second stream without burning out: freelancing, small products, an audience you own, spotting get-rich schemes, honest pricing and the one-person business. **Small and real beats big and imagined.**",
+      "page": 83,
+      "chapters": [
+        {
+          "id": "9.1",
+          "title": "One income is a\nsingle point of failure",
+          "dek": "A second stream doesn’t need to replace your salary; it just needs to exist, because even a small one changes what you can afford to refuse.",
+          "truth": "A second income doesn’t have to be big. It has to be real, and it has to be yours.",
+          "page": 84
+        },
+        {
+          "id": "9.2",
+          "title": "Freelancing when the\nfirst draft is free",
+          "dek": "When AI makes raw output cheap, sell what it can’t make cheap: outcomes, niche expertise and trust, not words or pixels by the pound.",
+          "truth": "Don’t sell what AI made cheap. Sell the result your client actually pays for.",
+          "page": 85
+        },
+        {
+          "id": "9.3",
+          "title": "Turn what you know\ninto a product",
+          "dek": "The question people keep asking you is a product brief; test whether anyone will pay before you spend a month building the answer.",
+          "truth": "Take pre-orders before you build. If nobody pays, you just saved a month.",
+          "page": 86
+        },
+        {
+          "id": "9.4",
+          "title": "An audience is\nan asset you own",
+          "dek": "Publishing what you learn, consistently, builds trust that compounds; keep the relationship on a list you own, not on a feed you rent.",
+          "truth": "Rent the platforms for reach. Own the list for the relationship.",
+          "page": 87
+        },
+        {
+          "id": "9.5",
+          "title": "Spot the AI\nget-rich scheme",
+          "dek": "Real AI skills can pay; schemes sell the feeling of a shortcut. Learn the red flags before a slick pitch reaches your savings.",
+          "truth": "People who can print money with AI don’t need to sell you the printer.",
+          "page": 88
+        },
+        {
+          "id": "9.6",
+          "title": "Price the outcome,\nnot the hours",
+          "dek": "If AI lets you finish in three hours what used to take five, billing by the hour turns your new skill into a pay cut.",
+          "truth": "Bill for the result. Keep the time AI saves you.",
+          "page": 89
+        },
+        {
+          "id": "9.7",
+          "title": "The one-person business,\nAI-powered",
+          "dek": "AI makes it cheaper than ever to start small and solo; customers, judgment and trust still have to come from you.",
+          "truth": "Let AI handle the chores. Only you can earn the first customer’s trust.",
+          "page": 90
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "title": "Money that buys you time",
+      "layer": "field",
+      "intro": "Money matters in this book for one reason: time. Savings buy you months to learn, search, switch or say no. This part is general education, not personal financial advice. It covers runway, fixed costs, lifestyle creep, hype, investing in yourself and the bad year that eventually comes. **Calm is something you can save for.**",
+      "page": 91,
+      "chapters": [
+        {
+          "id": "10.1",
+          "title": "Runway is freedom",
+          "dek": "Every month of expenses you have saved is a month you can say no, look around or learn, instead of grabbing the first thing offered.",
+          "truth": "Your first month of runway is the hardest to save and the most valuable to have. Start there.",
+          "page": 92
+        },
+        {
+          "id": "10.2",
+          "title": "Fixed costs decide\nyour options",
+          "dek": "Every monthly commitment you sign is a small vote against your future flexibility; keep the fixed base low and you keep the freedom to move.",
+          "truth": "Every fixed cost is a promise your future self must keep, job or no job.",
+          "page": 93
+        },
+        {
+          "id": "10.3",
+          "title": "Lifestyle creep quietly\neats your runway",
+          "dek": "When income rises, spending rises to meet it and the thrill fades fast; move part of every raise into savings before your habits notice it.",
+          "truth": "Spend part of every raise. Save the rest before you get used to it.",
+          "page": 94
+        },
+        {
+          "id": "10.4",
+          "title": "Don’t bet your runway\non hype",
+          "dek": "A technology can be real and still produce terrible bets; the internet changed everything and still burned people who bought at the top.",
+          "truth": "Being right about a technology is not the same as being right about a price.",
+          "page": 95
+        },
+        {
+          "id": "10.5",
+          "title": "The best early return\nis usually you",
+          "dek": "Early on, spending on skills, health and relationships often beats any return your small savings could earn, as long as you judge the course before you pay.",
+          "truth": "Invest in yourself first, but audit the seller like you would any investment.",
+          "page": 96
+        },
+        {
+          "id": "10.6",
+          "title": "Plan for the bad year",
+          "dek": "Assume a bad year will come; the time to decide what you would cut, sell and ask for is now, while you are calm.",
+          "truth": "Decide your bad-year moves while you’re calm, so panic finds a plan already waiting.",
+          "page": 97
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "title": "Mind and body under pressure",
+      "layer": "clear",
+      "intro": "Every skill in this book runs on one piece of equipment: your mind. It needs attention, sleep, people and a reason to get up, and the AI decade is quietly bidding for all four. This part is maintenance for the machine that matters most. **Treat it like the asset it is.**",
+      "page": 98,
+      "chapters": [
+        {
+          "id": "11.1",
+          "title": "Attention is\nthe new scarcity",
+          "dek": "When AI makes answers cheap, the scarce resource is your ability to stay with one hard problem long enough to think it through.",
+          "truth": "Answers are getting cheap. The ability to stay with one hard question is getting rare, and rare is valuable.",
+          "page": 99
+        },
+        {
+          "id": "11.2",
+          "title": "Deep work in\na shallow world",
+          "dek": "Your most valuable work happens in long, undistracted blocks; build one into every day and defend it like a meeting with your most important client.",
+          "truth": "Shallow work keeps you busy. Deep work makes you hard to replace. Schedule the deep work first.",
+          "page": 100
+        },
+        {
+          "id": "11.3",
+          "title": "Loneliness is\na career risk",
+          "dek": "Isolation is linked to worse health and quietly shrinks your opportunities; in a remote, AI-assisted workplace, connection no longer happens by accident, so schedule it.",
+          "truth": "Opportunities travel through people. Isolation doesn’t just feel bad; it closes doors you never see.",
+          "page": 101
+        },
+        {
+          "id": "11.4",
+          "title": "Sleep, movement,\ndaylight",
+          "dek": "Your thinking runs on a body; sleep, exercise and daylight aren’t wellness extras but the cheapest performance tools you will ever own.",
+          "truth": "A tired brain with the best AI tools still makes **tired decisions**.",
+          "page": 102
+        },
+        {
+          "id": "11.5",
+          "title": "When it’s more\nthan worry",
+          "dek": "Worry about AI is normal; when it takes your sleep, appetite or ability to function for weeks, it’s time to talk to a professional.",
+          "truth": "Getting help early isn’t a sign you’re failing. It’s a sign you’re paying attention.",
+          "page": 103
+        },
+        {
+          "id": "11.6",
+          "title": "Purpose isn’t found.\nIt’s built.",
+          "dek": "Meaning rarely arrives before you start; it grows from contribution, mastery and relationships, which means you can begin building it in almost any job.",
+          "truth": "You don’t find meaning waiting inside a job. You put it there, and you ==take it with you==.",
+          "page": 104
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "title": "The long game",
+      "layer": "clear",
+      "intro": "This decade won’t be won in a sprint. The people who do well are likely to be the ones still learning, still connected and still steady in year ten. This part is about time: how small efforts stack, where to aim, and how to turn this book into the next 30 days and 12 months. **Start small. Keep going.**",
+      "page": 105,
+      "chapters": [
+        {
+          "id": "12.1",
+          "title": "Compounding\nbeats intensity",
+          "dek": "Small, steady effort repeated for months beats heroic bursts; the person who shows up daily for a year usually passes the one who sprinted for a week.",
+          "truth": "Show up small, every day. Time does the multiplying.",
+          "page": 106
+        },
+        {
+          "id": "12.2",
+          "title": "Write the letter\nfrom ten years out",
+          "dek": "A vivid picture of your future self changes the choices you make today; write it down, then work backward to what this quarter needs.",
+          "truth": "You can’t plan ten years. You can ==aim ten years ahead== and plan the next ninety days.",
+          "page": 107
+        },
+        {
+          "id": "12.3",
+          "title": "Build a life\nAI can’t automate",
+          "dek": "The parts of life that matter most (people, health, community, craft, play) are the hardest to automate; decide now what your saved time is for.",
+          "truth": "Let AI take the tasks. Spend the time it gives back on ==the life it can’t live for you==.",
+          "page": 108
+        },
+        {
+          "id": "12.4",
+          "title": "Your next\n30 days",
+          "dek": "Turn this book into four weeks of small, specific actions; by day 30 you’ll have an AI routine, one piece of proof and ten conversations started.",
+          "truth": "Thirty days won’t change your life. They can change your direction, and ==direction is what compounds==.",
+          "page": 109
+        },
+        {
+          "id": "12.5",
+          "title": "The 12-month map",
+          "dek": "Plan the year in quarters across four tracks (skills, proof, network, runway), check progress every 90 days, and redraw the map when the ground moves.",
+          "truth": "Plan in quarters, review honestly, adjust without shame. That’s how a year becomes a direction.",
+          "page": 110
+        },
+        {
+          "id": "12.6",
+          "title": "What AI can’t\ntake from you",
+          "dek": "AI can take tasks, even whole jobs; it cannot take your judgment, your relationships, your character or your ability to learn and choose again.",
+          "truth": "What AI can’t take from you is what you build: your judgment, your people, your character, your will to keep learning.",
+          "page": 111
+        }
+      ]
+    }
+  ],
+  "sample": {
+    "part": 1,
+    "chapters": [
+      {
+        "id": "1.1",
+        "title": "AI doesn’t take jobs.\nIt takes tasks.",
+        "dek": "Your job is a bundle of tasks, and AI reaches into some of them, rarely all, so the useful question is which parts of your week will change.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A job title is a label on a bundle. A junior marketer writes briefs, cleans spreadsheets, sits in meetings, calms a nervous client and decides what to cut. AI is good at some of that bundle and weak at the rest. “AI will take your job” skips the bundle entirely."
+          },
+          {
+            "type": "evidence",
+            "title": "The evidence: exposure is partial",
+            "text": "Researchers from OpenAI and the University of Pennsylvania matched what large language models can do against the tasks that make up US occupations. Their estimate: about 80% of US workers could have at least 10% of their tasks affected, and about 19% could see at least half affected. Note the word they used: exposed. Exposure means a task could change. It does not mean a job disappears.",
+            "source": {
+              "cite": "Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2023). GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models. arXiv:2303.10130.",
+              "url": "https://arxiv.org/abs/2303.10130"
+            }
+          },
+          {
+            "type": "p",
+            "text": "So the realistic threat is rarely “zero jobs.” It’s a job where the parts you were paid for shrink, and ==the parts nobody automated become the whole job==. That shift can help you or hurt you. **It depends on whether you see it coming.**"
+          },
+          {
+            "type": "drill",
+            "title": "Field drill: The task audit",
+            "text": "List what you actually did last week as tasks, not duties: “wrote three product emails,” not “marketing.” Aim for fifteen lines. Mark each one D if an AI could draft it today, H if it needs a human, ? if you’re unsure. The H column is what you grow. The D column is what you learn to hand off."
+          },
+          {
+            "type": "truth",
+            "text": "Nobody hires a job title. They hire someone to get tasks done, and the task list is changing."
+          }
+        ]
+      },
+      {
+        "id": "1.2",
+        "title": "Every machine age\nhad its panic",
+        "dek": "Automation panics are old, and the record is consistent: work changes shape instead of vanishing, though the transition still hurts specific people.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "In 1964, with automation fears running high, President Lyndon Johnson set up a national commission on technology and jobs. Its 1966 report concluded that automation was not destroying employment: machines were ending particular jobs, not the need for work. Sixty years on, the record still backs it."
+          },
+          {
+            "type": "evidence",
+            "title": "The evidence: most of today’s work is new",
+            "text": "Economists David Autor, Caroline Chin, Anna Salomons and Bryan Seegmiller traced eight decades of new job titles through US census records. Their estimate: roughly 60% of US employment in 2018 was in job titles added since 1940. ==Most of the jobs people held in 2018 had no title in 1940.==",
+            "source": {
+              "cite": "Autor, D., Chin, C., Salomons, A., & Seegmiller, B. (2024). New Frontiers: The Origins and Content of New Work, 1940-2018. Quarterly Journal of Economics, 139(3), 1399-1465.",
+              "url": "https://economics.mit.edu/sites/default/files/2026-04/New-Frontiers-QJE-v139%283%29-p1399-1465-Aug-2024.pdf"
+            }
+          },
+          {
+            "type": "p",
+            "text": "ATMs tell the same story. Economist James Bessen found that from 1988 to 2004, the average urban bank branch went from 20 tellers to 13. Cheaper branches meant more branches, up 43% in cities, and teller jobs did not shrink as ATMs rolled out. The job changed instead: less cash handling, more talking to customers."
+          },
+          {
+            "type": "p",
+            "text": "Now the honest part. “Work survives” describes economies, not individuals. The US Bureau of Labor Statistics projects teller jobs to fall 13% from 2025 to 2035 as more customers bank online, and real people sit in those seats. History says new work will appear. **It doesn’t say the work will come to you.**"
+          },
+          {
+            "type": "truth",
+            "text": "Work has always outlived the machines. Careers outlive them by moving before they’re pushed."
+          }
+        ]
+      },
+      {
+        "id": "1.3",
+        "title": "The first rung\nis the one that moved",
+        "dek": "The clearest AI damage so far isn’t mass layoffs but fewer entry-level hires in exposed fields, so you need a new way to get experience.",
+        "blocks": [
+          {
+            "type": "evidence",
+            "title": "The evidence: the canaries",
+            "text": "Stanford economists Erik Brynjolfsson, Bharat Chandar and Ruyu Chen tracked millions of US workers through ADP payroll data. They found no sign of economy-wide job loss. But by mid-2026, employment of 22-to-25-year-olds in the most AI-exposed occupations stood 19% below where it would be had it kept pace with less-exposed peers. Experienced workers showed no such gap. The gap came mostly from ==fewer hires, not more firings==. The authors call these early warning signs, not proof of cause.",
+            "source": {
+              "cite": "Brynjolfsson, E., Chandar, B., & Chen, R. (2026). Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence. Stanford Digital Economy Lab working paper, revised August 12, 2026 (first version August 2025).",
+              "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
+            }
+          },
+          {
+            "type": "p",
+            "text": "Read that again. The experienced people are mostly fine. **The door they walked through is narrower.** Entry-level work was always a bundle of simpler tasks (summaries, first drafts, basic code, routine tickets) that employers paid beginners to do while they learned. AI now does many of those tasks, so the training ground shrinks."
+          },
+          {
+            "type": "compare",
+            "left": "The old route in",
+            "right": "The route now",
+            "rows": [
+              [
+                "Get hired, then learn on simple tasks",
+                "Show you can handle real tasks first"
+              ],
+              [
+                "A credential opens the door",
+                "Visible work opens the door"
+              ],
+              [
+                "Experience comes from the first job",
+                "Experience comes from projects, freelancing, volunteering"
+              ],
+              [
+                "Wait to be given responsibility",
+                "Volunteer for the messy problems"
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "text": "This is not a verdict on you. It’s a change of route. If the ladder lost its first rung, build a step of your own: work people can see, on problems people actually have. Parts 6 and 7 show you how."
+          },
+          {
+            "type": "truth",
+            "text": "If nobody will pay you to learn on simple tasks, learn on real ones, where people can see."
+          }
+        ]
+      },
+      {
+        "id": "1.4",
+        "title": "The jagged frontier",
+        "dek": "AI is excellent at some tasks and confidently wrong at neighbors that look identical, and knowing where that edge runs is now a core skill.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Picture AI’s ability not as a smooth wall but as a jagged coastline. One task falls inside the line, and the result is fast and impressive. A neighboring task that looks just as hard falls outside, and the AI fails while sounding exactly as sure of itself."
+          },
+          {
+            "type": "evidence",
+            "title": "The evidence: 758 consultants",
+            "text": "Researchers from Harvard Business School and other universities ran an experiment with 758 Boston Consulting Group consultants. On tasks inside AI’s frontier, those using GPT-4 completed 12.2% more tasks, 25.1% faster, with quality rated more than 40% higher. On a task deliberately chosen to sit outside the frontier, consultants using AI were 19 percentage points less likely to reach the correct answer than those working without it.",
+            "source": {
+              "cite": "Dell’Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality. Harvard Business School Working Paper 24-013.",
+              "url": "https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/"
+            }
+          },
+          {
+            "type": "p",
+            "text": "The consultants who got it wrong weren’t careless. They trusted a tool that had been brilliant five minutes earlier. **The danger isn’t the obvious error.** It’s ==the fluent one==. And the edge keeps moving as models improve, so last year’s map won’t do."
+          },
+          {
+            "type": "drill",
+            "title": "Field drill: Map your edge",
+            "text": "Take three tasks from your real work where you already know what a good answer looks like. Give each one to an AI assistant. Grade every output honestly: usable, fixable, or wrong. Write down what the wrong ones had in common. That note is your personal map of the frontier. Redo it every few months."
+          },
+          {
+            "type": "truth",
+            "text": "The skill isn’t using AI. It’s knowing where to stop trusting it."
+          }
+        ]
+      },
+      {
+        "id": "1.5",
+        "title": "AI lifts the bottom\nfaster than the top",
+        "dek": "In several of the best studies so far, AI helps beginners most and top performers least, so average work gets cheap and the premium moves above it.",
+        "blocks": [
+          {
+            "type": "evidence",
+            "title": "The evidence: 5,000 support agents",
+            "text": "Erik Brynjolfsson, Danielle Li and Lindsey Raymond studied more than 5,000 customer support agents who were given an AI assistant. Productivity, measured as issues resolved per hour, rose 14% on average and 34% for novice and low-skilled agents. For the most experienced and skilled agents, the effect was minimal.",
+            "source": {
+              "cite": "Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at Work. Quarterly Journal of Economics, 140(2), 889-942. Originally NBER Working Paper 31161.",
+              "url": "https://www.nber.org/papers/w31161"
+            }
+          },
+          {
+            "type": "p",
+            "text": "A writing experiment published in Science found the same shape. Shakked Noy and Whitney Zhang recruited 453 college-educated professionals and gave half of them ChatGPT. Time spent on writing tasks fell 40%, quality rose 18%, and the gap between stronger and weaker writers narrowed."
+          },
+          {
+            "type": "p",
+            "text": "Good news if you’re new: you can produce decent work sooner than any generation before you. The bad news is the same sentence: so can everyone else. **When the floor rises for everyone, “decent” stops being a reason to hire you.**"
+          },
+          {
+            "type": "mistake",
+            "title": "Mistake: Settling for the floor",
+            "text": "Using AI to produce the same competent work as everyone else, only faster, and calling that a career plan. Speed on average work is now table stakes. Ask of every output: ==what did I add that the tool couldn’t?=="
+          },
+          {
+            "type": "compare",
+            "left": "Getting cheaper",
+            "right": "Getting more valuable",
+            "rows": [
+              [
+                "A competent first draft",
+                "Knowing which draft is right"
+              ],
+              [
+                "Standard answers to standard questions",
+                "Handling the case that breaks the pattern"
+              ],
+              [
+                "Generic polish",
+                "A point of view people remember"
+              ],
+              [
+                "Speed on routine work",
+                "Judgment on unusual work"
+              ]
+            ]
+          },
+          {
+            "type": "truth",
+            "text": "AI hands everyone a decent floor. Your career gets built on what you stack on top of it."
+          }
+        ]
+      },
+      {
+        "id": "1.6",
+        "title": "When output gets cheap,\njudgment gets expensive",
+        "dek": "When something becomes cheap, whatever completes it rises in value: AI makes drafts and predictions cheap, which makes choosing between them valuable.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Economics has a simple rule: when something gets cheaper, ==its complements get more valuable==. When coffee gets cheaper, people buy more cream. AI makes drafts, options and predictions almost free. What completes them? Someone who can say which one is right, and why."
+          },
+          {
+            "type": "evidence",
+            "title": "The evidence: prediction needs judgment",
+            "text": "Economists Ajay Agrawal, Joshua Gans and Avi Goldfarb describe modern AI as a drop in the cost of prediction. In a 2018 NBER paper they show that prediction and judgment are complements, as long as judgment is not too difficult: deciding which outcomes matter, and what to do about them, gains value as predictions get cheaper. Their book Prediction Machines makes the same case for a general audience.",
+            "source": {
+              "cite": "Agrawal, A., Gans, J., & Goldfarb, A. (2018). Prediction, Judgment and Complexity: A Theory of Decision Making and Artificial Intelligence. NBER Working Paper 24243.",
+              "url": "https://www.nber.org/papers/w24243"
+            }
+          },
+          {
+            "type": "p",
+            "text": "Make it concrete. Anyone can now generate fifty logo drafts in minutes. The client still needs one. The person who can pick it, defend it, and explain why the other forty-nine fail is doing the scarce part of the job. **That’s the part that gets paid.**"
+          },
+          {
+            "type": "drill",
+            "title": "Field drill: Practice choosing",
+            "text": "Ask an AI for ten versions of something you make at work: a subject line, a slide title, an opening paragraph. Rank them. Write one sentence on why your top pick wins and one on why the worst fails. Repeat weekly. Judgment grows by deciding and explaining, not by generating."
+          },
+          {
+            "type": "truth",
+            "text": "Generating is cheap now. Choosing well, and owning the choice, is the job."
+          }
+        ]
+      },
+      {
+        "id": "1.7",
+        "title": "You’re not competing with AI.\nYou’re competing with people who use it well.",
+        "dek": "The realistic threat isn’t a robot but a peer who does your job with AI, faster and better, and employers say they already hire with that in mind.",
+        "blocks": [
+          {
+            "type": "evidence",
+            "title": "The evidence: what leaders say",
+            "text": "Microsoft and LinkedIn’s 2024 Work Trend Index surveyed 31,000 people in 31 countries. Two-thirds of leaders (66%) said they wouldn’t hire someone without AI skills, and 71% said they’d rather hire a less experienced candidate with AI skills than a more experienced one without. Only 39% of AI users had received AI training from their company. Worth remembering: both companies sell AI tools.",
+            "source": {
+              "cite": "Microsoft & LinkedIn (2024). 2024 Work Trend Index Annual Report: AI at Work Is Here. Now Comes the Hard Part.",
+              "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part"
+            }
+          },
+          {
+            "type": "p",
+            "text": "What leaders say in surveys isn’t always what they do. Still, the direction is clear: **the bar moved.** Picture two junior analysts. One spends the day cleaning data by hand. The other uses AI to clean it in an hour, checks it, and spends the afternoon on what the numbers mean. Guess who gets the next project."
+          },
+          {
+            "type": "say",
+            "label": "When a manager or interviewer asks about AI",
+            "tone": "Specific, not boastful",
+            "lines": [
+              {
+                "from": "them",
+                "text": "How do you use AI in your work?"
+              },
+              {
+                "from": "you",
+                "text": "Mostly for first drafts and cleanup. Last month I used it to summarize forty customer reviews, then checked the summary against the raw comments before I shared it."
+              },
+              {
+                "from": "note",
+                "text": "If they ask about its limits:"
+              },
+              {
+                "from": "you",
+                "text": "It sounds confident even when it’s wrong, so I verify anything that goes to a client or a decision-maker."
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Notice what that answer does. It names a real task, a result and a check. That’s the new bar: not “I use ChatGPT,” but ==proof that you use it with judgment==."
+          },
+          {
+            "type": "truth",
+            "text": "Nobody needs you to be an AI expert. They need you to be better at your job because of it."
+          }
+        ]
+      },
+      {
+        "id": "1.8",
+        "title": "Nobody knows the future,\nincluding the experts",
+        "dek": "Expert forecasts have a poor track record, including on technology and jobs, so stop betting on one prediction and build a plan that survives being wrong.",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Psychologist Philip Tetlock spent about twenty years scoring tens of thousands of expert forecasts on politics and economics. On average, the experts did little better than chance, and no better than simple rules like “assume current trends continue.” The better forecasters, whom he called foxes, drew on many ideas and admitted uncertainty."
+          },
+          {
+            "type": "evidence",
+            "title": "The evidence: the radiologists",
+            "text": "In 2016, AI pioneer Geoffrey Hinton said “people should stop training radiologists now.” Nine years later, as Deena Mousa reported in Works in Progress, US diagnostic radiology residency programs offered a record 1,208 positions in 2025, and radiology was the second-highest-paid medical specialty, averaging about $520,000 a year. AI is used in radiology. It just didn’t replace the radiologists.",
+            "source": {
+              "cite": "Mousa, D. (2025). AI isn’t replacing radiologists. Works in Progress.",
+              "url": "https://www.worksinprogress.news/p/why-ai-isnt-replacing-radiologists"
+            }
+          },
+          {
+            "type": "p",
+            "text": "Hinton is brilliant. He was still wrong, partly because the job is far more than reading images: one 2012 study found radiologists spent only 36% of their time interpreting them. So swap the question. Stop asking “What will happen?” and start asking **“What holds up if I’m wrong?”**"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Skills that compound: writing, numbers, judgment, learning fast.",
+              "People who know your work and would vouch for it.",
+              "Savings that buy you time to adjust.",
+              "Proof of work that anyone can check."
+            ]
+          },
+          {
+            "type": "drill",
+            "title": "Field drill: Stress-test your plan",
+            "text": "Write your current career plan in two lines. Now imagine three futures: AI moves slower than expected, about as expected, or much faster. For each, ask whether your plan still works. ==Anything that only works in one future is a bet.== Shrink it or add a backup."
+          },
+          {
+            "type": "truth",
+            "text": "You can’t pick the future. You can pick a plan that survives most of them."
+          }
+        ]
+      }
+    ]
+  },
+  "lookInside": [
+    {
+      "page": 4,
+      "label": "Read this first",
+      "image": "/book-art/en/page-4.webp"
+    },
+    {
+      "page": 10,
+      "label": "The Situation Finder",
+      "image": "/book-art/en/page-10.webp"
+    },
+    {
+      "page": 16,
+      "label": "Chapter 1.4 · The jagged frontier",
+      "image": "/book-art/en/page-16.webp"
+    },
+    {
+      "page": 41,
+      "label": "Chapter 4.2 · A good prompt is just clear thinking",
+      "image": "/book-art/en/page-41.webp"
+    }
+  ],
+  "notesPage": 112
+}

@@ -1,0 +1,65 @@
+import { headers } from "next/headers";
+import { after } from "next/server";
+import { eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { downloads, orders } from "@/lib/db/schema";
+import { deliverOrder } from "@/lib/delivery";
+import { activeEntitlement } from "@/lib/entitlements";
+import { buyerById } from "@/lib/buyers";
+import { verifyDownloadToken } from "@/lib/download-token";
+import { licensedCopyKey } from "@/lib/library";
+import { signedFileUrl } from "@/lib/files";
+import { captureError } from "@/lib/errors";
+import { rateLimit } from "@/lib/ratelimit";
+import { newId } from "@/lib/ids";
+import { EDITIONS, PRODUCT_ID, SITE } from "@/lib/site";
+import { isLang } from "@/i18n/config";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const maxDuration = 60;
+
+function plain(text: string, status: number, extra: Record<string, string> = {}): Response {
+  return new Response(text, { status, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", ...extra } });
+}
+
+/** Signed download link (from the success page or the delivery email) → personal copy via a 5-minute file link (302). */
+export async function GET(req: Request) {
+  const url = new URL(req.url);
+  const mode = url.searchParams.get("mode") === "read" ? "read" : "download";
+  const ed = url.searchParams.get("ed");
+  const lang = isLang(ed) ? ed : "en";
+  try {
+    const buyerId = verifyDownloadToken(url.searchParams.get("t") ?? "");
+    if (!buyerId) return plain(`This download link has expired or isn’t valid. Get a fresh one at ${SITE.url}/download`, 403);
+
+    const ent = await activeEntitlement(buyerId);
+    const buyer = ent ? await buyerById(buyerId) : null;
+    if (!ent || !buyer) return plain(`There’s no active purchase behind this link. If you think that’s wrong, email ${SITE.email}.`, 403);
+
+    const rl = await rateLimit(`dl:${buyerId}`, 40, 24 * 3600);
+    if (!rl.ok) {
+      return plain("You’ve opened the book many times today. For your security links are paused for a few hours; your copy is safe.", 429, {
+        "Retry-After": String(rl.resetIn),
+      });
+    }
+
+    const { key } = await licensedCopyKey(buyerId, buyer.email, lang);
+    const h = await headers();
+    await db.insert(downloads).values({ id: newId("dl"), userId: buyerId, product: `${PRODUCT_ID}:${lang}`, mode, country: h.get("x-vercel-ip-country") });
+
+    // If the delivery email for this purchase never went out (e.g. the webhook run died), retry it now.
+    after(async () => {
+      const o = (await db.select({ sent: orders.emailSentAt }).from(orders).where(eq(orders.id, ent.orderId)).limit(1))[0];
+      if (o && !o.sent) {
+        await deliverOrder(ent.orderId).catch((err) => captureError(err, { route: "/api/library/file", context: { stage: "deliver", orderId: ent.orderId } }));
+      }
+    });
+
+    const signed = signedFileUrl(key, { disposition: mode === "download" ? "attachment" : "inline", filename: EDITIONS[lang].fileName, ttlSeconds: 300 });
+    return new Response(null, { status: 302, headers: { Location: signed, "Cache-Control": "no-store", "Referrer-Policy": "no-referrer" } });
+  } catch (err) {
+    await captureError(err, { route: "/api/library/file", context: { mode } });
+    return plain("We couldn’t open your copy just now. Please try again; the problem has been logged.", 500);
+  }
+}
