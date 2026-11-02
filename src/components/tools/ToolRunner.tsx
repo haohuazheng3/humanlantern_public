@@ -62,10 +62,10 @@ function useStartOnce(id: string) {
   };
 }
 
-function NextStep({ toolId, next }: { toolId: string; next: ToolNext }) {
+function NextStep({ toolId, next, privateResult = false }: { toolId: string; next: ToolNext; privateResult?: boolean }) {
   return (
     <p className="mt-4 text-[0.95rem] font-semibold">
-      <Link href={next.href} className="text-accent-text underline-offset-4 hover:underline" onClick={() => track("tool_next", { tool: toolId, to: next.href })}>
+      <Link href={next.href} className="text-accent-text underline-offset-4 hover:underline" onClick={() => track("tool_next", privateResult ? { tool: toolId } : { tool: toolId, to: next.href })}>
         Next: {next.label} →
       </Link>
     </p>
@@ -158,7 +158,7 @@ function ResultCard({
           <CopyButton text={result.say} toolId={toolId} />
         </div>
       ) : null}
-      {step ? <NextStep toolId={toolId} next={step} /> : null}
+      {step ? <NextStep toolId={toolId} next={step} privateResult={privateResult} /> : null}
       {ch && !result.noBook ? <ChapterCard toolId={toolId} chapter={ch} price={price} result={privateResult ? undefined : result.id} base={base} /> : null}
       {method ? (
         <details className="mt-4 text-[0.88rem] text-ink-3">
