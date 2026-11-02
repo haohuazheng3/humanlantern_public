@@ -13,7 +13,7 @@ type State =
 
 export const CHECKOUT_STASH = "hl_checkout_url";
 export const CHECKOUT_NONCE = "hl_checkout_nonce";
-// Sessions expire after 30 minutes, so an attempt (and its idempotency key) is reused for 20 at most.
+// An attempt (its stashed session URL and its idempotency key) is reused for 20 minutes at most.
 const ATTEMPT_MS = 20 * 60 * 1000;
 
 export interface CheckoutLabels {
@@ -27,25 +27,29 @@ export interface CheckoutLabels {
   waiverButton: string;
 }
 
-function attemptNonce(): string {
+/** Attempts are per edition and waiver choice: switching language or ticking the box starts a new one. */
+const slot = (base: string, lang: string, waiver: boolean) => `${base}:${lang}:${waiver ? 1 : 0}`;
+
+function attemptNonce(lang: string, waiver: boolean): string {
+  const name = slot(CHECKOUT_NONCE, lang, waiver);
   try {
-    const kept = sessionStorage.getItem(CHECKOUT_NONCE);
+    const kept = sessionStorage.getItem(name);
     if (kept) {
       const { value, at } = JSON.parse(kept) as { value: string; at: number };
       if (Date.now() - at < ATTEMPT_MS) return value;
     }
     const value = crypto.randomUUID();
-    sessionStorage.setItem(CHECKOUT_NONCE, JSON.stringify({ value, at: Date.now() }));
+    sessionStorage.setItem(name, JSON.stringify({ value, at: Date.now() }));
     return value;
   } catch {
     return crypto.randomUUID();
   }
 }
 
-function forgetAttempt() {
+function forgetAttempt(lang: string, waiver: boolean) {
   try {
-    sessionStorage.removeItem(CHECKOUT_STASH);
-    sessionStorage.removeItem(CHECKOUT_NONCE);
+    sessionStorage.removeItem(slot(CHECKOUT_STASH, lang, waiver));
+    sessionStorage.removeItem(slot(CHECKOUT_NONCE, lang, waiver));
   } catch {
     /* fine */
   }
@@ -67,7 +71,7 @@ export function CheckoutStarter({ lang, t, contactHref }: { lang: string; t: Che
     async (waiver: boolean) => {
       setState({ phase: "starting" });
       try {
-        const stashed = sessionStorage.getItem(CHECKOUT_STASH);
+        const stashed = sessionStorage.getItem(slot(CHECKOUT_STASH, lang, waiver));
         if (stashed) {
           const { url, at } = JSON.parse(stashed) as { url: string; at: number };
           if (Date.now() - at < ATTEMPT_MS && url.startsWith("https://checkout.stripe.com/")) {
@@ -83,15 +87,16 @@ export function CheckoutStarter({ lang, t, contactHref }: { lang: string; t: Che
         const res = await fetch("/api/checkout", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nonce: attemptNonce(), lang, waiver }),
+          body: JSON.stringify({ nonce: attemptNonce(lang, waiver), lang, waiver }),
         });
         const body = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
         if (!res.ok || !body.url) {
-          setState({ phase: "error", message: body.error ?? t.errorGeneric });
+          // Server messages are English; the buyer sees this edition's own wording.
+          setState({ phase: "error", message: t.errorGeneric });
           return;
         }
         try {
-          sessionStorage.setItem(CHECKOUT_STASH, JSON.stringify({ url: body.url, at: Date.now() }));
+          sessionStorage.setItem(slot(CHECKOUT_STASH, lang, waiver), JSON.stringify({ url: body.url, at: Date.now() }));
         } catch {
           /* fine */
         }
@@ -126,7 +131,7 @@ export function CheckoutStarter({ lang, t, contactHref }: { lang: string; t: Che
             type="button"
             className="btn btn-primary btn-lg"
             onClick={() => {
-              forgetAttempt();
+              forgetAttempt(lang, agreed);
               void start(agreed);
             }}
           >

@@ -27,7 +27,11 @@ export async function licensedCopyKey(userId: string, email: string, lang: Lang)
     .from(licensedCopies)
     .where(and(eq(licensedCopies.userId, userId), eq(licensedCopies.product, product)))
     .limit(1);
-  if (existing[0]) return { key: existing[0].objectKey, personalised: true };
+  if (existing[0]) {
+    // Stale copies get deleted from R2 when the manuscript changes: re-stamp instead of serving a 404.
+    if (await fileExists(existing[0].objectKey).catch(() => true)) return { key: existing[0].objectKey, personalised: true };
+    await db.delete(licensedCopies).where(and(eq(licensedCopies.userId, userId), eq(licensedCopies.product, product)));
+  }
 
   const edition = EDITIONS[lang];
   const key = `licensed/${userId}/${BOOK.sku}-${lang}.pdf`;

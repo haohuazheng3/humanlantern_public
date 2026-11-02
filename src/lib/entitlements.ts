@@ -1,6 +1,6 @@
 import "server-only";
 import type Stripe from "stripe";
-import { and, desc, eq, sql } from "drizzle-orm";
+import { and, desc, eq, ne, sql } from "drizzle-orm";
 import { db } from "./db";
 import { entitlements, orders } from "./db/schema";
 import { newId } from "./ids";
@@ -33,7 +33,7 @@ export async function ordersForBuyer(buyerId: string): Promise<OrderRow[]> {
 }
 
 export type GrantResult =
-  | { ok: true; userId: string; email: string; orderId: string; newlyGranted: boolean; amountTotal: number; currency: string; lang: string }
+  | { ok: true; userId: string; email: string; orderId: string; newlyGranted: boolean; amountTotal: number; currency: string; lang: string; withdrawalWaiver: string | null }
   | { ok: false; reason: string };
 
 function sessionEmail(s: Stripe.Checkout.Session): string | null {
@@ -132,6 +132,7 @@ export async function grantFromCheckoutSession(
     amountTotal: order.amountTotal,
     currency: order.currency,
     lang: order.lang,
+    withdrawalWaiver: order.withdrawalWaiver,
   };
 }
 
@@ -144,9 +145,18 @@ export async function revokeByPaymentIntent(paymentIntentId: string, reason: "re
     .update(orders)
     .set({ status: reason, updatedAt: sql`now()`, refundedAt: reason === "refunded" ? sql`now()` : order.refundedAt })
     .where(eq(orders.id, order.id));
+  // The buyer may have paid twice (two tabs): access then rests on their other paid order instead.
+  const other = (
+    await db
+      .select({ id: orders.id })
+      .from(orders)
+      .where(and(eq(orders.userId, order.userId), eq(orders.product, order.product), eq(orders.status, "paid"), ne(orders.id, order.id)))
+      .orderBy(desc(orders.createdAt))
+      .limit(1)
+  )[0];
   await db
     .update(entitlements)
-    .set({ status: "revoked", revokedAt: sql`now()`, revokeReason: reason })
+    .set(other ? { orderId: other.id, status: "active", revokedAt: null, revokeReason: null } : { status: "revoked", revokedAt: sql`now()`, revokeReason: reason })
     .where(and(eq(entitlements.userId, order.userId), eq(entitlements.orderId, order.id)));
   return order.userId;
 }
@@ -157,9 +167,10 @@ export async function reinstateByPaymentIntent(paymentIntentId: string): Promise
   const order = rows[0];
   if (!order || order.status !== "disputed") return null;
   await db.update(orders).set({ status: "paid", updatedAt: sql`now()` }).where(eq(orders.id, order.id));
+  // Access may have been revoked against this order, or moved to another paid order meanwhile: either way it's active again.
   await db
     .update(entitlements)
-    .set({ status: "active", revokedAt: null, revokeReason: null })
-    .where(and(eq(entitlements.userId, order.userId), eq(entitlements.orderId, order.id)));
+    .set({ status: "active", orderId: sql`CASE WHEN ${entitlements.status} = 'revoked' THEN ${order.id} ELSE ${entitlements.orderId} END`, revokedAt: null, revokeReason: null })
+    .where(and(eq(entitlements.userId, order.userId), eq(entitlements.product, order.product)));
   return order.userId;
 }

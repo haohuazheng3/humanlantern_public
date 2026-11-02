@@ -1,6 +1,12 @@
+import { LocalizedBusy, LocalizedText } from "@/components/LocalizedText";
+import { getDict } from "@/i18n";
+import { LOCALES } from "@/i18n/config";
+
+const pick = (f: (l: (typeof LOCALES)[number]) => string) => Object.fromEntries(LOCALES.map((l) => [l, f(l)]));
+
 export default function SuccessLoading() {
   return (
-    <div className="mx-auto max-w-[1120px] px-3 pt-10 sm:px-5 sm:pt-16" aria-busy="true" aria-label="Unlocking your book">
+    <LocalizedBusy className="mx-auto max-w-[1120px] px-3 pt-10 sm:px-5 sm:pt-16" labels={pick((l) => getDict(l).success.loadingLabel)}>
       <div className="mx-auto max-w-3xl">
         <div className="slab p-6 sm:p-10">
           <div className="grid items-center gap-8 md:grid-cols-[200px_1fr] md:gap-12">
@@ -17,8 +23,10 @@ export default function SuccessLoading() {
             </div>
           </div>
         </div>
-        <p className="mt-4 text-center text-[0.9rem] text-ink-3">Confirming your payment with Stripe and unlocking your book…</p>
+        <p className="mt-4 text-center text-[0.9rem] text-ink-3">
+          <LocalizedText byLang={pick((l) => getDict(l).success.loading)} />
+        </p>
       </div>
-    </div>
+    </LocalizedBusy>
   );
 }

@@ -47,7 +47,7 @@ export function ToolCatalog({ tool }: { tool: GeneratorTool }) {
             {g.items.map((it) => (
               <li key={it.text} className="rounded-2xl bg-slab-2 px-4 py-3">
                 <div className="flex items-start gap-3">
-                  <p className="flex-1 text-[0.99rem] leading-relaxed text-ink">{it.text}</p>
+                  <p className="flex-1 whitespace-pre-line text-[0.99rem] leading-relaxed text-ink">{it.text}</p>
                   {tool.copyable ? <CopyButton text={it.text} toolId={tool.id} /> : null}
                 </div>
                 {it.why ? <p className="mt-1 text-[0.86rem] leading-relaxed text-ink-4">{it.why}</p> : null}

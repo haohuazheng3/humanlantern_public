@@ -758,6 +758,14 @@ body {
     font-style: italic;
     color: var(--ink);
   }
+  .prose-book .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.4em 0;
+  }
+  .prose-book .table-scroll table {
+    margin: 0;
+  }
   .prose-book table {
     width: 100%;
     border-collapse: collapse;

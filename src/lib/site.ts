@@ -45,6 +45,14 @@ export const EDITIONS: Record<Lang, { title: string; fileKey: string; fileName: 
 export const PRODUCT_ID = BOOK.sku;
 
 /** Pages that must never be indexed or listed in the sitemap (every edition). */
-export const PRIVATE_PATHS = ["/checkout", "/download", "/admin", "/sign-in", "/api/", "/unsubscribed", "/de/checkout", "/de/download", "/de/unsubscribed", "/ja/checkout", "/ja/download", "/ja/unsubscribed"] as const;
+/** Never crawled: the owner's area and the API. */
+export const PRIVATE_PATHS = ["/admin", "/sign-in", "/api/"] as const;
+
+/**
+ * Personal pages every page links to (Get the book, My copy). They stay crawlable on purpose: a
+ * robots.txt block would hide their noindex (meta + X-Robots-Tag from next.config) and Google can
+ * index a blocked URL from links alone.
+ */
+export const NOINDEX_PATHS = ["/checkout", "/download", "/unsubscribed"] as const;
 
 export const CONTENT_UPDATED = "2026-10-31";

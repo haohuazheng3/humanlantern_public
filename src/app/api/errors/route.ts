@@ -11,7 +11,8 @@ const Body = z.object({
   stack: z.string().max(8000).optional(),
   route: z.string().max(300).optional(),
   source: z.string().max(60).optional(),
-  severity: z.enum(["error", "warn"]).default("warn"),
+  // Accepted for compatibility but ignored: anyone can POST here, so browser reports are always warnings.
+  severity: z.enum(["error", "warn"]).optional(),
   userAgent: z.string().max(400).optional(),
 });
 
@@ -29,7 +30,9 @@ export async function POST(req: Request) {
     await captureError(err, {
       route: d.route ?? null,
       source: "client",
-      severity: d.severity,
+      // Never "error": a public endpoint must not be able to turn /api/health red or page the owner.
+      // Real client regressions surface in the headless smoke test and in the inbox as warnings.
+      severity: "warn",
       context: { via: d.source, userAgent: d.userAgent },
     });
   } catch (e) {

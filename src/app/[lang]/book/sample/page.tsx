@@ -5,8 +5,7 @@ import { Breadcrumbs, Container, CtaSlab, Section } from "@/components/ui";
 import { ChapterView } from "@/components/book/BookBlocks";
 import { rich } from "@/components/Rich";
 import { book, chapterCount } from "@/content/book";
-import { breadcrumbLd, pageMetadata } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/seo";
 import { getDict } from "@/i18n";
 import { isLang, localePath } from "@/i18n/config";
 
@@ -30,16 +29,10 @@ export default async function SamplePage(props: PageProps<"/[lang]/book/sample">
 
   return (
     <>
-      <JsonLd
-        data={breadcrumbLd([
-          { name: t.common.home, path: L("/") },
-          { name: t.nav.book, path: L("/book") },
-          { name: t.nav.sample, path: L("/book/sample") },
-        ])}
-      />
       <Container className="pt-10 sm:pt-14">
         <Breadcrumbs
           items={[
+            { name: t.common.home, path: L("/") },
             { name: t.nav.book, path: L("/book") },
             { name: t.nav.sample, path: L("/book/sample") },
           ]}

@@ -4,6 +4,7 @@ import { allChapters, book, thoughtSlug } from "@/content/book";
 import { getDict } from "@/i18n";
 import type { Lang } from "@/i18n/config";
 import { chapterLabel } from "@/i18n/format";
+import { plain } from "@/components/Rich";
 
 /** Finder data for the client component: only what the answers show, never chapter bodies. */
 export function finderData(lang: Lang) {
@@ -14,7 +15,7 @@ export function finderData(lang: Lang) {
   const chapters: Record<string, FinderChapter> = Object.fromEntries(
     allChapters(lang)
       .filter((c) => used.has(c.id))
-      .map((c) => [c.id, { id: c.id, title: c.title, dek: c.dek, truth: c.truth, page: c.page }]),
+      .map((c) => [c.id, { id: c.id, title: c.title, dek: c.dek, truth: plain(c.truth), page: c.page }]),
   );
   return { groups: b.finder.groups.map((g) => g.name), items, chapters };
 }

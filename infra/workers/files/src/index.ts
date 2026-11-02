@@ -68,7 +68,7 @@ async function download(req: Request, env: Env, url: URL): Promise<Response> {
   const name = url.searchParams.get("name") ?? "";
   const sig = url.searchParams.get("sig") ?? "";
   if (!key || !exp || !sig || !name) return text("Bad link.", 400);
-  if (Math.floor(Date.now() / 1000) > exp) return text("This link has expired. Get a fresh one at humanlantern.com/download.", 403);
+  if (Math.floor(Date.now() / 1000) > exp) return text("This link has expired. Open the page where you got it again (your purchase page or your email) for a fresh one, or write to contact@humanlantern.com.", 403);
   const expected = await hmacHex(env.SIGNING_SECRET, [key, String(exp), url.searchParams.get("disp") ?? "", name].join("\n"));
   if (!equal(expected, sig)) return text("This link isn't valid.", 403);
 

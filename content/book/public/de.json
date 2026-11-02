@@ -4,7 +4,7 @@
   "subtitle": "Ein Praxishandbuch für deine Arbeit, dein Einkommen und deinen Kopf im Zeitalter der KI",
   "edition": "Erste Auflage, 2026",
   "pages": 124,
-  "bytes": 2140976,
+  "bytes": 2160313,
   "cover": {
     "image": "/book-art/de/cover.webp",
     "png": "/book-art/de/cover.png",
@@ -321,49 +321,49 @@
       "n": 1,
       "title": "Die Wahrheiten, die dir keiner gesagt hat",
       "layer": "clear",
-      "intro": "Fast alles, was du über KI und Arbeit hörst, gibt es in zwei Sorten: Hype und Panik. Beide lassen die Belege weg. Dieser Teil liefert sie: was die besten Studien wirklich über Jobs, Aufgaben, Einsteiger, Profis und die Zukunft zeigen. Manches beruhigt. Manches nicht. **Aber alles davon hilft dir mehr als Angst.**",
+      "intro": "Das meiste, was du über KI und Arbeit hörst, gibt es in zwei Geschmacksrichtungen: Hype und Panik. Beide lassen die Belege weg. Dieser Teil liefert sie: was die besten Studien wirklich über Jobs, Aufgaben, Einsteiger, Profis und die Zukunft zeigen. Manches davon beruhigt. Manches nicht. **Alles davon nützt dir mehr als Angst.**",
       "page": 13,
       "chapters": [
         {
           "id": "1.1",
           "title": "KI nimmt keine Jobs.\nSie nimmt Aufgaben.",
-          "dek": "Dein Job ist ein Bündel von Aufgaben, und KI greift nach einigen, selten nach allen. Frag also: Welche Teile deiner Woche werden sich ändern?",
-          "truth": "Niemand stellt einen Titel ein, sondern jemanden für Aufgaben. Und die Liste der Aufgaben ändert sich.",
+          "dek": "Dein Job ist ein Bündel von Aufgaben. KI erfasst einige davon, selten alle. Die nützliche Frage lautet also: Welche Teile deiner Woche ändern sich?",
+          "truth": "Niemand stellt einen Jobtitel ein. Eingestellt wird, wer Aufgaben erledigt, und die Aufgabenliste ändert sich.",
           "page": 14
         },
         {
           "id": "1.2",
-          "title": "Jede Maschinenära\nhatte ihre Panik",
-          "dek": "Die Angst vor Automatisierung ist alt, die Bilanz eindeutig: Arbeit ändert ihre Form, statt zu verschwinden. Doch der Übergang trifft bestimmte Menschen hart.",
+          "title": "Jedes Maschinenzeitalter\nhatte seine Panik",
+          "dek": "Die Angst vor Automatisierung ist alt, die Bilanz eindeutig: Arbeit ändert ihre Form, statt zu verschwinden. Doch der Übergang trifft einzelne Menschen trotzdem hart.",
           "truth": "Arbeit hat jede Maschine überlebt. Karrieren überleben, wenn sie sich bewegen, bevor man sie schubst.",
           "page": 15
         },
         {
           "id": "1.3",
-          "title": "Die unterste Sprosse\nhat sich bewegt",
-          "dek": "Der klarste KI-Schaden bisher sind keine Massenentlassungen, sondern weniger Einstiegsjobs in exponierten Feldern. Du brauchst neue Wege zu Erfahrung.",
+          "title": "Die unterste Sprosse\nist weggerückt",
+          "dek": "Der klarste KI-Schaden bisher sind keine Massenentlassungen, sondern weniger Einstiegsjobs in exponierten Berufen. Du brauchst neue Wege zu Erfahrung.",
           "truth": "Bezahlt dich keiner fürs Lernen an einfachen Aufgaben, lern an echten, und zwar vor Publikum.",
           "page": 16
         },
         {
           "id": "1.4",
           "title": "Die zerklüftete Grenze",
-          "dek": "KI glänzt bei manchen Aufgaben und irrt selbstsicher bei Nachbarn, die gleich aussehen. Zu wissen, wo diese Grenze verläuft, ist heute eine Kernkompetenz.",
+          "dek": "KI glänzt bei manchen Aufgaben und irrt selbstsicher bei Nachbaraufgaben, die gleich aussehen. Zu wissen, wo diese Grenze verläuft, ist heute eine Kernkompetenz.",
           "truth": "Die Kunst ist nicht, KI zu nutzen. Sondern zu wissen, wo das Vertrauen endet.",
           "page": 17
         },
         {
           "id": "1.5",
           "title": "KI hebt den Boden\nschneller als die Spitze",
-          "dek": "In mehreren der besten Studien bisher hilft KI Anfängern am meisten und Spitzenkräften am wenigsten. Durchschnitt wird billig, bezahlt wird, was darüber liegt.",
+          "dek": "In mehreren der bisher besten Studien hilft KI Anfängern am meisten und Spitzenkräften am wenigsten. Durchschnitt wird billig, bezahlt wird, was darüber liegt.",
           "truth": "KI gibt allen einen ordentlichen Boden. Deine Karriere baust du aus dem, was du obendrauf setzt.",
           "page": 18
         },
         {
           "id": "1.6",
-          "title": "Billige Ergebnisse,\nteures Urteilsvermögen",
+          "title": "Werden Ergebnisse billig,\nwird Urteilsvermögen teuer",
           "dek": "Wird etwas billig, steigt der Wert dessen, was es ergänzt. KI macht Entwürfe und Vorhersagen billig, und damit wird die Wahl zwischen ihnen wertvoll.",
-          "truth": "Erzeugen ist billig geworden. Gut wählen und zur Wahl stehen: Das ist der Job.",
+          "truth": "Erzeugen ist billig geworden. Gut auswählen und dafür geradestehen: Das ist der Job.",
           "page": 19
         },
         {
@@ -377,22 +377,22 @@
           "id": "1.8",
           "title": "Niemand kennt die Zukunft,\nauch die Experten nicht",
           "dek": "Expertenprognosen schneiden schlecht ab, auch bei Technik und Jobs. Setz nicht auf eine einzige Vorhersage, sondern bau einen Plan, der einen Irrtum übersteht.",
-          "truth": "Die Zukunft kannst du nicht wählen. Einen Plan, der die meisten übersteht, schon.",
+          "truth": "Die Zukunft kannst du nicht wählen. Einen Plan, der fast jede übersteht, schon.",
           "page": 21
         }
       ]
     },
     {
       "n": 2,
-      "title": "Klarer Kopf im lauten Jahrzehnt",
+      "title": "Ein klarer Kopf im lauten Jahrzehnt",
       "layer": "clear",
-      "intro": "Der Lärm um KI ist laut, und vieles davon soll dich am Scrollen halten. Ein klarer Kopf ist kein Wesenszug, sondern eine Reihe von Gewohnheiten: wie du mit Angst umgehst, was du liest, mit wem du dich vergleichst, wie du entscheidest und wie du dich erholst. **Hier bekommst du sie.**",
+      "intro": "Der Lärm um KI ist ohrenbetäubend, und vieles davon ist darauf angelegt, dich am Scrollen zu halten. Ein klarer Kopf ist kein Wesenszug, sondern eine Reihe von Gewohnheiten: wie du mit Angst umgehst, was du liest, mit wem du dich vergleichst, wie du entscheidest und wie du dich erholst. **Dieser Teil gibt sie dir an die Hand.**",
       "page": 22,
       "chapters": [
         {
           "id": "2.1",
           "title": "Angst ist ein Signal,\nkein Plan",
-          "dek": "Sorge um KI zeigt, was dir wichtig ist. Doch sie schrumpft erst, wenn ein konkreter nächster Schritt daraus wird.",
+          "dek": "Die Sorge um KI zeigt auf etwas, das dir wichtig ist. Kleiner wird sie aber erst, wenn du einen konkreten nächsten Schritt daraus machst.",
           "truth": "Angst verlangt einen Schritt, keine News. Gib ihr den kleinsten, den du heute schaffst.",
           "page": 23
         },
@@ -406,43 +406,43 @@
         {
           "id": "2.3",
           "title": "Hype und Schwarzmalerei\nverkaufen beide etwas",
-          "dek": "Die lautesten KI-Stimmen verdienen an deiner Aufmerksamkeit, ob sie Reichtum versprechen oder Ruin. Miss jede Behauptung an ihren Belegen und Anreizen.",
+          "dek": "Die lautesten KI-Stimmen verdienen an deiner Aufmerksamkeit, ob sie Reichtum oder Ruin verheißen. Miss jede Behauptung an ihren Belegen und Anreizen.",
           "truth": "Hinter jeder selbstsicheren KI-Prognose steckt ein Geschäftsmodell. Finde es, bevor du ihr glaubst.",
           "page": 25
         },
         {
           "id": "2.4",
           "title": "Steuere, was\nin deiner Hand liegt",
-          "dek": "Unter Dauerstress ist Passivität normal. Der Ausweg ist nicht Optimismus, sondern die Kontrolle, die du wirklich hast, immer wieder zu bemerken und zu nutzen.",
-          "truth": "Kontrolle ist kein Gefühl, auf das du wartest, sondern ein Beleg, den du Schritt für Schritt sammelst.",
+          "dek": "Unter Dauerstress ist Passivität der Normalzustand. Der Ausweg ist nicht Optimismus, sondern die Kontrolle, die du wirklich hast, immer wieder zu bemerken und zu nutzen.",
+          "truth": "Kontrolle ist kein Gefühl, auf das du wartest. Sie ist ein Beleg, den du sammelst, Handgriff für Handgriff.",
           "page": 26
         },
         {
           "id": "2.5",
           "title": "Die Vergleichsfalle",
           "dek": "Virale Erfolgsgeschichten zeigen die Gewinner und verschweigen den Nenner. Der einzige Vergleich, der sich lohnt, ist der mit dir vor drei Monaten.",
-          "truth": "Du siehst die Gewinner, nie den Nenner. Miss dich an dem, der du vor drei Monaten warst.",
+          "truth": "Du siehst die Gewinner, nie den Nenner. Miss dich an dir selbst vor drei Monaten.",
           "page": 27
         },
         {
           "id": "2.6",
           "title": "Du bist nicht\ndein Jobtitel",
-          "dek": "Ein Titel ist eine Rolle, die du hast, nicht, wer du bist. Wer gut umsattelt, findet die nächste Identität durchs Handeln, nicht durchs Planen.",
-          "truth": "Titel laufen ab. Was du kannst und wer dir das zutraut, kommt mit.",
+          "dek": "Ein Titel ist eine Rolle, die du spielst, nicht, wer du bist. Wer gut umsattelt, findet die nächste Identität durchs Handeln, nicht durchs Planen.",
+          "truth": "Titel laufen ab. Was du kannst und wer dir das zutraut, nimmst du mit.",
           "page": 28
         },
         {
           "id": "2.7",
           "title": "Kleine Wetten\nschlagen große Pläne",
-          "dek": "In einem Jahrzehnt, das niemand vorhersagen kann, lehren dich billige Experimente mit klarer Frage und Frist mehr als jeder Fünfjahresplan.",
+          "dek": "In einem Jahrzehnt, das niemand vorhersagen kann, lehren dich billige Experimente mit klarer Frage und fester Frist mehr als jeder Fünfjahresplan.",
           "truth": "Pläne setzen aufs Vorhersagen, Wetten aufs Lernen. Dieses Jahrzehnt belohnt das Lernen.",
           "page": 29
         },
         {
           "id": "2.8",
-          "title": "Ruhe ist kein Lohn.\nSie ist Ausrüstung.",
-          "dek": "Dein Vorsprung im KI-Zeitalter ist Urteilsvermögen, und das untergräbt Schlafmangel zuerst, leise und meist unbemerkt.",
-          "truth": "Urteilsvermögen ist dein Vorsprung, geschärft wird es im Schlaf. Behandle ihn also nicht als Kür.",
+          "title": "Erholung ist keine Belohnung.\nSie ist Ausrüstung.",
+          "dek": "Dein Vorsprung im KI-Zeitalter ist Urteilsvermögen, und Schlafmangel untergräbt genau das zuerst, leise und meist unbemerkt.",
+          "truth": "Urteilsvermögen ist dein Vorsprung, und geschärft wird es im Schlaf. Schlaf ist also Pflicht, nicht Kür.",
           "page": 30
         }
       ]
@@ -451,27 +451,27 @@
       "n": 3,
       "title": "Was menschlich bleibt",
       "layer": "clear",
-      "intro": "Wenn Maschinen auf Knopfdruck schreiben, zeichnen, programmieren und zusammenfassen: Was bleibt dir? Mehr, als du denkst, nur nicht, was die meisten vermuten. Dieser Teil zeigt, welche menschliche Arbeit an Wert gewinnt, wenn Produzieren billig wird: auswählen, bürgen, sich kümmern, Probleme fassen, anpacken und wissen, was nirgends steht. **Dort liegt dein Hebel.**",
+      "intro": "Wenn Maschinen auf Knopfdruck schreiben, zeichnen, programmieren und zusammenfassen: Was bleibt dir? Mehr, als du denkst, nur nicht das, was die meisten vermuten. Dieser Teil zeigt, welche menschliche Arbeit an Wert gewinnt, wenn Produzieren billig wird: auswählen, bürgen, sich kümmern, die richtige Frage stellen, anpacken und wissen, was nirgends steht. **Dort liegt dein Hebel.**",
       "page": 31,
       "chapters": [
         {
           "id": "3.1",
           "title": "Urteilskraft: wissen,\nwas gut ist",
-          "dek": "Wenn jeder in Sekunden Entwürfe erzeugt, wird eines knapp: zu erkennen, welcher gut ist, was fehlt und wann du Nein sagst.",
-          "truth": "Optionen sind heute billig. Vertrauen gewinnt, wer weiß, welche davon rausgeht.",
+          "dek": "Wenn jeder in Sekunden einen Entwurf erzeugen kann, wird eines knapp: zu erkennen, welcher gut ist, was nachzubessern ist und wann du Nein sagst.",
+          "truth": "Optionen sind heute billig. Vertrauen gewinnt, wer weiß, welche davon rausgehen darf.",
           "page": 32
         },
         {
           "id": "3.2",
           "title": "Geschmack ist\nÜbungssache",
-          "dek": "Geschmack ist geschulte Vorliebe, die vorhersagt, was andere schätzen. Während KI jeden Kanal mit solidem Einerlei flutet, fällt auf, wer ihn hat.",
+          "dek": "Geschmack ist geschulte Vorliebe, die vorhersagt, was andere schätzen. Während KI jeden Kanal mit solidem Einerlei flutet, fällt auf, wer Geschmack hat.",
           "truth": "Geschmack ist kein Talent, auf das du wartest. Er ist ein Muskel: Du trainierst ihn mit jedem ehrlichen Vergleich.",
           "page": 33
         },
         {
           "id": "3.3",
           "title": "Vertrauen bleibt\nMenschensache",
-          "dek": "Menschen verzeihen Menschen oft Fehler, die sie einer Maschine nicht nachsehen. Wer vertrauenswürdig ist und Verantwortung trägt, bleibt wertvoll, auch wenn Software genauer ist.",
+          "dek": "Einem Menschen verzeihen wir oft Fehler, die wir einer Maschine nicht nachsehen. Wer vertrauenswürdig ist und Verantwortung trägt, bleibt wertvoll, auch wenn die Software genauer ist.",
           "truth": "Genauigkeit lässt sich automatisieren, eine Erfolgsbilanz nicht. Bau deine auf, mit jedem gehaltenen Wort.",
           "page": 34
         },
@@ -479,13 +479,13 @@
           "id": "3.4",
           "title": "Einer muss\nunterschreiben",
           "dek": "KI kann fast alles entwerfen. Doch Gerichte und Kunden machen weiter eine Person oder Firma für das Ergebnis verantwortlich, und bezahlt wird die Verantwortung.",
-          "truth": "KI kann das Dokument schreiben. Bezahlt wird, wer es unterschreibt und recht behält.",
+          "truth": "KI kann das Dokument schreiben. Bezahlt wird, wer es unterschreibt und richtigliegt.",
           "page": 35
         },
         {
           "id": "3.5",
           "title": "Die physische Welt\nist widerspenstig",
-          "dek": "Was uns mühelos fällt, etwa Sehen, Greifen oder der Weg durch ein chaotisches Zimmer, gehört für Maschinen zum Schwersten. Darum bleibt praktisches Können unterschätzt.",
+          "dek": "Was uns mühelos gelingt, etwa Sehen, Greifen oder der Weg durch ein chaotisches Zimmer, gehört für Maschinen zum Schwersten. Darum wird praktisches Können weiter unterschätzt.",
           "truth": "Was dir mühelos gelingt, fällt Robotern noch immer schwer. Praktisches Können ist ein Trumpf, keine Notlösung.",
           "page": 36
         },
@@ -493,21 +493,21 @@
           "id": "3.6",
           "title": "Die richtige Frage\nist das knappe Gut",
           "dek": "KI beantwortet alles, was du fragst, schnell und selbstsicher. Der Wert wandert also nach vorn: Welches Problem lohnt sich, für wen und warum jetzt?",
-          "truth": "Eine brillante Antwort auf die falsche Frage bleibt falsch. Denk am gründlichsten vor dem ersten Prompt.",
+          "truth": "Eine brillante Antwort auf die falsche Frage bleibt falsch. Dein bestes Denken gehört vor den ersten Prompt.",
           "page": 37
         },
         {
           "id": "3.7",
           "title": "Ein Mensch, der zuhört,\nzählt noch immer",
-          "dek": "KI kann Antworten schreiben, die einfühlsamer klingen als die gestresster Profis. Doch wer weiß, dass eine Maschine sie schrieb, fühlt sich weniger gehört. Echte Aufmerksamkeit bleibt wertvoll.",
+          "dek": "KI kann Antworten schreiben, die einfühlsamer klingen als die von gestressten Profis. Doch wer weiß, dass eine Maschine sie schrieb, fühlt sich weniger gehört. Echte Aufmerksamkeit behält ihren Wert.",
           "truth": "Worte lassen sich erzeugen, Aufmerksamkeit nur schenken. Schenk sie, wo es zählt.",
           "page": 38
         },
         {
           "id": "3.8",
           "title": "Kontext ist dein Burggraben",
-          "dek": "Modelle lernten aus dem, was die Welt aufschrieb. Die ungeschriebenen Regeln deines Teams, deiner Kunden und deiner Branche landeten nie in den Daten. Diese Lücke ist dein Vorteil.",
-          "truth": "KI weiß, was die Welt aufschrieb. Dein Vorsprung ist, was du weißt und noch keiner aufschrieb.",
+          "dek": "Modelle lernten aus dem, was die Welt aufgeschrieben hat. Die ungeschriebenen Regeln deines Teams, deiner Kunden und deiner Branche landeten nie in den Daten. Diese Lücke ist dein Vorteil.",
+          "truth": "KI weiß, was die Welt aufgeschrieben hat. Dein Vorsprung ist, was du weißt und noch niemand aufgeschrieben hat.",
           "page": 39
         }
       ]
@@ -516,34 +516,34 @@
       "n": 4,
       "title": "Mit KI arbeiten",
       "layer": "field",
-      "intro": "Das ist der praktische Teil. Keine Zauber-Prompts, keine Geheimtricks: nur Arbeitsgewohnheiten, die KI nützlich machen, Prüfschritte, die dich vor Blamagen schützen, und Fallen, die dich still schlechter machen. Wie in der Fahrschule gilt: **Die meiste Kunst liegt darin, zu wissen, wann du bremst.**",
+      "intro": "Das ist der praktische Teil. Keine Zauber-Prompts, keine Geheimtricks: nur Arbeitsgewohnheiten, die KI nützlich machen, Prüfschritte, die dich vor Blamagen schützen, und Fallen, die dich unbemerkt schlechter machen. Wie in der Fahrschule gilt: **Die Kunst liegt vor allem darin, zu wissen, wann du bremst.**",
       "page": 40,
       "chapters": [
         {
           "id": "4.1",
           "title": "Sieh KI als brillanten\nPraktikanten ohne Kontext",
           "dek": "KI ist schnell, belesen und eifrig, weiß aber nichts über deine Lage: Gib ihr Kontext, prüf ihre Arbeit und überlass ihr nie die Freigabe.",
-          "truth": "Gib der KI den Kontext, den ein kluger Neuzugang bekäme. Dann prüf ihre Arbeit, als wären ihre Fehler deine. Das sind sie.",
+          "truth": "Gib der KI den Kontext, den ein kluger Neuzugang bekäme. Dann prüf ihre Arbeit, als wären ihre Fehler deine eigenen. Denn das sind sie.",
           "page": 41
         },
         {
           "id": "4.2",
           "title": "Ein guter Prompt ist\nschlicht klares Denken",
           "dek": "Prompten ist keine Geheimsprache, sondern klares Erklären. Was du einer Kollegin nicht erklären kannst, kannst du auch keinem Modell erklären.",
-          "truth": "Unklare Prompts kommen von unklarem Denken. Kläre das Denken, und der Prompt schreibt sich fast von selbst.",
+          "truth": "Unklare Prompts entstehen aus unklarem Denken. Kläre dein Denken, und der Prompt schreibt sich fast von selbst.",
           "page": 42
         },
         {
           "id": "4.3",
           "title": "Prüf alles,\nworauf es ankommt",
-          "dek": "KI-Fehler sehen selten wie Fehler aus. Sie kommen flüssig, selbstsicher und plausibel daher. Was Folgen hat, braucht eine Prüfroutine, jedes Mal.",
+          "dek": "KI-Fehler sehen selten wie Fehler aus. Sie kommen flüssig, selbstsicher und plausibel daher. Was Folgen hat, braucht jedes Mal eine Prüfroutine.",
           "truth": "Flüssig ist nicht dasselbe wie wahr. Wenn es darauf ankommt, öffne die Quelle.",
           "page": 43
         },
         {
           "id": "4.4",
           "title": "Bau dir deine\npersönliche KI-Routine",
-          "dek": "Planloses Chatten bringt Zufallsergebnisse. Ein kleines System aus wiederkehrenden Aufgaben, gespeicherten Prompts, Vorlagen und Prüfschritt macht KI zum verlässlichen Werkzeug.",
+          "dek": "Planloses Chatten bringt Zufallsergebnisse. Ein kleines System aus wiederkehrenden Aufgaben, gespeicherten Prompts, Vorlagen und einem Prüfschritt macht KI zum verlässlichen Werkzeug.",
           "truth": "Ein guter Prompt, einmal genutzt, ist ein Trick. Gespeichert und verbessert, ist er ein System.",
           "page": 44
         },
@@ -564,7 +564,7 @@
         {
           "id": "4.7",
           "title": "Schneller lernen mit KI,\nohne dir etwas vorzumachen",
-          "dek": "KI kann dich schneller lernen lassen oder dir nur das Gefühl geben. Entscheidend ist, ob sie dich fragt oder dir bloß Antworten liefert.",
+          "dek": "KI kann dich schneller lernen lassen oder dir nur dieses Gefühl geben. Entscheidend ist, ob sie dir Fragen stellt oder bloß Antworten liefert.",
           "truth": "Wenn die KI das Denken übernimmt, lernst du nicht. Lass sie die Fragen stellen.",
           "page": 47
         },
@@ -581,63 +581,63 @@
       "n": 5,
       "title": "Fähigkeiten, die sich verzinsen",
       "layer": "field",
-      "intro": "Werkzeuge wechseln jedes Jahr. Die Fähigkeiten, die dich mit jedem Werkzeug gut machen, kaum. Hier sind acht davon: Lernen, Schreiben, Zahlen, Breite, Fachtiefe, Überzeugen, Bauen und Kombinieren. Keine verlangt Genie. Jede wird mit der Übung wertvoller, und **jede macht die nächste leichter erlernbar.**",
+      "intro": "Werkzeuge ändern sich jedes Jahr. Die Fähigkeiten, mit denen du jedes Werkzeug gut beherrschst, kaum. Dieser Teil behandelt acht davon: Lernen, Schreiben, Zahlenverständnis, Breite, Fachtiefe, Überzeugen, Bauen und Kombinieren. Keine setzt Genie voraus. Jede wird wertvoller, je länger du sie übst, und **mit jeder lernst du die nächste leichter.**",
       "page": 49,
       "chapters": [
         {
           "id": "5.1",
           "title": "Das Lernen lernen",
-          "dek": "Ändert sich dein Fach jedes Jahr, gewinnt, wer am schnellsten lernt, und die Schnellsten fragen sich selbst ab, statt erneut zu lesen.",
-          "truth": "Wiederlesen fühlt sich an wie Lernen. Es aus dem eigenen Kopf zu holen, ist Lernen.",
+          "dek": "Ändert sich dein Fach jedes Jahr, gewinnt, wer am schnellsten lernt. Und die Schnellsten fragen sich selbst ab, statt nur wiederzulesen.",
+          "truth": "Wiederlesen fühlt sich nach Lernen an. Etwas aus dem eigenen Kopf hervorzuholen ist Lernen.",
           "page": 50
         },
         {
           "id": "5.2",
           "title": "Schreiben ist\nsichtbares Denken",
-          "dek": "KI kann deine Sätze glätten, aber nicht entscheiden, was du glaubst. Erst beim Schreiben merkst du, was du wirklich denkst.",
+          "dek": "KI kann deine Sätze glätten, aber nicht entscheiden, was du glaubst. Schreib also zuerst selbst: So findest du heraus, was du wirklich denkst.",
           "truth": "Kannst du es nicht schlicht aufschreiben, hast du es noch nicht verstanden. **Das kann dir keine KI abnehmen.**",
           "page": 51
         },
         {
           "id": "5.3",
           "title": "Zahlen schützen dich\nvor Täuschung",
-          "dek": "Du brauchst keine höhere Mathematik: Ein paar einfache Unterscheidungen entlarven die meisten irreführenden KI-Schlagzeilen.",
-          "truth": "Bevor dich eine Zahl in Panik versetzt, frag, was sie zählt.",
+          "dek": "Um KI-Nachrichten klar zu lesen, brauchst du keine höhere Mathematik. Ein paar einfache Unterscheidungen entlarven die meisten irreführenden Schlagzeilen.",
+          "truth": "Bevor dich eine Zahl in Panik versetzt, frag, was sie gezählt hat.",
           "page": 52
         },
         {
           "id": "5.4",
           "title": "Tiefe plus Breite",
-          "dek": "Geh in einem Gebiet so tief, dass man dir vertraut, und so breit, dass du siehst, was Fachleute wie Maschinen übersehen.",
-          "truth": "Tiefe macht dich vertrauenswürdig. Breite macht dich nützlich in Räumen, auf die dich niemand vorbereitet hat.",
+          "dek": "Geh in einem Gebiet so tief, dass man dir vertraut, und blick so weit darüber hinaus, dass du siehst, was Spezialisten wie Maschinen übersehen.",
+          "truth": "Tiefe macht dich vertrauenswürdig. Breite macht dich nützlich in Runden, auf die dich niemand vorbereitet hat.",
           "page": 53
         },
         {
           "id": "5.5",
           "title": "Dein Fach plus KI\nschlägt KI allein",
-          "dek": "Deine Erfahrung ist nicht veraltet. Sie ist das Urteil, das entscheidet, ob dir die KI hilft oder still schadet.",
-          "truth": "KI vervielfacht das Urteil, das du mitbringst. Bring mehr mit.",
+          "dek": "Deine Erfahrung ist nicht veraltet. Sie liefert das Urteil, das entscheidet, ob dir die Ergebnisse der KI helfen oder unbemerkt schaden.",
+          "truth": "KI vervielfacht dein Urteilsvermögen. Bring mehr davon mit.",
           "page": 54
         },
         {
           "id": "5.6",
           "title": "Sprich, damit andere handeln",
-          "dek": "Vielbeschäftigte reagieren auf Nachrichten, die zuerst den Kern nennen, um eine Sache bitten und den nächsten Schritt erleichtern.",
-          "truth": "Erst der Kern. Dann eine Bitte. Dann der nächste Schritt.",
+          "dek": "Vielbeschäftigte reagieren auf Nachrichten, die mit dem Kern beginnen, um genau eine Sache bitten und den nächsten Schritt leicht machen.",
+          "truth": "Erst der Kern. Dann genau eine Bitte. Dann der nächste Schritt.",
           "page": 55
         },
         {
           "id": "5.7",
-          "title": "Vom Nutzen zum Bauen",
-          "dek": "Für kleine Werkzeuge musst du kein Programmierer werden. Du brauchst eine nervige Routineaufgabe und Geduld für mehrere Anläufe.",
-          "truth": "Den Sprung zum Bauen schafft ein kleines, langweiliges Werkzeug, das funktioniert.",
+          "title": "Vom Anwenden zum Bauen",
+          "dek": "Für kleine Werkzeuge musst du kein Programmierer werden. Du brauchst eine nervige Aufgabe, die du von Hand erledigst, und Geduld für mehrere Anläufe.",
+          "truth": "Vom Anwenden zum Bauen ist es nur ein Schritt: ein kleines, langweiliges Werkzeug, das funktioniert.",
           "page": 56
         },
         {
           "id": "5.8",
           "title": "Fähigkeiten kombinieren\nstatt auf eine setzen",
-          "dek": "Weltklasse in einer Sache ist selten und fragil. Gut in drei Dingen zu sein, die sich selten treffen, ist machbar und schwer zu kopieren.",
-          "truth": "Du musst in nichts die Nummer eins sein. **Sei die einzige Person mit deiner Kombination.**",
+          "dek": "In einer Sache Weltklasse zu sein, ist selten und anfällig. Gut in drei Dingen zu sein, die selten zusammenkommen, ist machbar und schwer zu kopieren.",
+          "truth": "Du musst in nichts die Nummer eins sein. **Sei die einzige Person mit genau deiner Kombination.**",
           "page": 57
         }
       ]
@@ -646,48 +646,48 @@
       "n": 6,
       "title": "Chancen finden",
       "layer": "field",
-      "intro": "Eine Chance kündigt sich selten als „KI-Chance“ an. Sie zeigt sich als Beschwerde, Arbeitsstau, Budgetposten, als Frage eines Fremden. Dieser Teil schult deinen Blick für Orte, die andere übersehen, und zeigt, wie die richtigen Leute erfahren, dass du helfen kannst. **Sehen ist die halbe Arbeit, gesehen werden die andere Hälfte.**",
+      "intro": "Eine Chance kündigt sich selten als „KI-Chance“ an. Sie zeigt sich als Beschwerde, als Arbeitsstau, als Budgetposten, als Frage eines Fremden. Dieser Teil schult deinen Blick für Orte, die andere übersehen, und zeigt dir, wie die richtigen Leute erfahren, dass du helfen kannst. **Sehen ist die halbe Arbeit. Gesehen werden die andere Hälfte.**",
       "page": 58,
       "chapters": [
         {
           "id": "6.1",
           "title": "Chancen stecken\nin der Reibung",
-          "dek": "Wo Menschen warten, klagen, kopieren und einfügen oder jemanden für öde Arbeit bezahlen, steckt ein lohnendes Problem.",
+          "dek": "Wo Menschen warten, klagen, hin- und herkopieren oder jemanden für öde Arbeit bezahlen, liegt ein Problem, das sich zu lösen lohnt.",
           "truth": "Jede Beschwerde ist eine noch ungeschriebene Stellenbeschreibung.",
           "page": 59
         },
         {
           "id": "6.2",
           "title": "Folge dem Geld\nund dem Schmerz",
-          "dek": "Die besten Chancen liegen, wo ein schmerzhaftes Problem auf ein Budget trifft, das schon fließt. Und gerade fließen viele Budgets in Richtung KI.",
-          "truth": "Such Schmerz, für den schon gezahlt wird, und geh dorthin, wohin das Budget fließt.",
+          "dek": "Die besten Chancen liegen dort, wo ein schmerzhaftes Problem auf ein Budget trifft, das schon fließt. Und derzeit fließen viele Budgets in Richtung KI.",
+          "truth": "Such Schmerz, für den schon gezahlt wird, und stell dich dorthin, wohin das Budget fließt.",
           "page": 60
         },
         {
           "id": "6.3",
           "title": "Langweilige Branchen,\nweit offene Türen",
-          "dek": "Die Branchen, die KI am langsamsten einführen, bieten Leuten mit KI-Wissen die wenigste Konkurrenz und oft den meisten Papierkram.",
-          "truth": "Glamouröse Branchen haben Gedränge. Langweilige haben Probleme, Budgets und offene Türen.",
+          "dek": "In den Branchen, die KI am langsamsten einführen, haben Leute, die sich damit auskennen, die wenigste Konkurrenz und oft den meisten Papierkram aufzuräumen.",
+          "truth": "In glamourösen Branchen herrscht Gedränge. Langweilige haben Probleme, Budgets und offene Türen.",
           "page": 61
         },
         {
           "id": "6.4",
           "title": "Sei die KI-Anlaufstelle\nim Team ohne KI",
-          "dek": "In den meisten Teams wird eine Person, die KI gut nutzt, zur Anlaufstelle. Diese Rolle verdienst du mit gelösten Problemen, nicht mit Predigten.",
-          "truth": "Rede nicht über KI. Repariere still etwas und zeig dann, wie.",
+          "dek": "In den meisten Teams wird eine Person, die KI gut nutzt, zur Anlaufstelle. Diese Rolle erarbeitest du dir mit gelösten Problemen, nicht mit Predigten.",
+          "truth": "Rede nicht über KI. Bring still etwas in Ordnung und zeig dann, wie.",
           "page": 62
         },
         {
           "id": "6.5",
           "title": "Beweise schlagen Abschlüsse",
-          "dek": "Arbeitgeber sagen, sie stellen nach Können ein, setzen aber meist auf Abschlüsse. Also müssen deine Beweise sichtbar, konkret und leicht prüfbar sein.",
+          "dek": "Arbeitgeber sagen, sie stellen nach Können ein, greifen aber meist doch auf Abschlüsse zurück. Also müssen deine Beweise sichtbar, konkret und leicht prüfbar sein.",
           "truth": "Abschlüsse bringen dich auf die Liste, Beweise zur Zusage. **Mach deine Beweise unübersehbar.**",
           "page": 63
         },
         {
           "id": "6.6",
           "title": "Gib dem Glück\nmehr Fläche",
-          "dek": "Glück ist teils Zufall, aber du kannst die Chancen erhöhen: Tu Interessantes und lass dann mehr Leute davon wissen.",
+          "dek": "Glück ist zum Teil Zufall, aber du kannst deine Chancen erhöhen: Tu interessante Dinge und sorg dafür, dass mehr Leute davon erfahren.",
           "truth": "Das Glück ist mit den Sichtbaren. Mach die Arbeit, dann zeig sie.",
           "page": 64
         },
@@ -700,9 +700,9 @@
         },
         {
           "id": "6.8",
-          "title": "Lies die Signale früh",
+          "title": "Erkenne die Signale früh",
           "dek": "Zwanzig ruhige Minuten im Monat verraten dir mehr über die Richtung deines Fachs als täglich eine Stunde Panik-Scrollen.",
-          "truth": "Schau monatlich hin, handle bei einem Signal und lass das tägliche Doomscrolling.",
+          "truth": "Schau einmal im Monat hin, greif ein Signal auf und lass das tägliche Doomscrolling.",
           "page": 66
         }
       ]
@@ -711,42 +711,42 @@
       "n": 7,
       "title": "So wirst du heute eingestellt",
       "layer": "field",
-      "intro": "Die Jobsuche ist zum Wettrüsten geworden: Wer sucht, bewirbt sich per KI überall, und wer einstellt, filtert per Software alles. In diesem Lärm ist ein klares Signal selten und wertvoll. Dieser Teil zeigt dir, wie du dieses Signal wirst, von der ersten Bewerbung bis zum ersten Quartal im Job. **Masse ist heute billig. Glaubwürdigkeit nicht.**",
+      "intro": "Der Bewerbungsprozess ist zum Wettrüsten geworden: Kandidaten bewerben sich per KI überall, Arbeitgeber filtern per Software alles. In diesem Lärm ist ein klares Signal selten und wertvoll. Dieser Teil zeigt dir, wie du dieses Signal wirst, von der ersten Bewerbung bis zum ersten Quartal im Job. **Masse ist heute billig. Glaubwürdigkeit nicht.**",
       "page": 67,
       "chapters": [
         {
           "id": "7.1",
           "title": "Die Bewerbungsflut\nund wie du ihr entkommst",
           "dek": "Wenn Bewerben nichts kostet, bedeuten Bewerbungen nichts mehr. Der Ausweg: weniger, gezieltere, persönlichere Bewerbungen, die ein Mensch wirklich lesen will.",
-          "truth": "Wenn sich alle überall bewerben können, wird eines knapp: ein Grund, deine zu lesen.",
+          "truth": "Wenn sich alle überall bewerben können, wird eines knapp: ein Grund, ausgerechnet deine Bewerbung zu lesen.",
           "page": 68
         },
         {
           "id": "7.2",
           "title": "Ein Lebenslauf, der Software\nund Mensch übersteht",
           "dek": "Nicht Roboter sortieren dich heimlich aus, sondern starre Filter und gehetzte Menschen. Schreib für beide: erst die passenden Begriffe, dann echte Ergebnisse.",
-          "truth": "Schreib so, dass der Filter dich findet und ein müder Mensch dir sofort glaubt.",
+          "truth": "Schreib so, dass der Filter dich findet und ein müder Mensch dir auf den ersten Blick glaubt.",
           "page": 69
         },
         {
           "id": "7.3",
-          "title": "Empfehlungen wirken noch",
-          "dek": "Eine Empfehlung ersetzt keine Eignung, aber sie verschafft ihr Gehör. Verdienen musst du sie mit Neugier, nicht mit Bitten an Fremde.",
-          "truth": "Bitte keine Fremden um Empfehlungen. Hör auf, fremd zu sein. Dann frag.",
+          "title": "Empfehlungen ziehen immer noch",
+          "dek": "Eine Empfehlung ersetzt keine Eignung, aber sie verschafft ihr Gehör. Verdienen musst du sie dir mit Neugier, nicht mit Bitten an Fremde.",
+          "truth": "Frag keine Fremden nach einer Empfehlung. Hör auf, fremd zu sein. Dann frag.",
           "page": 70
         },
         {
           "id": "7.4",
           "title": "Das Portfolio-Projekt,\ndas Antworten bringt",
-          "dek": "Ein kleines Projekt, das ein echtes Problem deiner Wunschfirma löst, schlägt eine Wand voller Zertifikate. Es zeigt, dass du die Arbeit kannst.",
-          "truth": "Sag nicht, dass du die Arbeit kannst. ==Gib ihnen eine Kostprobe.==",
+          "dek": "Ein kleines Projekt, das ein echtes Problem deiner Wunschfirma löst, schlägt eine Wand voller Zertifikate. Es zeigt, dass du den Job kannst.",
+          "truth": "Behaupte nicht, dass du den Job kannst. ==Gib ihnen eine Kostprobe.==",
           "page": 71
         },
         {
           "id": "7.5",
-          "title": "Was Jobinterviews heute prüfen",
-          "dek": "Wenn KI jede Antwort entwerfen kann, prüfen gute Interviewer nicht dein Wissen, sondern wie du denkst, entscheidest und Verantwortung trägst.",
-          "truth": "Interviews prüfen heute, was KI dir nicht vortäuschen kann: wie du denkst, wenn die Antwort nirgends steht.",
+          "title": "Was Vorstellungsgespräche heute prüfen",
+          "dek": "Wenn KI jede Antwort entwerfen kann, prüfen gute Interviewer nicht mehr dein Wissen, sondern wie du denkst, entscheidest und Verantwortung trägst.",
+          "truth": "Interviews prüfen heute, was keine KI für dich vortäuschen kann: wie du denkst, wenn die Antwort nirgends steht.",
           "page": 72
         },
         {
@@ -759,14 +759,14 @@
         {
           "id": "7.7",
           "title": "Verhandle das erste Angebot",
-          "dek": "Die meisten nehmen die erste Zahl, die sie hören. Dabei kostet eine höfliche, vorbereitete Bitte selten viel, und das Plus wirkt in jeder künftigen Erhöhung nach.",
-          "truth": "Das erste Angebot ist ein Eröffnungszug. Höflich nachzufragen gehört zum Verfahren und gefährdet es nicht.",
+          "dek": "Die meisten akzeptieren die erste Zahl, die sie hören. Dabei kostet eine höfliche, gut vorbereitete Nachfrage selten viel, und das Plus wirkt in jeder künftigen Gehaltserhöhung nach.",
+          "truth": "Das erste Angebot ist ein Eröffnungszug. Höflich nachzuverhandeln gehört zum Prozess, es gefährdet ihn nicht.",
           "page": 74
         },
         {
           "id": "7.8",
           "title": "Deine ersten 90 Tage",
-          "dek": "Deine ersten drei Monate prägen, was man sich über dich erzählt. Lern die ungeschriebenen Regeln, lande einen sichtbaren Erfolg und erleichtere deiner Führungskraft das Leben.",
+          "dek": "Deine ersten drei Monate prägen, was man sich über dich erzählt. Lern die ungeschriebenen Regeln, fahr einen sichtbaren Erfolg ein und erleichtere deiner Führungskraft das Leben.",
           "truth": "In deinen ersten 90 Tagen ist „unkompliziert“ mehr wert als „beeindruckend“.",
           "page": 75
         }
@@ -774,51 +774,51 @@
     },
     {
       "n": 8,
-      "title": "Schachzüge in deiner Karriere",
+      "title": "Weichenstellungen in deiner Laufbahn",
       "layer": "field",
-      "intro": "Sobald du drin bist, werden die Fragen schwieriger. Solltest du umsatteln? Lohnt sich das Studium? Musst du programmieren können? Was tust du, wenn deine Firma voll auf KI setzt oder dich entlässt? Dieser Teil ersetzt Panik durch einfache Tests und konkrete Schritte. **Jeder Karriereschritt ist eine Wette, also setz mit offenen Augen.**",
+      "intro": "Sobald du drin bist, werden die Fragen schwieriger. Solltest du umsatteln? Lohnt sich ein Studium? Musst du programmieren können? Was tust du, wenn deine Firma voll auf KI setzt oder dich entlässt? Dieser Teil ersetzt Panik durch einfache Tests und konkrete Schritte. **Jeder Karriereschritt ist eine Wette, also setz mit offenen Augen.**",
       "page": 76,
       "chapters": [
         {
           "id": "8.1",
           "title": "Solltest du umsatteln?\nEin Entscheidungstest",
-          "dek": "Bevor du deine Karriere sprengst, prüf, ob das Problem das Berufsfeld ist oder nur dieser Job. Dann teste den neuen Weg günstig.",
+          "dek": "Bevor du alles hinwirfst, prüf, ob es am Berufsfeld liegt oder nur an diesem Job. Dann teste den neuen Weg mit kleinem Einsatz.",
           "truth": "Wechsle hin zu etwas, das du getestet hast, ==nie nur weg von etwas, das du fürchtest.==",
           "page": 77
         },
         {
           "id": "8.2",
           "title": "Lohnt sich ein Studium noch?",
-          "dek": "Im Schnitt zahlt sich ein Studium noch aus, aber der Schnitt zahlt nicht deine Studiengebühren. Entscheidend sind Fach, Kosten und ob du abschließt.",
-          "truth": "Ein Studium ist eine Wette auf ==einen Studiengang zu einem Preis==. Bewerte diese Wette, nicht den Landesschnitt.",
+          "dek": "Im Schnitt zahlt sich ein Studium immer noch gut aus, aber der Schnitt bezahlt nicht deine Studiengebühren. Entscheidend sind Fach, Kosten und ob du abschließt.",
+          "truth": "Ein Studium ist eine Wette auf ==einen bestimmten Studiengang zu einem bestimmten Preis==. Bewerte diese Wette, nicht den Landesschnitt.",
           "page": 78
         },
         {
           "id": "8.3",
           "title": "Solltest du programmieren lernen?",
-          "dek": "Lern genug Code, um präzise zu denken und deine Arbeit zu automatisieren. Profi-Entwickler zu werden ist eine andere, härtere Wette als noch vor ein paar Jahren.",
+          "dek": "Lern so viel Code, dass du präzise denken und deine eigene Arbeit automatisieren kannst. Profi-Entwickler zu werden ist eine eigene Wette, und heute eine härtere als noch vor ein paar Jahren.",
           "truth": "Code ist das Alphabet, um mit Maschinen klar zu denken. ==Eine Entwicklerkarriere ist eine andere Entscheidung.==",
           "page": 79
         },
         {
           "id": "8.4",
           "title": "Wenn deine Firma die\n„KI-Transformation“ ausruft",
-          "dek": "Die Ankündigung bedeutet meist Experimente, umgeschichtete Budgets und vage Ziele. Wer früh handelt, die Tools lernt und Ergebnisse zeigt, darf mitgestalten, was danach kommt.",
-          "truth": "In einer vagen Transformation schreibt am Plan mit, wer echte Ergebnisse hat.",
+          "dek": "Die Ankündigung bedeutet meist Experimente, umgeschichtete Budgets und vage Ziele. Wer früh aktiv wird, die Tools beherrschen lernt und Ergebnisse vorweist, gestaltet mit, was danach kommt.",
+          "truth": "In einer vagen Transformation schreibt am Plan mit, wer echte Ergebnisse vorweisen kann.",
           "page": 80
         },
         {
           "id": "8.5",
           "title": "Die erste Woche nach der Kündigung",
-          "dek": "Eine Kündigung ist ein Schock, kein Urteil. Schütz in Woche eins dein Geld, deine Optionen und deinen Schlaf, statt panisch Bewerbungen zu streuen.",
+          "dek": "Eine Kündigung ist ein Schock, kein Urteil. Schütz in der ersten Woche dein Geld, deine Optionen und deinen Schlaf, statt panisch Bewerbungen zu streuen.",
           "truth": "Schütz zuerst dein Geld und deinen Kopf. Von festem Boden aus sucht es sich besser.",
           "page": 81
         },
         {
           "id": "8.6",
           "title": "Aufsteigen, wenn KI\nSprossen absägt",
-          "dek": "Schluckt KI die Einsteigeraufgaben, an denen man früher den Job lernte, sammle Erfahrung gezielt: Verantwortung, Kundenkontakt, teamübergreifende Arbeit, echte Mentoren.",
-          "truth": "Verliert die Leiter Sprossen, warte nicht, bis du dran bist. Meld dich für Arbeit, die Urteilskraft schult.",
+          "dek": "Wenn KI die Einsteigeraufgaben schluckt, an denen man früher den Job gelernt hat, musst du Erfahrung gezielt sammeln: Verantwortung, Kundenkontakt, teamübergreifende Arbeit, echte Mentoren.",
+          "truth": "Verliert die Leiter Sprossen, warte nicht, bis du dran bist. Meld dich freiwillig für Arbeit, die dein Urteilsvermögen schult.",
           "page": 82
         },
         {
@@ -834,55 +834,55 @@
       "n": 9,
       "title": "Einkommen neben dem Gehalt",
       "layer": "field",
-      "intro": "Ein Gehalt fühlt sich sicher an, weil es pünktlich kommt. Doch es hängt an einem Arbeitgeber, einer Chefin, einem Budgetposten. Dieser Teil zeigt, wie du ein zweites Standbein aufbaust, ohne auszubrennen: Freelancing, kleine Produkte, ein eigenes Publikum, Geldmaschen durchschauen, ehrliche Preise und die Ein-Personen-Firma. **Klein und echt schlägt groß und erträumt.**",
+      "intro": "Ein Gehalt fühlt sich sicher an, weil es pünktlich kommt. Doch es hängt an genau einem Arbeitgeber, einer Chefin und einem Budgetposten. Dieser Teil zeigt, wie du ein zweites Standbein aufbaust, ohne auszubrennen: Freelancing, kleine Produkte, ein eigenes Publikum, Abzocke erkennen, ehrliche Preise und die Ein-Personen-Firma. **Klein und echt schlägt groß und erträumt.**",
       "page": 84,
       "chapters": [
         {
           "id": "9.1",
           "title": "Ein Einkommen allein\nist eine Schwachstelle",
-          "dek": "Ein zweites Einkommen muss dein Gehalt nicht ersetzen, nur existieren. Schon ein kleines verändert, wozu du dir ein Nein leisten kannst.",
+          "dek": "Ein zweites Einkommen muss dein Gehalt nicht ersetzen. Es muss nur da sein, denn schon ein kleines ändert, wozu du Nein sagen kannst.",
           "truth": "Ein zweites Einkommen muss nicht groß sein. Es muss echt sein und dir gehören.",
           "page": 85
         },
         {
           "id": "9.2",
           "title": "Freelancing, wenn der\nerste Entwurf gratis ist",
-          "dek": "Macht KI die reine Produktion billig, verkauf, was sie nicht verbilligt: Ergebnisse, Nischenwissen und Vertrauen statt Wörter und Pixel kiloweise.",
+          "dek": "Macht KI die reine Produktion billig, verkauf, was sie nicht billig machen kann: Ergebnisse, Nischenwissen und Vertrauen, nicht Wörter und Pixel als Meterware.",
           "truth": "Verkauf nicht, was KI billig gemacht hat. Verkauf das Ergebnis, für das dein Kunde wirklich zahlt.",
           "page": 86
         },
         {
           "id": "9.3",
           "title": "Mach aus deinem Wissen\nein Produkt",
-          "dek": "Die Frage, die man dir ständig stellt, beschreibt dein Produkt. Teste, ob jemand zahlt, bevor du einen Monat in die Antwort steckst.",
+          "dek": "Die Frage, die man dir ständig stellt, ist dein Produktbriefing. Teste, ob jemand zahlt, bevor du einen Monat in die Antwort steckst.",
           "truth": "Erst Vorbestellungen, dann bauen. Zahlt niemand, hast du einen Monat gespart.",
           "page": 87
         },
         {
           "id": "9.4",
-          "title": "Ein Publikum ist\neigenes Kapital",
-          "dek": "Teilst du stetig, was du lernst, wächst Vertrauen mit Zinseszins. Pflege den Kontakt über eine eigene Liste, nicht im gemieteten Feed.",
-          "truth": "Miete Plattformen für Reichweite. Besitze die Liste für die Beziehung.",
+          "title": "Ein Publikum ist\nKapital, das dir gehört",
+          "dek": "Teilst du stetig, was du lernst, wächst Vertrauen wie mit Zinseszins. Pflege den Kontakt über eine eigene Liste, nicht über einen gemieteten Feed.",
+          "truth": "Miete Plattformen für die Reichweite. Die Beziehung pflegst du auf deiner eigenen Liste.",
           "page": 88
         },
         {
           "id": "9.5",
-          "title": "Durchschau die\nKI-Geldmasche",
-          "dek": "Echtes KI-Können kann sich lohnen, Maschen verkaufen das Gefühl einer Abkürzung. Kenn die Warnsignale, bevor ein Blender an dein Erspartes kommt.",
+          "title": "Durchschau die\nKI-Abzocke",
+          "dek": "Echtes KI-Können kann sich lohnen; Maschen verkaufen nur das Gefühl einer Abkürzung. Lern die Warnsignale kennen, bevor ein Blender an dein Erspartes kommt.",
           "truth": "Wer mit KI Geld drucken kann, muss dir die Druckmaschine nicht verkaufen.",
           "page": 89
         },
         {
           "id": "9.6",
-          "title": "Berechne das Ergebnis,\nnicht die Stunden",
-          "dek": "Schaffst du mit KI in drei Stunden, was früher fünf dauerte, macht der Stundensatz dein neues Können zur Lohnkürzung.",
-          "truth": "Berechne das Ergebnis. Die Zeit, die KI spart, gehört dir.",
+          "title": "Rechne das Ergebnis ab,\nnicht die Stunden",
+          "dek": "Schaffst du mit KI in drei Stunden, was früher fünf dauerte, macht die Abrechnung nach Stunden dein neues Können zur Lohnkürzung.",
+          "truth": "Rechne das Ergebnis ab. Die Zeit, die dir KI spart, behältst du.",
           "page": 90
         },
         {
           "id": "9.7",
           "title": "Die Ein-Personen-Firma\nmit KI-Antrieb",
-          "dek": "Mit KI war es nie billiger, klein und allein zu starten. Kunden, Urteil und Vertrauen musst du trotzdem selbst liefern.",
+          "dek": "Mit KI war es nie billiger, klein und allein zu starten. Kunden, Urteilsvermögen und Vertrauen musst du trotzdem selbst mitbringen.",
           "truth": "Überlass der KI die Routine. Das Vertrauen des ersten Kunden gewinnst nur du.",
           "page": 91
         }
@@ -892,48 +892,48 @@
       "n": 10,
       "title": "Geld, das dir Zeit kauft",
       "layer": "field",
-      "intro": "Geld zählt hier aus einem Grund: Zeit. Ersparnisse kaufen dir Monate zum Lernen, Suchen, Wechseln oder Neinsagen. Dieser Teil ist allgemeine Bildung, keine persönliche Finanzberatung. Es geht um dein Polster, Fixkosten, wachsende Ansprüche, Hype, Investitionen in dich und das schlechte Jahr, das irgendwann kommt. **Auf Gelassenheit kannst du sparen.**",
+      "intro": "Geld zählt in diesem Buch aus einem einzigen Grund: Zeit. Ersparnisse kaufen dir Monate zum Lernen, Suchen, Wechseln oder Neinsagen. Dieser Teil bietet allgemeine Orientierung, keine persönliche Finanzberatung. Es geht um dein Polster, Fixkosten, wachsende Ansprüche, Hype, Investitionen in dich selbst und das schlechte Jahr, das irgendwann kommt. **Auf Gelassenheit kannst du sparen.**",
       "page": 92,
       "chapters": [
         {
           "id": "10.1",
           "title": "Dein Polster ist Freiheit",
-          "dek": "Jeder angesparte Monat an Ausgaben ist ein Monat, in dem du Nein sagen, dich umsehen oder lernen kannst, statt das Erstbeste zu nehmen.",
-          "truth": "Der erste Monat Polster ist am schwersten anzusparen und am wertvollsten. Fang dort an.",
+          "dek": "Jeder Monat Lebenshaltungskosten, den du angespart hast, ist ein Monat, in dem du Nein sagen, dich umsehen oder lernen kannst, statt das Erstbeste zu nehmen.",
+          "truth": "Der erste Monat Polster ist am schwersten anzusparen und am wertvollsten. Fang damit an.",
           "page": 93
         },
         {
           "id": "10.2",
           "title": "Fixkosten bestimmen\ndeine Optionen",
-          "dek": "Jeder Monatsvertrag, den du unterschreibst, ist eine kleine Stimme gegen deine künftige Beweglichkeit. Halte die Fixkosten niedrig, dann bleibst du frei.",
+          "dek": "Jede monatliche Verpflichtung, die du eingehst, ist eine kleine Stimme gegen deine künftige Flexibilität. Halte den Sockel an Fixkosten niedrig, dann bleibst du beweglich.",
           "truth": "Fixkosten sind Versprechen, die dein künftiges Ich halten muss, mit Job oder ohne.",
           "page": 94
         },
         {
           "id": "10.3",
           "title": "Wachsende Ansprüche\nfressen leise dein Polster",
-          "dek": "Steigt das Einkommen, wachsen die Ausgaben mit, und der Reiz verfliegt schnell. Spar einen Teil jeder Erhöhung, bevor deine Gewohnheiten sie bemerken.",
+          "dek": "Steigt das Einkommen, wachsen die Ausgaben mit, und der Reiz verfliegt schnell. Leg einen Teil jeder Gehaltserhöhung zurück, bevor deine Gewohnheiten sie bemerken.",
           "truth": "Gib einen Teil jeder Erhöhung aus. Spar den Rest, bevor du dich daran gewöhnst.",
           "page": 95
         },
         {
           "id": "10.4",
           "title": "Verwette dein Polster\nnicht auf Hype",
-          "dek": "Eine Technologie kann echt sein und trotzdem miese Wetten liefern: Das Internet veränderte alles, doch wer am Gipfel kaufte, verbrannte sich die Finger.",
+          "dek": "Eine Technologie kann echt sein und trotzdem miese Wetten hervorbringen: Das Internet veränderte alles, doch wer auf dem Höhepunkt kaufte, verbrannte sich die Finger.",
           "truth": "Bei einer Technologie recht zu haben heißt nicht, beim Preis recht zu haben.",
           "page": 96
         },
         {
           "id": "10.5",
           "title": "Die beste frühe Rendite\nbist meistens du",
-          "dek": "Am Anfang schlagen Ausgaben für Können, Gesundheit und Beziehungen oft jede Rendite deines kleinen Ersparten, solange du den Kurs vor dem Zahlen prüfst.",
-          "truth": "Investier zuerst in dich, aber prüf den Verkäufer wie jede andere Geldanlage.",
+          "dek": "Anfangs schlagen Ausgaben für Fähigkeiten, Gesundheit und Beziehungen oft jede Rendite, die dein kleines Erspartes bringen könnte, solange du den Kurs prüfst, bevor du zahlst.",
+          "truth": "Investier zuerst in dich, aber prüf den Verkäufer so kritisch wie jede andere Geldanlage.",
           "page": 97
         },
         {
           "id": "10.6",
           "title": "Plane das schlechte Jahr ein",
-          "dek": "Rechne mit einem schlechten Jahr. Was du dann streichst, verkaufst und erbittest, entscheide jetzt, solange du ruhig bist.",
+          "dek": "Rechne mit einem schlechten Jahr. Was du dann streichst, verkaufst und worum du bittest, entscheidest du am besten jetzt, solange du ruhig bist.",
           "truth": "Leg deine Schritte fürs schlechte Jahr in Ruhe fest, dann findet die Panik schon einen Plan vor.",
           "page": 98
         }
@@ -1048,16 +1048,16 @@
       {
         "id": "1.1",
         "title": "KI nimmt keine Jobs.\nSie nimmt Aufgaben.",
-        "dek": "Dein Job ist ein Bündel von Aufgaben, und KI greift nach einigen, selten nach allen. Frag also: Welche Teile deiner Woche werden sich ändern?",
+        "dek": "Dein Job ist ein Bündel von Aufgaben. KI erfasst einige davon, selten alle. Die nützliche Frage lautet also: Welche Teile deiner Woche ändern sich?",
         "blocks": [
           {
             "type": "p",
-            "text": "Ein Jobtitel ist ein Etikett auf einem Bündel. Eine Einsteigerin im Marketing schreibt Briefings, pflegt Tabellen, sitzt in Meetings, beruhigt nervöse Kunden und entscheidet, was rausfliegt. Manches davon kann KI gut, den Rest nicht. „KI nimmt dir den Job“ übergeht das Bündel komplett."
+            "text": "Ein Jobtitel ist ein Etikett auf einem Bündel. Eine Marketing-Einsteigerin schreibt Briefings, bereinigt Tabellen, sitzt in Meetings, beruhigt einen nervösen Kunden und entscheidet, was rausfliegt. Manches davon kann KI gut, den Rest eher schlecht. „KI nimmt dir den Job“ übergeht das Bündel komplett."
           },
           {
             "type": "evidence",
-            "title": "Die Belege: nur teilweise betroffen",
-            "text": "Forschende von OpenAI und der University of Pennsylvania verglichen, was große Sprachmodelle können, mit den Aufgaben, aus denen US-Berufe bestehen. Ihre Schätzung: Bei etwa 80 % der US-Beschäftigten könnten mindestens 10 % der Aufgaben betroffen sein, bei etwa 19 % mindestens die Hälfte. Achte auf ihr Wort: exponiert. Exponiert heißt, eine Aufgabe könnte sich ändern. Nicht, dass ein Job verschwindet.",
+            "title": "Die Belege: Exponiert ist nur ein Teil",
+            "text": "Forschende von OpenAI und der University of Pennsylvania glichen die Fähigkeiten großer Sprachmodelle mit den Aufgaben ab, aus denen US-Berufe bestehen. Ihre Schätzung: Bei etwa 80 % der US-Beschäftigten könnten mindestens 10 % der Aufgaben betroffen sein, bei etwa 19 % mindestens die Hälfte. Achte auf ihren Begriff: „exponiert“. Exponiert heißt, eine Aufgabe könnte sich ändern. Es heißt nicht, dass ein Job verschwindet.",
             "source": {
               "cite": "Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2023). GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models. arXiv:2303.10130.",
               "url": "https://arxiv.org/abs/2303.10130"
@@ -1065,32 +1065,32 @@
           },
           {
             "type": "p",
-            "text": "Die realistische Gefahr heißt also selten „null Jobs“. Sondern: Die Teile, für die du bezahlt wurdest, schrumpfen, und ==was niemand automatisiert hat, wird zum ganzen Job==. Das kann dir nützen oder schaden. **Es kommt darauf an, ob du es kommen siehst.**"
+            "text": "Die realistische Gefahr heißt also selten „null Jobs“. Eher diese: Die Teile, für die du bezahlt wurdest, schrumpfen, und ==was niemand automatisiert hat, wird zum ganzen Job==. Das kann dir nützen oder schaden. **Es kommt darauf an, ob du es kommen siehst.**"
           },
           {
             "type": "drill",
             "title": "Übung: Aufgaben-Inventur",
-            "text": "Schreib auf, was du letzte Woche wirklich getan hast, als Aufgaben, nicht als Pflichten: „drei Produkt-Mails geschrieben“, nicht „Marketing“. Ziel: fünfzehn Zeilen. Markiere jede mit K, wenn KI sie heute entwerfen könnte, mit M, wenn es einen Menschen braucht, mit ?, wenn du unsicher bist. Die M-Spalte baust du aus. Die K-Spalte lernst du abzugeben."
+            "text": "Schreib auf, was du letzte Woche wirklich getan hast, als Aufgaben, nicht als Zuständigkeiten: „drei Produktmails geschrieben“, nicht „Marketing“. Ziel: fünfzehn Zeilen. Markiere jede mit K, wenn eine KI sie heute entwerfen könnte, mit M, wenn sie einen Menschen braucht, mit ?, wenn du unsicher bist. Die M-Spalte baust du aus. Die K-Spalte lernst du abzugeben."
           },
           {
             "type": "truth",
-            "text": "Niemand stellt einen Titel ein, sondern jemanden für Aufgaben. Und die Liste der Aufgaben ändert sich."
+            "text": "Niemand stellt einen Jobtitel ein. Eingestellt wird, wer Aufgaben erledigt, und die Aufgabenliste ändert sich."
           }
         ]
       },
       {
         "id": "1.2",
-        "title": "Jede Maschinenära\nhatte ihre Panik",
-        "dek": "Die Angst vor Automatisierung ist alt, die Bilanz eindeutig: Arbeit ändert ihre Form, statt zu verschwinden. Doch der Übergang trifft bestimmte Menschen hart.",
+        "title": "Jedes Maschinenzeitalter\nhatte seine Panik",
+        "dek": "Die Angst vor Automatisierung ist alt, die Bilanz eindeutig: Arbeit ändert ihre Form, statt zu verschwinden. Doch der Übergang trifft einzelne Menschen trotzdem hart.",
         "blocks": [
           {
             "type": "p",
-            "text": "1964, als die Automatisierungsangst hochkochte, setzte Präsident Lyndon Johnson eine nationale Kommission zu Technik und Arbeit ein. Ihr Bericht von 1966 befand: Automatisierung vernichtet keine Beschäftigung. Maschinen beenden einzelne Jobs, nicht den Bedarf an Arbeit. Sechzig Jahre später gibt ihr die Bilanz weiter recht."
+            "text": "1964, als die Automatisierungsangst hochkochte, setzte Präsident Lyndon Johnson eine nationale Kommission zu Technik und Arbeit ein. Ihr Bericht von 1966 kam zu dem Schluss: Automatisierung vernichtet keine Beschäftigung. Maschinen beenden einzelne Jobs, nicht den Bedarf an Arbeit. Sechzig Jahre später gibt die Bilanz dem Bericht noch immer recht."
           },
           {
             "type": "evidence",
-            "title": "Die Belege: Heutige Arbeit ist meist neu",
-            "text": "Die Ökonomen David Autor, Caroline Chin, Anna Salomons und Bryan Seegmiller verfolgten anhand von US-Zensusdaten acht Jahrzehnte neuer Berufsbezeichnungen. Ihre Schätzung: Rund 60 % der US-Beschäftigung 2018 entfielen auf seit 1940 neu hinzugekommene Jobtitel. ==Die meisten Jobs von 2018 hatten 1940 noch keinen Namen.==",
+            "title": "Die Belege: Der Großteil heutiger Arbeit ist neu",
+            "text": "Die Ökonomen David Autor, Caroline Chin, Anna Salomons und Bryan Seegmiller verfolgten anhand von US-Zensusdaten acht Jahrzehnte neuer Berufsbezeichnungen. Ihre Schätzung: Rund 60 % der US-Beschäftigung entfielen 2018 auf Berufsbezeichnungen, die seit 1940 hinzugekommen sind. ==Die meisten Jobs von 2018 hatten 1940 noch keinen Namen.==",
             "source": {
               "cite": "Autor, D., Chin, C., Salomons, A., & Seegmiller, B. (2024). New Frontiers: The Origins and Content of New Work, 1940-2018. Quarterly Journal of Economics, 139(3), 1399-1465.",
               "url": "https://economics.mit.edu/sites/default/files/2026-04/New-Frontiers-QJE-v139%283%29-p1399-1465-Aug-2024.pdf"
@@ -1098,11 +1098,11 @@
           },
           {
             "type": "p",
-            "text": "Geldautomaten erzählen dasselbe. Laut Ökonom James Bessen sank die Zahl der Kassierer pro städtischer Bankfiliale von 1988 bis 2004 im Schnitt von 20 auf 13. Billigere Filialen hießen mehr Filialen (in Städten 43 % mehr), und Kassiererjobs schrumpften nicht, als die Automaten kamen. Dafür änderte sich der Job: weniger Bargeld, mehr Kundengespräche."
+            "text": "Geldautomaten erzählen dieselbe Geschichte. Laut dem Ökonomen James Bessen sank die Zahl der Kassierer pro städtischer Bankfiliale von 1988 bis 2004 im Schnitt von 20 auf 13. Weil Filialen billiger wurden, gab es mehr davon, in Städten 43 % mehr, und die Kassiererjobs schrumpften nicht, während sich die Automaten verbreiteten. Stattdessen änderte sich der Job: weniger Bargeld, mehr Kundengespräche."
           },
           {
             "type": "p",
-            "text": "Jetzt der ehrliche Teil. „Arbeit überlebt“ beschreibt Volkswirtschaften, nicht Einzelne. Die US-Arbeitsstatistikbehörde erwartet, dass Kassiererjobs von 2025 bis 2035 um 13 % schrumpfen, weil mehr Kunden online banken. Auf diesen Stellen sitzen echte Menschen. Die Geschichte sagt, dass neue Arbeit entsteht. **Nicht, dass sie zu dir kommt.**"
+            "text": "Jetzt der ehrliche Teil. „Arbeit überlebt“ beschreibt Volkswirtschaften, nicht Einzelne. Die amtliche US-Arbeitsmarktstatistik rechnet damit, dass die Zahl der Kassiererjobs von 2025 bis 2035 um 13 % sinkt, weil mehr Kunden Onlinebanking nutzen. Auf diesen Stellen sitzen echte Menschen. Die Geschichte sagt, dass neue Arbeit entsteht. **Nicht, dass sie zu dir kommt.**"
           },
           {
             "type": "truth",
@@ -1112,13 +1112,13 @@
       },
       {
         "id": "1.3",
-        "title": "Die unterste Sprosse\nhat sich bewegt",
-        "dek": "Der klarste KI-Schaden bisher sind keine Massenentlassungen, sondern weniger Einstiegsjobs in exponierten Feldern. Du brauchst neue Wege zu Erfahrung.",
+        "title": "Die unterste Sprosse\nist weggerückt",
+        "dek": "Der klarste KI-Schaden bisher sind keine Massenentlassungen, sondern weniger Einstiegsjobs in exponierten Berufen. Du brauchst neue Wege zu Erfahrung.",
         "blocks": [
           {
             "type": "evidence",
-            "title": "Die Belege: die Kanarienvögel",
-            "text": "Die Stanford-Ökonomen Erik Brynjolfsson, Bharat Chandar und Ruyu Chen werteten ADP-Lohndaten von Millionen US-Beschäftigten aus. Einen gesamtwirtschaftlichen Jobverlust fanden sie nicht. Doch Mitte 2026 lag die Beschäftigung 22- bis 25-Jähriger in den am stärksten KI-exponierten Berufen 19 % unter dem Wert, den sie im Gleichschritt mit weniger exponierten Gleichaltrigen erreicht hätte. Bei Erfahrenen gab es keine solche Lücke. Die Lücke entstand vor allem durch ==weniger Einstellungen, nicht mehr Kündigungen==. Die Autoren sehen darin Frühwarnzeichen, keinen Kausalbeweis.",
+            "title": "Die Belege: Kanarienvögel im Bergwerk",
+            "text": "Die Stanford-Ökonomen Erik Brynjolfsson, Bharat Chandar und Ruyu Chen werteten ADP-Lohndaten von Millionen US-Beschäftigten aus. Einen gesamtwirtschaftlichen Jobverlust fanden sie nicht. Doch Mitte 2026 lag die Beschäftigung 22- bis 25-Jähriger in den am stärksten KI-exponierten Berufen 19 % unter dem Wert, den sie im Gleichschritt mit weniger exponierten Gleichaltrigen erreicht hätte. Bei Erfahrenen gab es keine solche Lücke. Sie entstand vor allem ==durch weniger Einstellungen statt mehr Entlassungen==. Die Autoren sehen darin Frühwarnzeichen, keinen Kausalbeweis.",
             "source": {
               "cite": "Brynjolfsson, E., Chandar, B., & Chen, R. (2026). Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence. Stanford Digital Economy Lab working paper, revised August 12, 2026 (first version August 2025).",
               "url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/"
@@ -1126,7 +1126,7 @@
           },
           {
             "type": "p",
-            "text": "Lies das noch einmal. Den Erfahrenen geht es meist gut. **Die Tür, durch die sie kamen, ist enger geworden.** Einstiegsarbeit war immer ein Bündel einfacherer Aufgaben (Zusammenfassungen, erste Entwürfe, einfacher Code, Routinetickets), für die Arbeitgeber Anfänger bezahlten, während sie lernten. Vieles davon erledigt jetzt KI, also schrumpft das Übungsfeld."
+            "text": "Lies das noch einmal. Den Erfahrenen geht es meist gut. **Die Tür, durch die sie kamen, ist enger geworden.** Einstiegsarbeit war immer ein Bündel einfacherer Aufgaben (Zusammenfassungen, erste Entwürfe, simpler Code, Routinetickets), für die Arbeitgeber Anfänger bezahlten, während sie lernten. Vieles davon erledigt jetzt KI, und das Übungsfeld schrumpft."
           },
           {
             "type": "compare",
@@ -1147,7 +1147,7 @@
               ],
               [
                 "Auf Verantwortung warten",
-                "Sich für die kniffligen Probleme melden"
+                "Sich für die vertrackten Probleme melden"
               ]
             ]
           },
@@ -1164,16 +1164,16 @@
       {
         "id": "1.4",
         "title": "Die zerklüftete Grenze",
-        "dek": "KI glänzt bei manchen Aufgaben und irrt selbstsicher bei Nachbarn, die gleich aussehen. Zu wissen, wo diese Grenze verläuft, ist heute eine Kernkompetenz.",
+        "dek": "KI glänzt bei manchen Aufgaben und irrt selbstsicher bei Nachbaraufgaben, die gleich aussehen. Zu wissen, wo diese Grenze verläuft, ist heute eine Kernkompetenz.",
         "blocks": [
           {
             "type": "p",
-            "text": "Stell dir das Können der KI nicht als glatte Mauer vor, sondern als zerklüftete Küste. Liegt eine Aufgabe innerhalb der Linie, ist das Ergebnis schnell und beeindruckend. Eine Nachbaraufgabe, die genauso schwer aussieht, liegt außerhalb: Die KI scheitert und klingt dabei genauso sicher."
+            "text": "Stell dir das Können der KI nicht als glatte Mauer vor, sondern als zerklüftete Küste. Liegt eine Aufgabe innerhalb der Linie, ist das Ergebnis schnell und beeindruckend. Eine Nachbaraufgabe, die genauso schwer aussieht, liegt außerhalb: Die KI scheitert und klingt dabei kein bisschen weniger selbstsicher."
           },
           {
             "type": "evidence",
             "title": "Die Belege: 758 Berater",
-            "text": "Forschende der Harvard Business School und weiterer Universitäten führten ein Experiment mit 758 Beratern der Boston Consulting Group durch. Bei Aufgaben innerhalb der KI-Grenze erledigten die Berater mit GPT-4 12,2 % mehr Aufgaben, 25,1 % schneller und in einer um über 40 % besser bewerteten Qualität. Bei einer Aufgabe, die gezielt außerhalb der Grenze lag, kamen Berater mit KI um 19 Prozentpunkte seltener zur richtigen Lösung als jene ohne.",
+            "text": "Forschende der Harvard Business School und weiterer Universitäten führten ein Experiment mit 758 Beratern der Boston Consulting Group durch. Bei Aufgaben innerhalb der KI-Grenze erledigten die Berater mit GPT-4 12,2 % mehr Aufgaben, waren 25,1 % schneller, und ihre Arbeit wurde um über 40 % besser bewertet. Bei einer Aufgabe, die gezielt außerhalb der Grenze gewählt war, kamen Berater mit KI um 19 Prozentpunkte seltener zur richtigen Lösung als jene ohne.",
             "source": {
               "cite": "Dell’Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality. Harvard Business School Working Paper 24-013.",
               "url": "https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/"
@@ -1181,12 +1181,12 @@
           },
           {
             "type": "p",
-            "text": "Wer danebenlag, war nicht nachlässig, sondern traute einem Werkzeug, das fünf Minuten vorher noch brillant war. **Gefährlich ist nicht der offensichtliche Fehler.** Gefährlich ist ==der plausible==. Und die Grenze wandert mit jedem besseren Modell: Die Karte vom Vorjahr reicht nicht."
+            "text": "Wer danebenlag, war nicht nachlässig, sondern vertraute einem Werkzeug, das fünf Minuten vorher noch brillant gewesen war. **Gefährlich ist nicht der offensichtliche Fehler.** Gefährlich ist ==der plausible==. Und die Grenze verschiebt sich mit jedem besseren Modell. Die Karte vom letzten Jahr taugt nicht mehr."
           },
           {
             "type": "drill",
             "title": "Übung: Kartiere deine Grenze",
-            "text": "Nimm drei Aufgaben aus deiner echten Arbeit, bei denen du schon weißt, wie eine gute Antwort aussieht. Gib jede einem KI-Assistenten. Bewerte jedes Ergebnis ehrlich: brauchbar, reparierbar oder falsch. Notier, was die falschen gemeinsam hatten. Diese Notiz ist deine persönliche Karte der Grenze. Wiederhol das alle paar Monate."
+            "text": "Nimm drei Aufgaben aus deinem Arbeitsalltag, bei denen du schon weißt, wie eine gute Antwort aussieht. Gib jede einem KI-Assistenten. Bewerte jedes Ergebnis ehrlich: brauchbar, korrigierbar oder falsch. Notier, was die falschen gemeinsam hatten. Diese Notiz ist deine persönliche Karte der Grenze. Wiederhol das alle paar Monate."
           },
           {
             "type": "truth",
@@ -1197,7 +1197,7 @@
       {
         "id": "1.5",
         "title": "KI hebt den Boden\nschneller als die Spitze",
-        "dek": "In mehreren der besten Studien bisher hilft KI Anfängern am meisten und Spitzenkräften am wenigsten. Durchschnitt wird billig, bezahlt wird, was darüber liegt.",
+        "dek": "In mehreren der bisher besten Studien hilft KI Anfängern am meisten und Spitzenkräften am wenigsten. Durchschnitt wird billig, bezahlt wird, was darüber liegt.",
         "blocks": [
           {
             "type": "evidence",
@@ -1210,16 +1210,16 @@
           },
           {
             "type": "p",
-            "text": "Ein in Science veröffentlichtes Schreibexperiment zeigte dasselbe Muster. Shakked Noy und Whitney Zhang gewannen 453 Fachkräfte mit Hochschulabschluss und gaben der Hälfte ChatGPT. Die Schreibzeit sank um 40 %, die Qualität stieg um 18 %, und der Abstand zwischen starken und schwachen Schreibenden schrumpfte."
+            "text": "Ein in der Fachzeitschrift Science veröffentlichtes Schreibexperiment zeigte dasselbe Muster. Shakked Noy und Whitney Zhang rekrutierten 453 Berufstätige mit Hochschulabschluss und gaben der Hälfte ChatGPT. Der Zeitaufwand für die Schreibaufgaben sank um 40 %, die Qualität stieg um 18 %, und der Abstand zwischen starken und schwachen Schreibenden schrumpfte."
           },
           {
             "type": "p",
-            "text": "Die gute Nachricht für Neue: Du lieferst früher ordentliche Arbeit als jede Generation vor dir. Die schlechte steckt im selben Satz: Das können alle anderen auch. **Steigt der Boden für alle, ist „ordentlich“ kein Grund mehr, dich einzustellen.**"
+            "text": "Die gute Nachricht, wenn du neu bist: Du kannst früher ordentliche Arbeit liefern als jede Generation vor dir. Die schlechte steckt im selben Satz: Das können alle anderen auch. **Steigt der Boden für alle, ist „ordentlich“ kein Grund mehr, dich einzustellen.**"
           },
           {
             "type": "mistake",
             "title": "Fehler: Sich mit dem Boden zufriedengeben",
-            "text": "Mit KI dieselbe solide Arbeit liefern wie alle anderen, nur schneller, und das Karriereplan nennen. Tempo bei Durchschnittsarbeit ist heute Mindeststandard. Frag bei jedem Ergebnis: ==Was habe ich beigetragen, das das Werkzeug nicht konnte?=="
+            "text": "Mit KI dieselbe solide Arbeit liefern wie alle anderen, nur schneller, und das einen Karriereplan nennen. Tempo bei Durchschnittsarbeit ist heute Mindeststandard. Frag bei jedem Ergebnis: ==Was habe ich beigesteuert, was das Werkzeug nicht konnte?=="
           },
           {
             "type": "compare",
@@ -1240,7 +1240,7 @@
               ],
               [
                 "Tempo bei Routinearbeit",
-                "Urteilskraft bei Ungewöhnlichem"
+                "Urteilsvermögen bei Ungewöhnlichem"
               ]
             ]
           },
@@ -1252,17 +1252,17 @@
       },
       {
         "id": "1.6",
-        "title": "Billige Ergebnisse,\nteures Urteilsvermögen",
+        "title": "Werden Ergebnisse billig,\nwird Urteilsvermögen teuer",
         "dek": "Wird etwas billig, steigt der Wert dessen, was es ergänzt. KI macht Entwürfe und Vorhersagen billig, und damit wird die Wahl zwischen ihnen wertvoll.",
         "blocks": [
           {
             "type": "p",
-            "text": "Die Ökonomie kennt eine einfache Regel: Wird etwas billiger, ==gewinnt, was es ergänzt, an Wert==. Wird Kaffee billiger, kaufen die Leute mehr Milch. KI macht Entwürfe, Optionen und Vorhersagen fast kostenlos. Was ergänzt sie? Jemand, der sagen kann, welche davon stimmt, und warum."
+            "text": "In der Ökonomie gilt eine einfache Regel: Wird etwas billiger, ==gewinnt, was es ergänzt, an Wert==. Wird Kaffee billiger, kaufen die Leute mehr Milch. KI macht Entwürfe, Optionen und Vorhersagen fast kostenlos. Was ergänzt sie? Jemand, der sagen kann, welche davon stimmt, und warum."
           },
           {
             "type": "evidence",
             "title": "Die Belege: Vorhersage braucht Urteilsvermögen",
-            "text": "Die Ökonomen Ajay Agrawal, Joshua Gans und Avi Goldfarb beschreiben moderne KI als Preissturz für Vorhersagen. In einem NBER-Arbeitspapier von 2018 zeigen sie: Vorhersage und Urteilsvermögen ergänzen sich, solange das Urteilen nicht zu schwierig ist. Zu entscheiden, welche Ergebnisse zählen und was zu tun ist, gewinnt an Wert, je billiger Vorhersagen werden. Ihr Buch „Prediction Machines“ vertritt dieselbe These für ein breites Publikum.",
+            "text": "Die Ökonomen Ajay Agrawal, Joshua Gans und Avi Goldfarb beschreiben moderne KI als Preissturz für Vorhersagen. In einem NBER-Arbeitspapier von 2018 zeigen sie: Vorhersage und Urteilsvermögen ergänzen sich, solange das Urteilen nicht zu schwierig ist. Zu entscheiden, welche Ergebnisse zählen und was dann zu tun ist, gewinnt an Wert, je billiger Vorhersagen werden. Ihr Buch „Prediction Machines“ vertritt dieselbe These für ein breites Publikum.",
             "source": {
               "cite": "Agrawal, A., Gans, J., & Goldfarb, A. (2018). Prediction, Judgment and Complexity: A Theory of Decision Making and Artificial Intelligence. NBER Working Paper 24243.",
               "url": "https://www.nber.org/papers/w24243"
@@ -1275,11 +1275,11 @@
           {
             "type": "drill",
             "title": "Übung: Auswählen trainieren",
-            "text": "Lass eine KI zehn Varianten von etwas erstellen, das du bei der Arbeit machst: Betreffzeile, Folientitel, erster Absatz. Ordne sie. Begründe in einem Satz, warum dein Favorit gewinnt, und in einem, warum die schwächste scheitert. Jede Woche. Urteilsvermögen wächst durchs Entscheiden und Begründen, nicht durchs Erzeugen."
+            "text": "Lass eine KI zehn Varianten von etwas erstellen, das du bei der Arbeit machst: eine Betreffzeile, einen Folientitel, einen ersten Absatz. Bring sie in eine Rangfolge. Begründe in einem Satz, warum dein Favorit gewinnt, und in einem, warum die schwächste Variante scheitert. Wiederhol das jede Woche. Urteilsvermögen wächst durchs Entscheiden und Begründen, nicht durchs Erzeugen."
           },
           {
             "type": "truth",
-            "text": "Erzeugen ist billig geworden. Gut wählen und zur Wahl stehen: Das ist der Job."
+            "text": "Erzeugen ist billig geworden. Gut auswählen und dafür geradestehen: Das ist der Job."
           }
         ]
       },
@@ -1291,7 +1291,7 @@
           {
             "type": "evidence",
             "title": "Die Belege: was Führungskräfte sagen",
-            "text": "Für den Work Trend Index 2024 befragten Microsoft und LinkedIn 31.000 Menschen in 31 Ländern. Zwei Drittel der Führungskräfte (66 %) sagten, sie würden niemanden ohne KI-Kenntnisse einstellen, und 71 % nähmen lieber Unerfahrenere mit KI-Kenntnissen als Erfahrenere ohne. Nur 39 % der KI-Nutzenden hatten von ihrer Firma eine KI-Schulung bekommen. Bedenke: Beide Firmen verkaufen KI-Werkzeuge.",
+            "text": "Für den Work Trend Index 2024 befragten Microsoft und LinkedIn 31.000 Menschen in 31 Ländern. Zwei Drittel der Führungskräfte (66 %) sagten, sie würden niemanden ohne KI-Kenntnisse einstellen, und 71 % nähmen lieber Unerfahrenere mit KI-Kenntnissen als Erfahrenere ohne. Nur 39 % der KI-Nutzenden hatten von ihrer Firma eine KI-Schulung bekommen. Nicht vergessen: Beide Firmen verkaufen KI-Werkzeuge.",
             "source": {
               "cite": "Microsoft & LinkedIn (2024). 2024 Work Trend Index Annual Report: AI at Work Is Here. Now Comes the Hard Part.",
               "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part"
@@ -1299,7 +1299,7 @@
           },
           {
             "type": "p",
-            "text": "Was Führungskräfte in Umfragen sagen, tun sie nicht immer. Die Richtung ist trotzdem klar: **Die Latte liegt höher.** Nimm zwei Junior-Analysten. Der eine bereinigt den ganzen Tag Daten von Hand. Der andere schafft das mit KI in einer Stunde, prüft es und widmet den Nachmittag der Frage, was die Zahlen bedeuten. Rate, wer das nächste Projekt bekommt."
+            "text": "Was Führungskräfte in Umfragen sagen, tun sie nicht immer. Die Richtung ist trotzdem klar: **Die Latte liegt höher.** Stell dir zwei Junior-Analysten vor. Der eine bereinigt den ganzen Tag Daten von Hand. Der andere schafft das mit KI in einer Stunde, prüft das Ergebnis und widmet den Nachmittag der Frage, was die Zahlen bedeuten. Rate, wer das nächste Projekt bekommt."
           },
           {
             "type": "say",
@@ -1312,21 +1312,21 @@
               },
               {
                 "from": "you",
-                "text": "Vor allem für erste Entwürfe und zum Aufräumen. Letzten Monat habe ich damit vierzig Kundenbewertungen zusammengefasst und die Zusammenfassung vor dem Teilen mit den Originalkommentaren abgeglichen."
+                "text": "Vor allem für erste Entwürfe und Aufräumarbeiten. Letzten Monat habe ich damit vierzig Kundenbewertungen zusammengefasst und die Zusammenfassung mit den Originalkommentaren abgeglichen, bevor ich sie weitergegeben habe."
               },
               {
                 "from": "note",
-                "text": "Falls nach Grenzen gefragt wird:"
+                "text": "Falls nach den Grenzen gefragt wird:"
               },
               {
                 "from": "you",
-                "text": "Sie klingt auch dann sicher, wenn sie falschliegt. Darum prüfe ich alles, was an Kunden oder Entscheider geht."
+                "text": "Die KI klingt auch dann überzeugt, wenn sie falschliegt. Darum prüfe ich alles, was an Kunden oder Entscheider geht."
               }
             ]
           },
           {
             "type": "p",
-            "text": "Sieh, was diese Antwort leistet: eine echte Aufgabe, ein Ergebnis, eine Kontrolle. Die neue Latte ist nicht „Ich nutze ChatGPT“, sondern ==der Beleg, dass du es mit Verstand nutzt==."
+            "text": "Schau, was diese Antwort leistet: Sie nennt eine echte Aufgabe, ein Ergebnis und eine Kontrolle. Genau da liegt die Latte heute: nicht bei „Ich nutze ChatGPT“, sondern ==beim Beleg, dass du es mit Verstand nutzt==."
           },
           {
             "type": "truth",
@@ -1354,7 +1354,7 @@
           },
           {
             "type": "p",
-            "text": "Hinton ist brillant. Er lag trotzdem falsch, auch weil der Job weit mehr ist als Bilder lesen: Laut einer Studie von 2012 verbrachten Radiologen nur 36 % ihrer Zeit damit, Bilder zu befunden. Tausch also die Frage aus. Frag nicht mehr „Was wird passieren?“, sondern **„Was hält, wenn ich falschliege?“**"
+            "text": "Hinton ist brillant. Er lag trotzdem falsch, auch weil der Job weit mehr ist als Bilder lesen: Laut einer Studie von 2012 verbrachten Radiologen nur 36 % ihrer Zeit damit, Bilder zu befunden. Tausch also die Frage aus. Frag nicht mehr „Was wird passieren?“, sondern **„Was hält, wenn ich falschliege?“**"
           },
           {
             "type": "list",
@@ -1368,11 +1368,11 @@
           {
             "type": "drill",
             "title": "Übung: Stresstest für deinen Plan",
-            "text": "Schreib deinen aktuellen Karriereplan in zwei Zeilen auf. Stell dir drei Zukünfte vor: KI ist langsamer als erwartet, etwa wie erwartet oder viel schneller. Prüf jeweils, ob dein Plan noch trägt. ==Was nur in einer Zukunft funktioniert, ist eine Wette.== Verkleinere sie oder sorg für einen Plan B."
+            "text": "Schreib deinen aktuellen Karriereplan in zwei Zeilen auf. Stell dir drei Zukünfte vor: KI entwickelt sich langsamer als erwartet, etwa wie erwartet oder viel schneller. Prüf jeweils, ob dein Plan noch trägt. ==Was nur in einer Zukunft funktioniert, ist eine Wette.== Verkleinere sie oder sorg für einen Plan B."
           },
           {
             "type": "truth",
-            "text": "Die Zukunft kannst du nicht wählen. Einen Plan, der die meisten übersteht, schon."
+            "text": "Die Zukunft kannst du nicht wählen. Einen Plan, der fast jede übersteht, schon."
           }
         ]
       }

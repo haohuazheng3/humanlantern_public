@@ -459,6 +459,7 @@ export const de: Dict = {
     contact: "Kontakt aufnehmen",
     errorGeneric: "Wir konnten die Bezahlseite nicht öffnen. Bitte versuch es noch einmal.",
     errorNetwork: "Wir erreichen den Server nicht. Prüf deine Verbindung und versuch es noch einmal.",
+    loadingLabel: "Checkout wird vorbereitet",
     back: "Zurück zum Buch",
     fine: (days: number) =>
       `Bezahlt wird auf der sicheren Seite von Stripe, deine Karte sehen wir nie. Du hast einen Aktionscode? Gib ihn dort ein. Auf deiner Abrechnung steht ein unauffälliger Buchungstext, nie der Buchtitel. ${days} Tage Geld zurück.`,
@@ -494,6 +495,17 @@ export const de: Dict = {
     keep: (days: number) =>
       `Diese Buttons funktionieren ${days} Tage lang, und einen neuen Link bekommst du jederzeit unter`,
     bookmark: "Tipp: Setz dir ein Lesezeichen für diese Seite.",
+    keepNoEmail: (days: number) => `Diese Buttons funktionieren ${days} Tage lang. Setz ein Lesezeichen oder kopier den Link dieser Seite: Wenn du sie wieder öffnest, bekommst du immer frische Buttons. Verloren? Schreib an`,
+    keepNoEmailTail: "",
+    copyLink: "Link dieser Seite kopieren",
+    copied: "Kopiert",
+    waiverConfirm: "Wie du vor dem Bezahlen bestätigt hast, wolltest du sofortigen Zugang zu diesem E-Book. Dein gesetzliches Widerrufsrecht ist deshalb mit der Freischaltung erloschen. Unsere 7-Tage-Erstattung gilt trotzdem: Schreib uns einfach.",
+    refundedTitle: "Diese Bestellung wurde erstattet.",
+    refundedBody: "Der Betrag ging zurück auf dein ursprüngliches Zahlungsmittel, deshalb ist diese Kopie nicht mehr aktiv. Du kannst das Buch jederzeit wieder kaufen.",
+    disputedTitle: "Diese Zahlung wird gerade geprüft.",
+    disputedBody: "Deine Bank hat diese Zahlung angefochten, deshalb ist der Zugang bis zur Klärung pausiert. Fragen? Schreib an",
+    loading: "Wir bestätigen deine Zahlung bei Stripe und schalten dein Buch frei …",
+    loadingLabel: "Dein Buch wird freigeschaltet",
   },
   unsubscribed: {
     metaTitle: "Abgemeldet",

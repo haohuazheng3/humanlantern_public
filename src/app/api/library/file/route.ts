@@ -3,7 +3,7 @@ import { after } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { downloads, orders } from "@/lib/db/schema";
-import { deliverOrder } from "@/lib/delivery";
+import { deliverOrder, emailDeliveryEnabled } from "@/lib/delivery";
 import { activeEntitlement } from "@/lib/entitlements";
 import { buyerById } from "@/lib/buyers";
 import { verifyDownloadToken } from "@/lib/download-token";
@@ -31,7 +31,10 @@ export async function GET(req: Request) {
   const lang = isLang(ed) ? ed : "en";
   try {
     const buyerId = verifyDownloadToken(url.searchParams.get("t") ?? "");
-    if (!buyerId) return plain(`This download link has expired or isn’t valid. Get a fresh one at ${SITE.url}/download`, 403);
+    if (!buyerId) {
+      const where = emailDeliveryEnabled() ? `Get a fresh one at ${SITE.url}/download` : `Open the page where you bought the book again for fresh buttons, or email ${SITE.email}`;
+      return plain(`This link has expired or isn’t valid. ${where}.`, 403);
+    }
 
     const ent = await activeEntitlement(buyerId);
     const buyer = ent ? await buyerById(buyerId) : null;
@@ -56,7 +59,8 @@ export async function GET(req: Request) {
       }
     });
 
-    const signed = signedFileUrl(key, { disposition: mode === "download" ? "attachment" : "inline", filename: EDITIONS[lang].fileName, ttlSeconds: 300 });
+    // Reading stays open in a tab that gets refreshed or restored later, so its link lives for 6 hours; downloads need minutes.
+    const signed = signedFileUrl(key, { disposition: mode === "download" ? "attachment" : "inline", filename: EDITIONS[lang].fileName, ttlSeconds: mode === "read" ? 6 * 3600 : 300 });
     return new Response(null, { status: 302, headers: { Location: signed, "Cache-Control": "no-store", "Referrer-Policy": "no-referrer" } });
   } catch (err) {
     await captureError(err, { route: "/api/library/file", context: { mode } });

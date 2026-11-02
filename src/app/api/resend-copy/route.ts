@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { resendCopy } from "@/lib/delivery";
+import { after } from "next/server";
+import { emailDeliveryEnabled, resendCopy } from "@/lib/delivery";
 import { isLang } from "@/i18n/config";
 import { buyerIdFor, normalizeEmail } from "@/lib/buyers";
 import { captureError } from "@/lib/errors";
@@ -33,9 +34,12 @@ export async function POST(req: Request) {
     const perEmail = await rateLimit(`resend:email:${buyerIdFor(email)}`, 3, 24 * 3600);
     if (!perEmail.ok) return Response.json(SENT);
 
-    const r = await resendCopy(email, isLang(parsed.data.lang) ? parsed.data.lang : "en");
-    // Same answer for owners and strangers, except that delivery itself isn't switched on yet.
-    if (r === "not-configured") return Response.json({ error: "unavailable" }, { status: 503 });
+    if (!emailDeliveryEnabled()) return Response.json({ error: "unavailable" }, { status: 503 });
+    // Same answer, at the same speed, for owners and strangers: the stamping and sending happen after the response.
+    const lang = isLang(parsed.data.lang) ? parsed.data.lang : "en";
+    after(async () => {
+      await resendCopy(email, lang).catch((err) => captureError(err, { route: "/api/resend-copy", context: { stage: "send" } }));
+    });
     return Response.json(SENT);
   } catch (err) {
     await captureError(err, { route: "/api/resend-copy" });

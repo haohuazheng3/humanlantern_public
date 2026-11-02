@@ -1,4 +1,5 @@
 import { z } from "zod";
+import Stripe from "stripe";
 import { CHECKOUT_BRAND, paymentsEnabled, stripe, stripeEnvTag } from "@/lib/stripe";
 import { captureError } from "@/lib/errors";
 import { clientIp, ipHash, rateLimit, tooMany } from "@/lib/ratelimit";
@@ -44,32 +45,41 @@ export async function POST(req: Request) {
     const metadata: Record<string, string> = { product: PRODUCT_ID, site: CHECKOUT_BRAND.site, env: stripeEnvTag(), lang };
     if (data.waiver) metadata.withdrawal_waiver = "accepted-before-checkout";
 
-    const session = await stripe().checkout.sessions.create(
-      {
-        mode: "payment",
-        line_items: [{ price: requireEnv("STRIPE_PRICE_BOOK"), quantity: 1 }],
-        customer_creation: "always",
-        locale: STRIPE_LOCALE[lang],
+  const params: Stripe.Checkout.SessionCreateParams = {
+      mode: "payment",
+      line_items: [{ price: requireEnv("STRIPE_PRICE_BOOK"), quantity: 1 }],
+      customer_creation: "always",
+      locale: STRIPE_LOCALE[lang],
+      metadata,
+      payment_intent_data: {
         metadata,
-        payment_intent_data: {
-          metadata,
-          description: `${BOOK.title} (ebook)`,
-          statement_descriptor_suffix: CHECKOUT_BRAND.statementSuffix,
-        },
-        allow_promotion_codes: true,
-        success_url: `${origin}${localePath(lang, "/checkout/success")}?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${origin}${localePath(lang, "/book")}?checkout=cancelled`,
-        expires_at: Math.floor(Date.now() / 1000) + 30 * 60,
-        branding_settings: {
-          display_name: CHECKOUT_BRAND.displayName,
-          button_color: CHECKOUT_BRAND.buttonColor,
-          border_style: "rounded",
-          icon: { type: "url", url: CHECKOUT_BRAND.iconUrl },
-        },
-        custom_text: { submit: { message: env("RESEND_API_KEY") ? t.buy.deliveryWithEmail : t.buy.delivery } },
+        description: `${BOOK.title} (ebook)`,
+        statement_descriptor_suffix: CHECKOUT_BRAND.statementSuffix,
       },
-      { idempotencyKey: `hl-co-${nonce}` },
-    );
+      allow_promotion_codes: true,
+      success_url: `${origin}${localePath(lang, "/checkout/success")}?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}${localePath(lang, "/book")}?checkout=cancelled`,
+      // No expires_at: Stripe's default (24 h) keeps the parameters identical for every retry of one attempt,
+      // which the idempotency key requires.
+      branding_settings: {
+        display_name: CHECKOUT_BRAND.displayName,
+        button_color: CHECKOUT_BRAND.buttonColor,
+        border_style: "rounded",
+        icon: { type: "url", url: CHECKOUT_BRAND.iconUrl },
+      },
+        custom_text: { submit: { message: env("RESEND_API_KEY") ? t.buy.deliveryWithEmail : t.buy.delivery } },
+    };
+    // One key per attempt, edition and waiver choice: a retry of the same attempt gets the same session back.
+    const key = `hl-co-${nonce}-${lang}-${data.waiver ? 1 : 0}`;
+    let session: Stripe.Checkout.Session;
+    try {
+      session = await stripe().checkout.sessions.create(params, { idempotencyKey: key });
+    } catch (err) {
+      // Same key, different parameters (e.g. the delivery email was switched on mid-attempt): start a fresh attempt.
+      if (!(err instanceof Stripe.errors.StripeIdempotencyError)) throw err;
+      await captureError(err, { route: "/api/checkout", severity: "warn", context: { stage: "idempotency-retry" } });
+      session = await stripe().checkout.sessions.create(params, { idempotencyKey: `${key}-${newToken(6)}` });
+    }
 
     if (!session.url) throw new Error("Stripe returned a session without a URL");
     return Response.json({ url: session.url });

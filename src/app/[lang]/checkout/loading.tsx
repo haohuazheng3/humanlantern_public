@@ -1,6 +1,10 @@
+import { LocalizedBusy } from "@/components/LocalizedText";
+import { getDict } from "@/i18n";
+import { LOCALES } from "@/i18n/config";
+
 export default function CheckoutLoading() {
   return (
-    <div className="mx-auto max-w-[1120px] px-3 pt-10 sm:px-5 sm:pt-16" aria-busy="true" aria-label="Preparing checkout">
+    <LocalizedBusy className="mx-auto max-w-[1120px] px-3 pt-10 sm:px-5 sm:pt-16" labels={Object.fromEntries(LOCALES.map((l) => [l, getDict(l).checkout.loadingLabel]))}>
       <div className="mx-auto max-w-2xl">
         <div className="slab p-6 sm:p-9">
           <div className="skeleton h-3 w-24" />
@@ -18,6 +22,6 @@ export default function CheckoutLoading() {
           <div className="skeleton mt-2 h-3 w-4/5" />
         </div>
       </div>
-    </div>
+    </LocalizedBusy>
   );
 }

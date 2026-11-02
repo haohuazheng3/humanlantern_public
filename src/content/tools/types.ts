@@ -30,6 +30,8 @@ export interface ToolResult {
   tone: Tone;
   /** Overrides the tool's next step for this result. */
   next?: ToolNext;
+  /** Hide the book card, e.g. on a result that points to crisis support. */
+  noBook?: boolean;
 }
 
 export interface QuizOption {
@@ -73,6 +75,8 @@ export interface QuizTool {
   /** How the score works, shown under the result. */
   method: string;
   next?: ToolNext;
+  /** Health or wellbeing answers: analytics record that the quiz was finished, never the result. */
+  private?: boolean;
 }
 
 export interface DecisionNode {
@@ -111,7 +115,15 @@ export interface CalcInput {
 }
 
 /** Calculators are fixed formulas implemented in the renderer; the data only names one. */
-export type Formula = "ageRule" | "datesToRelationship" | "breakupRecovery" | "engagementTiming" | "ringBudget";
+export type Formula =
+  | "severance"
+  | "degreePayback"
+  | "mastersPayback"
+  | "savingsRunway"
+  | "savingsTarget"
+  | "raise"
+  | "freelanceRate"
+  | "logoPrice";
 
 export interface CalculatorTool {
   kind: "calculator";
@@ -163,6 +175,10 @@ export interface GeneratorTool {
   copyable: boolean;
   /** Shown under the list. */
   note: string;
+  /** Label of the per-item explanation toggle (default "Why it works"). */
+  whyLabel?: string;
+  /** A checklist: keep the authored order, show every match and no "shuffle" button. */
+  ordered?: boolean;
   next?: ToolNext;
   catalog?: GeneratorCatalog;
   chapter: string;
@@ -193,4 +209,36 @@ export interface CheckerTool {
   next?: ToolNext;
 }
 
-export type Tool = QuizTool | DecisionTool | CalculatorTool | GeneratorTool | CheckerTool;
+/**
+ * How much of a task today's AI tools can carry: "automate" = a tool can already produce
+ * work you'd accept with a quick check; "assist" = it drafts or speeds the task, a person
+ * still decides; "human" = presence, trust, hands or accountability the task can't do without.
+ */
+export type Exposure = "automate" | "assist" | "human";
+
+export interface AuditTask {
+  task: string;
+  exposure: Exposure;
+  /** One line: why the task sits in its band. */
+  why: string;
+}
+
+/**
+ * Task audit: the reader says how much of a normal week each task takes; the tool adds up
+ * the share AI can already do, the share it drafts for a person to finish, and the share
+ * that stays human, then picks a result from the AI-carried share (automate + half of assist).
+ */
+export interface AuditTool {
+  kind: "audit";
+  id: string;
+  name: string;
+  intro: string;
+  tasks: AuditTask[];
+  /** AI-carried share in percent (0–100) → result id. */
+  bands: { min: number; max: number; result: string }[];
+  results: ToolResult[];
+  method: string;
+  next?: ToolNext;
+}
+
+export type Tool = QuizTool | DecisionTool | CalculatorTool | GeneratorTool | CheckerTool | AuditTool;

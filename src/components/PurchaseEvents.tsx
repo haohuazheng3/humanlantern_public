@@ -11,8 +11,10 @@ import { CHECKOUT_NONCE, CHECKOUT_STASH } from "./CheckoutStarter";
 export function PurchaseEvents({ sessionId, orderId, amount, currency }: { sessionId: string; orderId: string; amount: number; currency: string }) {
   useEffect(() => {
     try {
-      sessionStorage.removeItem(CHECKOUT_STASH);
-      sessionStorage.removeItem(CHECKOUT_NONCE);
+      // Attempts are stored per edition and waiver choice (`hl_checkout_url:en:0`…): forget them all.
+      for (const k of Object.keys(sessionStorage)) {
+        if (k.startsWith(`${CHECKOUT_STASH}:`) || k.startsWith(`${CHECKOUT_NONCE}:`)) sessionStorage.removeItem(k);
+      }
     } catch {
       /* fine */
     }

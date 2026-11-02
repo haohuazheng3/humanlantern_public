@@ -200,3 +200,12 @@ export function autolinkTerms(lang: Lang): { phrase: string; href: string }[] {
   terms.push({ phrase: finder, href: localePath(lang, "/finder") });
   return terms;
 }
+
+/** Every internal path an article may link to right now (pages that always exist + live posts and hubs), per edition. */
+export function livePaths(lang: Lang): Set<string> {
+  const base = ["/", "/book", "/book/sample", "/finder", "/pricing", "/faq", "/how-it-works", "/about", "/contact", "/blog"];
+  const paths = new Set(base.map((p) => localePath(lang, p)));
+  for (const c of CATEGORIES) if (postsInCategory(lang, c.slug).length) paths.add(localePath(lang, `/blog/${c.slug}`));
+  for (const p of publishedPosts(lang)) paths.add(postUrl(p));
+  return paths;
+}

@@ -25,7 +25,8 @@ export function BookVisual({
             alt={alt}
             width={b.cover.width}
             height={b.cover.height}
-            priority={priority}
+            // Next 16: `priority` is deprecated; the hero cover is the LCP element, so fetch it eagerly at high priority.
+            {...(priority ? { loading: "eager" as const, fetchPriority: "high" as const } : {})}
             sizes={sizes}
             className="block h-auto w-full"
           />

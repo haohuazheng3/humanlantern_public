@@ -28,9 +28,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "AI and your job",
-        title: "Will AI take my job? What the evidence actually says",
-        description: "Which tasks AI takes first, which jobs change most, what happens to entry-level work, and how to read the scariest headlines, with sources.",
-        intro: "Most of what you hear about AI and jobs is hype or panic. These guides start from the research: which tasks change, who is most exposed, and what that means for your next move.",
+        title: "AI and Jobs: Will AI Replace Jobs? What the Evidence Says",
+        description: "Will AI replace jobs? What the 2026 data shows on AI and jobs: which occupations are most exposed, what's happening to hiring, and how to check your own job.",
+        intro: "Most of what you hear about AI and jobs is hype or panic. These guides start from the evidence: which tasks AI can do, which jobs are most exposed and what that means for your next move.",
       },
       de: {
         name: "KI und dein Job",
@@ -52,9 +52,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Career moves",
-        title: "Career moves in the age of AI: switch, stay, or level up",
-        description: "Should you switch fields, go back to school, or double down? Decision tests for career moves, layoffs and climbing a ladder AI is flattening.",
-        intro: "Big career decisions made in a panic are usually the wrong ones. These guides give you decision tests, honest odds, and the steps that work whether you stay or go.",
+        title: "Career Change: How to Change Careers in the Age of AI",
+        description: "How to change careers without a panic move: decision tests, career change at 30, 40 and 50, whether a degree pays, layoffs, severance and jobs worth switching to.",
+        intro: "Big career decisions made in a panic are usually the wrong ones. These guides give you decision tests, honest odds and the steps that work whether you stay, switch or get pushed.",
       },
       de: {
         name: "Karriere",
@@ -76,9 +76,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Getting hired",
-        title: "How to get hired when AI floods every job opening",
-        description: "Résumés that survive software and a human, referrals, portfolio projects, interviews that test judgment, and using AI in your search without faking it.",
-        intro: "AI made applying nearly free, so every opening drowns in applications. These guides show how to step out of the flood: fewer, sharper applications, proof of work, and people who vouch for you.",
+        title: "Job Search Tips That Work When AI Floods Every Opening",
+        description: "Job search tips and strategies for 2026: résumés that survive software, referrals, cover letters, thank-you emails, negotiation and using AI without faking it.",
+        intro: "AI made applying nearly free, so every opening drowns in applications. These guides show how to step out of the flood: fewer, sharper applications, proof of work and people who vouch for you.",
       },
       de: {
         name: "Bewerbung",
@@ -100,9 +100,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Skills to learn",
-        title: "What skills to learn for the AI era (and what to skip)",
-        description: "The skills that compound when AI does the drafting: learning how to learn, writing, numbers, judgment, depth plus range, and whether to learn to code.",
-        intro: "Every guru has a different list of skills you must learn. These guides start from what actually gets more valuable when output gets cheap, and how to build it without wasting a year.",
+        title: "Skills to Learn in the Age of AI, and How to Learn Them",
+        description: "Which skills to learn now: the AI skills employers want, the human skills AI makes more valuable, transferable skills for career changers and how to finish learning.",
+        intro: "The skills that last pair AI fluency with what AI does poorly. These guides help you find what you already have, rate what you're missing and learn it without fooling yourself.",
       },
       de: {
         name: "Skills",
@@ -124,9 +124,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Working with AI",
-        title: "How to use AI at work without getting worse at your job",
-        description: "Prompts that work, checking AI output, building a personal workflow, what never to paste into a chatbot, and learning with AI without fooling yourself.",
-        intro: "Used well, AI makes you faster and better. Used carelessly, it quietly makes you worse. These guides show the difference, with prompts you can paste today.",
+        title: "AI in the Workplace: How to Use AI at Work Without Getting Worse",
+        description: "AI in the workplace in 2026: how people use AI at work, prompts for weekly tasks, what never to paste into a chatbot, and the risks of trusting it too much.",
+        intro: "Used well, AI makes you faster and better. Used carelessly, it quietly makes you worse. These guides show the difference, with prompts you can use today.",
       },
       de: {
         name: "Arbeiten mit KI",
@@ -148,9 +148,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Income beyond a paycheck",
-        title: "A second income in the age of AI, without the scams",
-        description: "Freelancing with AI leverage, turning what you know into a product, building an audience, pricing your work, and spotting AI get-rich schemes.",
-        intro: "One income is a single point of failure. These guides cover realistic second incomes, honest odds, and the red flags of the AI money schemes flooding your feed.",
+        title: "How to Make Extra Money: Side Hustle Ideas Without the Scams",
+        description: "How to make extra money with skills you already have: side hustle ideas that survive a bad year, freelance pricing, AI money reality checks and scam red flags.",
+        intro: "One income is a single point of failure. These guides cover realistic ways to make extra money, honest odds and the red flags of the AI money schemes flooding your feed.",
       },
       de: {
         name: "Nebeneinkommen",
@@ -172,9 +172,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "Money and runway",
-        title: "Money that buys you time: runway, fixed costs and the bad year",
-        description: "How much runway to save, why fixed costs decide your options, lifestyle creep, and not betting your savings on hype. General education, not financial advice.",
-        intro: "Savings aren’t just security; they’re the freedom to say no, to switch, to learn. These guides keep it general and practical. Not financial advice.",
+        title: "How to Build an Emergency Fund (and Why Runway Is Freedom)",
+        description: "How to build an emergency fund: how much to save, how long savings last if your paycheck stops and turning raises into runway. General education, not advice.",
+        intro: "Savings aren't just security; they're the freedom to say no, to switch and to learn. These guides keep it general and practical. Not financial advice.",
       },
       de: {
         name: "Geld und Puffer",
@@ -196,9 +196,9 @@ export const CATEGORIES: Category[] = [
     copy: {
       en: {
         name: "A clear head",
-        title: "AI anxiety: how to think clearly when the headlines won’t stop",
-        description: "Anxiety as a signal, doomscrolling, hype and doom, focus, sleep, loneliness and burnout under pressure, and when worry needs more than a guide.",
-        intro: "You can’t make good decisions with a head full of headlines. These guides help you turn worry into one next step and protect the attention, sleep and nerve your work depends on.",
+        title: "Job Insecurity: How to Think Clearly When Work Feels Unsafe",
+        description: "Job insecurity and AI anxiety: why the fear feels so strong, what the evidence says, how to cope this week, burnout and imposter checks, and when to get help.",
+        intro: "You can't make good decisions with a head full of headlines. These guides help you turn worry into one next step and protect the attention, sleep and nerve your work depends on.",
       },
       de: {
         name: "Ein klarer Kopf",

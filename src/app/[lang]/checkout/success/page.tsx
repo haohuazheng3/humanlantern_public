@@ -2,11 +2,13 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { after } from "next/server";
+import Stripe from "stripe";
 import { BookVisual } from "@/components/BookVisual";
 import { LibraryActions } from "@/components/LibraryActions";
 import { PurchaseEvents } from "@/components/PurchaseEvents";
 import { Identify } from "@/components/Identify";
 import { AutoRefresh } from "@/components/AutoRefresh";
+import { CopyPageLink } from "@/components/CopyPageLink";
 import { Container } from "@/components/ui";
 import { rich } from "@/components/Rich";
 import { grantFromCheckoutSession } from "@/lib/entitlements";
@@ -61,7 +63,9 @@ export default async function SuccessPage(props: PageProps<"/[lang]/checkout/suc
   try {
     session = await stripe().checkout.sessions.retrieve(sessionId, { expand: ["payment_intent.latest_charge"] });
   } catch (err) {
-    await captureError(err, { route: "/checkout/success", context: { sessionId } });
+    // A made-up or foreign session id is a 4xx from Stripe: worth a note, not a page to the owner.
+    const expected = err instanceof Stripe.errors.StripeInvalidRequestError;
+    await captureError(err, { route: "/checkout/success", severity: expected ? "warn" : "error", context: { sessionId } });
     return (
       <Shell>
         <div className="slab p-7 sm:p-10" role="alert">
@@ -96,8 +100,43 @@ export default async function SuccessPage(props: PageProps<"/[lang]/checkout/suc
   }
 
   const grant = await grantFromCheckoutSession(session, "success_page");
+  if (!grant.ok && (grant.reason === "order-refunded" || grant.reason === "order-disputed")) {
+    // Expected states of a real order (the buyer reopened a bookmarked page): explain, don't alert.
+    const refunded = grant.reason === "order-refunded";
+    return (
+      <Shell>
+        <div className="slab p-7 sm:p-10" role="status">
+          <h1 className="headline text-[1.8rem] text-ink">{refunded ? s.refundedTitle : s.disputedTitle}</h1>
+          <p className="mt-3 text-[1rem] text-ink-3">
+            {refunded ? (
+              s.refundedBody
+            ) : (
+              <>
+                {s.disputedBody}
+                {gap(lang)}
+                {mail}
+                {gap(lang)}
+                {s.oddTail}
+              </>
+            )}
+          </p>
+          {refunded ? (
+            <Link href={localePath(lang, "/book")} className="btn btn-ghost mt-5">
+              {t.checkout.back}
+            </Link>
+          ) : null}
+        </div>
+      </Shell>
+    );
+  }
   if (!grant.ok) {
-    await captureError(new Error(`success page could not grant: ${grant.reason}`), { route: "/checkout/success", context: { sessionId, reason: grant.reason } });
+    // Sessions of other brands on the shared Stripe account land here by mistake: a warning, not an outage.
+    const foreign = grant.reason.startsWith("other-");
+    await captureError(new Error(`success page could not grant: ${grant.reason}`), {
+      route: "/checkout/success",
+      severity: foreign ? "warn" : "error",
+      context: { sessionId, reason: grant.reason },
+    });
     return (
       <Shell>
         <div className="slab p-7 sm:p-10" role="alert">
@@ -128,7 +167,7 @@ export default async function SuccessPage(props: PageProps<"/[lang]/checkout/suc
       <PurchaseEvents sessionId={session.id} orderId={grant.orderId} amount={grant.amountTotal} currency={grant.currency} />
       <div className="slab overflow-hidden p-6 sm:p-10">
         <div className="grid items-start gap-8 md:grid-cols-[200px_1fr] md:gap-12">
-          <BookVisual b={b} alt={b.title} className="mx-auto w-[48%] max-w-[200px] md:w-full" sizes="200px" />
+          <BookVisual b={b} alt={b.title} priority className="mx-auto w-[48%] max-w-[200px] md:w-full" sizes="200px" />
           <div className="min-w-0">
             <p className="tag tag-ok">{s.paidTag(orderRef(grant.orderId))}</p>
             <h1 className="display mt-4 text-[2.3rem] text-ink sm:text-[2.8rem]">{s.title}</h1>
@@ -143,16 +182,33 @@ export default async function SuccessPage(props: PageProps<"/[lang]/checkout/suc
             </div>
             <div className="slab-inset mt-6 p-4 text-[0.9rem] leading-relaxed text-ink-3">
               <p className="[&_strong]:break-all [&_strong]:text-ink">{rich(emailed ? s.emailed(grant.email) : s.notEmailed(grant.email), lang)}</p>
-              <p className="mt-2">
-                {s.keep(DOWNLOAD_LINK_DAYS)}
-                {gap(lang)}
-                <Link href={localePath(lang, "/download")} className="underline underline-offset-4">
-                  {SITE.domain}
-                  {localePath(lang, "/download")}
-                </Link>
-                {stop(lang)}
-              </p>
-              <p className="mt-2 text-ink-4">{s.bookmark}</p>
+              {emailed ? (
+                <>
+                  <p className="mt-2">
+                    {s.keep(DOWNLOAD_LINK_DAYS)}
+                    {gap(lang)}
+                    <Link href={localePath(lang, "/download")} className="underline underline-offset-4">
+                      {SITE.domain}
+                      {localePath(lang, "/download")}
+                    </Link>
+                    {stop(lang)}
+                  </p>
+                  <p className="mt-2 text-ink-4">{s.bookmark}</p>
+                </>
+              ) : (
+                <>
+                  {/* Without the delivery email this page is the buyer's way back to the book: never point to /download. */}
+                  <p className="mt-2">
+                    {s.keepNoEmail(DOWNLOAD_LINK_DAYS)}
+                    {gap(lang)}
+                    {mail}
+                    {s.keepNoEmailTail}
+                    {s.keepNoEmailTail ? null : stop(lang)}
+                  </p>
+                  <CopyPageLink label={s.copyLink} done={s.copied} />
+                </>
+              )}
+              {grant.withdrawalWaiver ? <p className="mt-3 border-t border-[var(--line-2)] pt-3 text-ink-4">{s.waiverConfirm}</p> : null}
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { chapterLabel } from "@/i18n/format";
  * edition shows its own words.
  */
 
-function Box({ title, tone, children }: { title: string; tone: "evidence" | "drill" | "mistake"; children: ReactNode }) {
+export function Box({ title, tone, children }: { title: string; tone: "evidence" | "drill" | "mistake"; children: ReactNode }) {
   const bar = { evidence: "before:bg-info", drill: "before:bg-ok", mistake: "before:bg-bad" }[tone];
   const [label, rest] = splitTitle(title);
   return (

@@ -18,8 +18,8 @@ function authorized(req: Request): boolean {
   return timingSafeEqual(Buffer.from(got), Buffer.from(secret));
 }
 
-/** Daily (GitHub Actions) or on demand: Stripe paid vs database granted, with repairs. */
-export async function POST(req: Request) {
+/** Daily (Vercel Cron, GET) or on demand (POST): Stripe paid vs database granted, with repairs. */
+async function run(req: Request): Promise<Response> {
   if (!authorized(req)) return Response.json({ error: "unauthorized" }, { status: 401 });
   const days = Math.min(90, Math.max(1, Number(new URL(req.url).searchParams.get("days") ?? 7) || 7));
   try {
@@ -37,3 +37,6 @@ export async function POST(req: Request) {
     return Response.json({ error: "reconcile failed" }, { status: 500 });
   }
 }
+
+export const GET = run;
+export const POST = run;

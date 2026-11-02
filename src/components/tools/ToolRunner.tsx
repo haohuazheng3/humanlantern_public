@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useRef, useState, type ReactNode } from "react";
 import { track } from "@/components/Consent";
 import type {
+  AuditTool,
   CalculatorTool,
   CheckerTool,
   DecisionTool,
@@ -44,6 +45,7 @@ export function ToolRunner({ tool, chapters, price, base = "" }: { tool: Tool } 
         {tool.kind === "calculator" ? <CalculatorView tool={tool} {...shared} /> : null}
         {tool.kind === "generator" ? <GeneratorView tool={tool} {...shared} /> : null}
         {tool.kind === "checker" ? <CheckerView tool={tool} {...shared} /> : null}
+        {tool.kind === "audit" ? <AuditView tool={tool} {...shared} /> : null}
       </div>
     </section>
   );
@@ -128,10 +130,12 @@ function ResultCard({
   children,
   method,
   next,
+  privateResult = false,
 }: {
   toolId: string;
   result: ToolResult;
   next?: ToolNext;
+  privateResult?: boolean;
   onRestart: () => void;
   restartLabel?: string;
   children?: ReactNode;
@@ -155,7 +159,7 @@ function ResultCard({
         </div>
       ) : null}
       {step ? <NextStep toolId={toolId} next={step} /> : null}
-      {ch ? <ChapterCard toolId={toolId} chapter={ch} price={price} result={result.id} base={base} /> : null}
+      {ch && !result.noBook ? <ChapterCard toolId={toolId} chapter={ch} price={price} result={privateResult ? undefined : result.id} base={base} /> : null}
       {method ? (
         <details className="mt-4 text-[0.88rem] text-ink-3">
           <summary className="cursor-pointer select-none font-semibold text-ink-3 hover:text-ink">How this result is worked out</summary>
@@ -238,6 +242,7 @@ function QuizView({ tool, ...shared }: { tool: QuizTool } & Shared) {
         result={result}
         next={tool.next}
         method={tool.method}
+        privateResult={tool.private}
         onRestart={() => {
           setAnswers([]);
           setAt(0);
@@ -262,7 +267,7 @@ function QuizView({ tool, ...shared }: { tool: QuizTool } & Shared) {
             setAnswers(next);
             setAt(at + 1);
             if (at + 1 === tool.questions.length) {
-              track("tool_complete", { tool: tool.id, result: scoreQuiz(tool, next).id });
+              track("tool_complete", tool.private ? { tool: tool.id } : { tool: tool.id, result: scoreQuiz(tool, next).id });
             }
           }}
         />
@@ -446,7 +451,7 @@ function GeneratorView({ tool, chapters, price, base }: { tool: GeneratorTool } 
   const [open, setOpen] = useState<number | null>(null);
   const start = useStartOnce(tool.id);
   const pool = tool.items.filter((it) => matches(it, tool, picked));
-  const list = seededShuffle(pool, seed).slice(0, tool.show);
+  const list = tool.ordered ? pool : seededShuffle(pool, seed).slice(0, tool.show);
   const ch = chapters[tool.chapter];
 
   return (
@@ -478,19 +483,19 @@ function GeneratorView({ tool, chapters, price, base }: { tool: GeneratorTool } 
         {list.map((it, i) => (
           <li key={it.text} className="rounded-2xl bg-slab-2 px-4 py-3">
             <div className="flex items-start gap-3">
-              <p className="flex-1 text-[0.99rem] leading-relaxed text-ink">{it.text}</p>
+              <p className="flex-1 whitespace-pre-line text-[0.99rem] leading-relaxed text-ink">{it.text}</p>
               {tool.copyable ? <CopyButton text={it.text} toolId={tool.id} /> : null}
             </div>
             {it.why ? (
               <button type="button" className="mt-1 text-[0.82rem] font-semibold text-accent-text hover:underline" onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>
-                {open === i ? "Hide why" : "Why it works"}
+                {open === i ? "Hide" : (tool.whyLabel ?? "Why it works")}
               </button>
             ) : null}
             {open === i && it.why ? <p className="mt-1 text-[0.9rem] leading-relaxed text-ink-3">{it.why}</p> : null}
           </li>
         ))}
       </ol>
-      <div className="mt-4 flex flex-wrap items-center gap-3">
+      <div className={`mt-4 flex flex-wrap items-center gap-3 ${tool.ordered ? "hidden" : ""}`}>
         <button
           type="button"
           className="btn btn-primary btn-sm"
@@ -593,6 +598,153 @@ function CheckerView({ tool, ...shared }: { tool: CheckerTool } & Shared) {
           </ResultCard>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+/* ---------- task audit ---------- */
+
+/** Rough share of a normal week: none, a few hours, about a day, several days. */
+const TIME = [
+  { label: "None", w: 0 },
+  { label: "Some", w: 1 },
+  { label: "A lot", w: 2.5 },
+  { label: "Most", w: 5 },
+];
+
+const BAND_COPY: Record<AuditTool["tasks"][number]["exposure"], { label: string; bar: string }> = {
+  automate: { label: "AI can already do it", bar: "bg-[var(--bad)]" },
+  assist: { label: "AI drafts, you decide", bar: "bg-[var(--accent)]" },
+  human: { label: "Needs you", bar: "bg-[var(--ok)]" },
+};
+
+export function auditScore(tool: AuditTool, picks: (number | undefined)[]) {
+  const sums = { automate: 0, assist: 0, human: 0 };
+  tool.tasks.forEach((t, i) => {
+    const p = picks[i];
+    if (p !== undefined) sums[t.exposure] += TIME[p].w;
+  });
+  const total = sums.automate + sums.assist + sums.human;
+  if (total === 0) return null;
+  const pct = (n: number) => Math.round((n / total) * 100);
+  const carried = Math.round(((sums.automate + sums.assist / 2) / total) * 100);
+  const band = tool.bands.find((b) => carried >= b.min && carried <= b.max) ?? tool.bands[tool.bands.length - 1];
+  return { automate: pct(sums.automate), assist: pct(sums.assist), human: 100 - pct(sums.automate) - pct(sums.assist), carried, result: band.result };
+}
+
+function AuditView({ tool, ...shared }: { tool: AuditTool } & Shared) {
+  const [picks, setPicks] = useState<(number | undefined)[]>(() => tool.tasks.map(() => undefined));
+  const [shown, setShown] = useState(false);
+  const start = useStartOnce(tool.id);
+  const score = auditScore(tool, picks);
+  const result = score ? tool.results.find((r) => r.id === score.result) : undefined;
+  const answered = picks.filter((p) => p !== undefined).length;
+  const top = (exposure: AuditTool["tasks"][number]["exposure"]) =>
+    tool.tasks
+      .map((t, i) => ({ t, w: picks[i] === undefined ? 0 : TIME[picks[i]!].w }))
+      .filter((x) => x.t.exposure === exposure && x.w > 0)
+      .sort((a, b) => b.w - a.w)
+      .slice(0, 3);
+
+  if (shown && score && result) {
+    const lists: { title: string; items: { t: AuditTool["tasks"][number] }[] }[] = [
+      { title: "Hand these to AI first", items: top("automate") },
+      { title: "Where your judgment is the product", items: top("assist") },
+      { title: "Your moat: keep growing these", items: top("human") },
+    ];
+    return (
+      <ResultCard
+        toolId={tool.id}
+        result={result}
+        next={tool.next}
+        method={tool.method}
+        onRestart={() => {
+          setPicks(tool.tasks.map(() => undefined));
+          setShown(false);
+        }}
+        restartLabel="Change my answers"
+        {...shared}
+      >
+        <div className="mt-4 rounded-2xl bg-slab-2 px-4 py-4">
+          <p className="text-[0.8rem] text-ink-4">Share of your week that AI can carry today</p>
+          <p className="condensed mt-0.5 text-[2rem] font-semibold leading-none text-ink">{score.carried}%</p>
+          <div className="mt-3 flex h-2.5 overflow-hidden rounded-full bg-slab-3" aria-hidden>
+            <div className={BAND_COPY.automate.bar} style={{ width: `${score.automate}%` }} />
+            <div className={BAND_COPY.assist.bar} style={{ width: `${score.assist}%` }} />
+            <div className={BAND_COPY.human.bar} style={{ width: `${score.human}%` }} />
+          </div>
+          <dl className="mt-3 grid grid-cols-3 gap-2 text-[0.82rem]">
+            {(["automate", "assist", "human"] as const).map((k) => (
+              <div key={k}>
+                <dt className="text-ink-4">{BAND_COPY[k].label}</dt>
+                <dd className="font-semibold text-ink">{score[k]}%</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {lists
+            .filter((l) => l.items.length)
+            .map((l) => (
+              <div key={l.title} className="rounded-2xl bg-slab-2 px-4 py-3">
+                <p className="text-[0.8rem] font-semibold text-ink-3">{l.title}</p>
+                <ul className="mt-1.5 space-y-1.5 text-[0.9rem] leading-snug text-ink-2">
+                  {l.items.map(({ t }) => (
+                    <li key={t.task}>{t.task}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+        </div>
+      </ResultCard>
+    );
+  }
+
+  return (
+    <div>
+      <p className="text-[0.92rem] text-ink-3">For each task, pick how much of a normal week it takes. Skip anything you never do.</p>
+      <ol className="mt-4 divide-y divide-[var(--line)]">
+        {tool.tasks.map((t, i) => (
+          <li key={t.task} className="py-3">
+            <p className="text-[0.98rem] font-semibold leading-snug text-ink">{t.task}</p>
+            <div role="radiogroup" aria-label={t.task} className="mt-2 grid grid-cols-4 gap-1.5">
+              {TIME.map((o, oi) => (
+                <button
+                  key={o.label}
+                  type="button"
+                  role="radio"
+                  aria-checked={picks[i] === oi}
+                  data-selected={picks[i] === oi ? "true" : undefined}
+                  className="chip !min-h-[40px] justify-center !px-2 text-[0.85rem]"
+                  onClick={() => {
+                    start();
+                    setPicks((prev) => prev.map((p, pi) => (pi === i ? oi : p)));
+                  }}
+                >
+                  {o.label}
+                </button>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          className="btn btn-primary"
+          disabled={!score}
+          onClick={() => {
+            if (!score) return;
+            setShown(true);
+            track("tool_complete", { tool: tool.id, result: score.result, carried: score.carried });
+          }}
+        >
+          Show my result
+        </button>
+        <span className="text-[0.85rem] text-ink-4">
+          {answered} of {tool.tasks.length} answered
+        </span>
+      </div>
     </div>
   );
 }

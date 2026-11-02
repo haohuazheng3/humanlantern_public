@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Container, CtaSlab, PageHero, Section } from "@/components/ui";
 import { SituationFinder } from "@/components/SituationFinder";
+import { plain } from "@/components/Rich";
 import { JsonLd } from "@/components/JsonLd";
 import { book, chapterById, chapterCount } from "@/content/book";
 import { finderData, finderLabels } from "@/lib/finder";
@@ -30,7 +31,7 @@ export default async function FinderPage(props: PageProps<"/[lang]/finder">) {
 
   return (
     <>
-      <JsonLd data={faqLd(qa.map(({ s, ch }) => ({ q: s.thought, a: `${ch!.dek} ${ch!.truth}`.trim() })))} />
+      <JsonLd data={faqLd(qa.map(({ s, ch }) => ({ q: s.thought, a: plain(`${ch!.dek} ${ch!.truth}`).trim() })))} />
       <PageHero eyebrow={t.finder.eyebrow} title={t.finder.title} lede={t.finder.lede} />
       <Section className="!pt-10">
         <SituationFinder {...finder} t={finderLabels(lang)} bookHref={L("/book")} sampleHref={L("/book/sample")} />
@@ -56,7 +57,7 @@ export default async function FinderPage(props: PageProps<"/[lang]/finder">) {
                           <div className="text-[0.95rem] leading-relaxed text-ink-3">
                             <p>{ch.dek}</p>
                             <p className="mt-1 text-[0.85rem] text-ink-4">
-                              {chapterLabel(lang, ch.id)} · {ch.title.replace(/\n/g, " ")} · {t.finder.onPage(ch.page).split("·")[0].trim()}
+                              {chapterLabel(lang, ch.id)} · {ch.title.replace(/\n/g, " ")} · {t.finder.onPage(ch.page).split(/[·・]/)[0].trim()}
                             </p>
                           </div>
                         ) : null}

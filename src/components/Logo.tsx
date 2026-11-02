@@ -32,7 +32,7 @@ export function LogoLink({ href = "/", label, className = "", size = 26 }: { hre
   return (
     <Link href={href} aria-label={label} className={`group inline-flex min-h-[44px] items-center gap-2 rounded-full pr-1 ${className}`}>
       <LogoMark size={size} className="transition-transform duration-500 group-hover:-translate-y-[1px]" />
-      <Wordmark className="text-[1.12rem] leading-none" />
+      <Wordmark className="whitespace-nowrap text-[1.05rem] leading-none sm:text-[1.12rem]" />
     </Link>
   );
 }

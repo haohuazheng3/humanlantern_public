@@ -2,8 +2,9 @@ import Link from "next/link";
 import { LANG_META, LOCALES, localePath, type Lang } from "@/i18n/config";
 
 /** Pages that exist in only one edition fall back to that edition's equivalent hub. */
-function targetPath(path: string): string {
+function targetPath(path: string, to: Lang): string {
   if (/^\/blog\/[^/]+\/.+/.test(path)) return "/blog"; // articles are per-language
+  if (path === "/legal-notice" && to !== "ja") return "/terms"; // 特定商取引法に基づく表記 is Japanese only
   return path;
 }
 
@@ -12,14 +13,17 @@ function targetPath(path: string): string {
  * before hydration, for crawlers, and without any client state.
  */
 export function LangSwitcher({ lang, path, label, className = "", variant = "pill" }: { lang: Lang; path: string; label: string; className?: string; variant?: "pill" | "row" }) {
-  const target = targetPath(path);
+  // The success page needs its ?session_id, which a plain link can't carry: buyers switch editions
+  // with the picker on the page itself, so the header switch steps aside there.
+  if (path === "/checkout/success") return null;
+  const target = (l: Lang) => targetPath(path, l);
   if (variant === "row") {
     return (
       <div role="group" aria-label={label} className={`grid grid-cols-3 gap-1.5 ${className}`}>
         {LOCALES.map((l) => (
           <Link
             key={l}
-            href={localePath(l, target)}
+            href={localePath(l, target(l))}
             hrefLang={LANG_META[l].hreflang}
             lang={LANG_META[l].htmlLang}
             aria-current={l === lang ? "true" : undefined}
@@ -38,7 +42,7 @@ export function LangSwitcher({ lang, path, label, className = "", variant = "pil
       {LOCALES.map((l) => (
         <Link
           key={l}
-          href={localePath(l, target)}
+          href={localePath(l, target(l))}
           hrefLang={LANG_META[l].hreflang}
           lang={LANG_META[l].htmlLang}
           title={LANG_META[l].name}

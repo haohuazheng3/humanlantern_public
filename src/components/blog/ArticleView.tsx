@@ -1,16 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { ComponentType, ReactNode } from "react";
+import { isValidElement, type ComponentType, type ReactNode } from "react";
 import { Breadcrumbs, BuyButton, Container, FaqList } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { BookVisual } from "@/components/BookVisual";
-import { BlockView } from "@/components/book/BookBlocks";
+import { BlockView, Box } from "@/components/book/BookBlocks";
+import { plain, rich } from "@/components/Rich";
 import { categoryBySlug } from "@/content/categories";
 import { book, chapterById, chapterCount } from "@/content/book";
 import { toolById, toolChapters } from "@/content/tools";
+import type { Tool } from "@/content/tools/types";
 import { ToolRunner, type ChapterInfo } from "@/components/tools/ToolRunner";
 import { CATALOG_ID, ToolCatalog } from "@/components/tools/ToolCatalog";
-import { autolinkTerms, postUrl, relatedPosts, type Post } from "@/lib/blog";
+import { autolinkTerms, livePaths, postUrl, relatedPosts, type Post } from "@/lib/blog";
 import { renderMdx } from "@/lib/mdx";
 import { articleLd, faqLd, webAppLd } from "@/lib/seo";
 import { BOOK } from "@/lib/site";
@@ -27,16 +29,50 @@ function formatDate(iso: string, lang: Lang) {
  * MDX components available to articles (see content/blog/en/ai-and-jobs/article-template.mdx).
  * They reuse the book's own blocks, so a guide reads like a page of the book.
  */
-function mdxComponents(lang: Lang): Record<string, ComponentType<Record<string, unknown>>> {
+function mdxComponents(lang: Lang, tool: Tool | null): Record<string, ComponentType<Record<string, unknown>>> {
   const t = getDict(lang);
   const block = (b: Block) => <BlockView b={b} lang={lang} sourceLabel={t.sample.sources} />;
   const textOf = (children: ReactNode) => (typeof children === "string" ? children : "");
+  /*
+   * Article blocks render their MDX children directly (paragraphs, links, emphasis), inside the
+   * same box the book uses. A plain string still goes through the book's rich() formatter.
+   */
+  const body = (children: ReactNode) =>
+    typeof children === "string" ? <p>{rich(children, lang)}</p> : <div className="[&_a]:underline [&_a]:underline-offset-2 [&_p+p]:mt-2">{children}</div>;
   const Evidence = ({ title, source, url, children }: { title: string; source?: string; url?: string; children: ReactNode }) => (
-    <div className="not-prose">{block({ type: "evidence", title, text: textOf(children), source: source ? { cite: source, url } : undefined })}</div>
+    <div className="not-prose">
+      <Box title={title} tone="evidence">
+        {body(children)}
+        {source ? (
+          <p className="mt-2 text-[0.82rem] leading-snug text-ink-4">
+            {t.sample.sources}:{" "}
+            {url ? (
+              <a href={url} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink-3">
+                {source}
+              </a>
+            ) : (
+              source
+            )}
+          </p>
+        ) : null}
+      </Box>
+    </div>
   );
-  const Prompt = ({ title, children }: { title: string; children: ReactNode }) => <div className="not-prose">{block({ type: "prompt", title, text: textOf(children) })}</div>;
-  const Drill = ({ title, children }: { title: string; children: ReactNode }) => <div className="not-prose">{block({ type: "drill", title, text: textOf(children) })}</div>;
-  const Mistake = ({ title, children }: { title: string; children: ReactNode }) => <div className="not-prose">{block({ type: "mistake", title, text: textOf(children) })}</div>;
+  const Prompt = ({ title, children }: { title: string; children: ReactNode }) => <div className="not-prose">{block({ type: "prompt", title, text: textOf(children) || nodeText(children) })}</div>;
+  const Drill = ({ title, children }: { title: string; children: ReactNode }) => (
+    <div className="not-prose">
+      <Box title={title} tone="drill">
+        {body(children)}
+      </Box>
+    </div>
+  );
+  const Mistake = ({ title, children }: { title: string; children: ReactNode }) => (
+    <div className="not-prose">
+      <Box title={title} tone="mistake">
+        {body(children)}
+      </Box>
+    </div>
+  );
   const Compare = ({ left, right, rows }: { left: string; right: string; rows: [string, string][] }) => <div className="not-prose">{block({ type: "compare", left, right, rows })}</div>;
   const Say = ({ label, tone, lines }: { label: string; tone?: string; lines: { from: "them" | "you" | "note"; text: string }[] }) => (
     <div className="not-prose">{block({ type: "say", label, tone, lines })}</div>
@@ -83,8 +119,67 @@ function mdxComponents(lang: Lang): Record<string, ComponentType<Record<string, 
     );
   };
   const BookCTA = ({ chapter }: { chapter?: string }) => <BookCard lang={lang} chapter={chapter} />;
-  return { Evidence, Prompt, Drill, Mistake, Compare, Say, Truth, Callout, Photo, BookCTA } as unknown as Record<string, ComponentType<Record<string, unknown>>>;
+  /**
+   * Links: internal ones go through next/link and are only rendered while their target is live
+   * (articles publish in batches, so a link to a later one reads as plain text until it ships);
+   * external sources open in a new tab.
+   */
+  const live = livePaths(lang);
+  const A = ({ href = "", children, ...rest }: { href?: string; children: ReactNode }) => {
+    if (href.startsWith("/")) {
+      const target = href.split("#")[0].replace(/\/$/, "") || "/";
+      return live.has(target) ? <Link href={href}>{children}</Link> : <>{children}</>;
+    }
+    if (href.startsWith("#")) return <a href={href}>{children}</a>;
+    return (
+      <a href={href} target="_blank" rel="noopener" {...rest}>
+        {children}
+      </a>
+    );
+  };
+  /** Every task the page's audit tool rates, server-rendered so the ratings read (and index) without JavaScript. */
+  const TaskTable = () =>
+    tool?.kind === "audit" ? (
+      <div className="not-prose my-6 overflow-x-auto">
+        <table className="w-full min-w-[520px] border-collapse text-left font-sans text-[0.92rem]">
+          <thead>
+            <tr className="border-b border-[var(--line-2)] text-[0.78rem] uppercase tracking-[0.1em] text-ink-4">
+              <th className="py-2 pr-3 font-semibold">Task</th>
+              <th className="py-2 pr-3 font-semibold">AI today</th>
+              <th className="py-2 font-semibold">Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tool.tasks.map((task) => (
+              <tr key={task.task} className="border-b border-[var(--line)] align-top">
+                <td className="py-2.5 pr-3 font-semibold text-ink">{task.task}</td>
+                <td className="whitespace-nowrap py-2.5 pr-3 text-ink-2">{AUDIT_LABEL[task.exposure]}</td>
+                <td className="py-2.5 leading-snug text-ink-3">{task.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ) : null;
+  /** Markdown tables scroll inside their own box on narrow screens instead of widening the page. */
+  const Table = ({ children }: { children?: ReactNode }) => (
+    <div className="table-scroll">
+      <table>{children}</table>
+    </div>
+  );
+  return { Evidence, Prompt, Drill, Mistake, Compare, Say, Truth, Callout, Photo, BookCTA, TaskTable, a: A, table: Table } as unknown as Record<string, ComponentType<Record<string, unknown>>>;
 }
+
+/** Plain text of MDX children (prompts are copy-paste text, so formatting is dropped on purpose). */
+function nodeText(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(nodeText).join("");
+  if (isValidElement(node)) return nodeText((node.props as { children?: ReactNode }).children);
+  return "";
+}
+
+const AUDIT_LABEL = { automate: "Can already do it", assist: "Drafts, you decide", human: "Needs a person" } as const;
 
 function BookCard({ lang, chapter }: { lang: Lang; chapter?: string }) {
   const t = getDict(lang);
@@ -98,7 +193,7 @@ function BookCard({ lang, chapter }: { lang: Lang; chapter?: string }) {
       <div className="font-sans">
         <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#ff9b57]">{ch ? `${chapterLabel(lang, ch.id)} · ${b.title}` : b.title}</p>
         <p className="mt-2 text-[1.05rem] font-semibold text-[#f6f0e8]">{ch ? ch.title.replace(/\n/g, " ") : b.subtitle}</p>
-        {ch?.truth ? <blockquote className="truth-line mt-2 border-l-2 border-[#ff9b57]/60 pl-3 text-[0.98rem] leading-relaxed text-[#d8cec2]">{ch.truth}</blockquote> : null}
+        {ch?.truth ? <blockquote className="truth-line mt-2 border-l-2 border-[#ff9b57]/60 pl-3 text-[0.98rem] leading-relaxed text-[#d8cec2]">{plain(ch.truth)}</blockquote> : null}
         <Link href={localePath(lang, "/book")} className="mt-3 inline-flex min-h-[44px] items-center gap-2 text-[0.95rem] font-semibold text-[#ff9b57] hover:text-[#ffb27f]">
           {t.buy.getBookPrice(BOOK.priceLabel)} <span aria-hidden>→</span>
         </Link>
@@ -139,17 +234,17 @@ export async function ArticleView({ post, preview = false }: { post: Post; previ
   const cat = categoryBySlug(post.category)!;
   const catName = cat.copy[lang].name;
   const url = postUrl(post);
-  const body = await renderMdx(post.body, { format: post.format, components: mdxComponents(lang), autolink: autolinkTerms(lang), self: url });
+  const tool = toolById(post.tool);
+  const body = await renderMdx(post.body, { format: post.format, components: mdxComponents(lang, tool), autolink: autolinkTerms(lang), self: url });
   const related = relatedPosts(post, 3);
   const chapter = post.chapters[0];
-  const tool = toolById(post.tool);
   const catalog = tool?.kind === "generator" && tool.catalog ? tool : null;
   const toc = catalog ? [{ id: CATALOG_ID, text: catalog.catalog!.title }, ...post.headings] : post.headings;
   const chapterMap: Record<string, ChapterInfo> = {};
   if (tool) {
     for (const id of toolChapters(tool)) {
       const c = chapterById(lang, id);
-      if (c) chapterMap[id] = { id: c.id, title: c.title.replace(/\n/g, " "), page: c.page, teaser: c.truth };
+      if (c) chapterMap[id] = { id: c.id, title: c.title.replace(/\n/g, " "), page: c.page, teaser: plain(c.truth) };
     }
   }
   const blogHref = localePath(lang, "/blog");

@@ -98,10 +98,14 @@ ${waiver ? small(escapeHtml(c.waiver)) : ""}
   return { subject, text, html };
 }
 
-async function sendCopy(buyerId: string, email: string, ref: string, lang: Lang, waiver: boolean, idempotencyKey: string): Promise<void> {
+/**
+ * `issuedAt` fixes the link's issue time to the idempotency key's own time (the order's creation, or
+ * the hour of a resend), so a retry under the same key sends byte-identical mail, as Resend requires.
+ */
+async function sendCopy(buyerId: string, email: string, ref: string, lang: Lang, waiver: boolean, idempotencyKey: string, issuedAt: number): Promise<void> {
   const { key } = await licensedCopyKey(buyerId, email, lang);
   const pdf = await readFile(key);
-  const token = createDownloadToken(buyerId);
+  const token = createDownloadToken(buyerId, DOWNLOAD_LINK_DAYS, issuedAt);
   const links = Object.fromEntries(LOCALES.map((l) => [l, `${SITE.url}${downloadPath(token, "download", l)}`])) as Record<Lang, string>;
   await sendEmail({
     to: email,
@@ -153,7 +157,7 @@ export async function deliverOrder(orderId: string): Promise<DeliveryResult> {
   try {
     const lang = isLang(order.lang) ? order.lang : "en";
     await withDeadline(
-      sendCopy(order.userId, order.email, orderRef(order.id), lang, Boolean(order.withdrawalWaiver), `hl-deliver-${order.id}`),
+      sendCopy(order.userId, order.email, orderRef(order.id), lang, Boolean(order.withdrawalWaiver), `hl-deliver-${order.id}`, new Date(order.createdAt).getTime()),
       DELIVERY_DEADLINE_MS,
       "delivery email",
     );
@@ -185,7 +189,7 @@ export async function resendCopy(email: string, lang: Lang): Promise<"sent" | "n
   const ent = await activeEntitlement(buyerId);
   if (!ent) return "not-owned";
   const hour = Math.floor(Date.now() / 3_600_000);
-  await sendCopy(buyerId, address, orderRef(ent.orderId), lang, false, `hl-resend-${buyerId}-${lang}-${hour}`);
+  await sendCopy(buyerId, address, orderRef(ent.orderId), lang, false, `hl-resend-${buyerId}-${lang}-${hour}`, hour * 3_600_000);
   return "sent";
 }
 

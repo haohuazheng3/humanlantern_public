@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { Breadcrumbs, Container, CtaSlab, Section } from "@/components/ui";
+import { Breadcrumbs, Container, CtaSlab, FaqList, Section } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { book, chapterById, chapterCount, thoughtSlug } from "@/content/book";
 import type { Category } from "@/content/categories";
+import { PILLARS } from "@/content/pillars";
+import { rich } from "@/components/Rich";
 import { PAGE_SIZE, postUrl, type Post } from "@/lib/blog";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, faqLd } from "@/lib/seo";
 import { getDict } from "@/i18n";
 import { localePath, type Lang } from "@/i18n/config";
 
@@ -21,6 +23,9 @@ export function CategoryView({ cat, posts, page, lang }: { cat: Category; posts:
     .map((it, i) => ({ ...it, slug: thoughtSlug(it.thought, i) }))
     .filter((it) => cat.chapters.includes(it.chapter))
     .slice(0, 6);
+  // Pillar copy (answer, start-here guides, sections, FAQ) is English-only and sits on page 1.
+  const pillar = lang === "en" && page === 1 && posts.length ? PILLARS[cat.slug] : undefined;
+  const start = pillar ? pillar.start.map((s) => ({ ...s, post: posts.find((p) => p.slug === s.slug) })).filter((s) => s.post) : [];
 
   return (
     <>
@@ -52,9 +57,34 @@ export function CategoryView({ cat, posts, page, lang }: { cat: Category; posts:
           <h1 className="display mt-4 text-[2.3rem] text-ink sm:text-[3.3rem]">{c.title}</h1>
           <p className="mt-5 text-[1.1rem] leading-relaxed text-ink-3">{c.intro}</p>
         </div>
+        {pillar ? (
+          <div className="slab-inset mt-8 max-w-3xl px-5 py-5 sm:px-6">
+            <p className="eyebrow eyebrow-accent">The short answer</p>
+            <p className="mt-3 text-[1.06rem] leading-relaxed text-ink-2">{rich(pillar.answer, lang)}</p>
+          </div>
+        ) : null}
+        {start.length ? (
+          <div className="mt-8 max-w-3xl">
+            <h2 className="headline text-[1.4rem] text-ink">Start here</h2>
+            <ol className="mt-4 grid gap-3">
+              {start.map((s, i) => (
+                <li key={s.slug}>
+                  <Link href={postUrl(s.post!)} className="slab slab-hover flex gap-4 px-5 py-4">
+                    <span className="numeral text-[1.4rem] leading-none text-accent-text">{i + 1}</span>
+                    <span className="min-w-0">
+                      <span className="block font-semibold text-ink">{s.post!.title}</span>
+                      <span className="mt-1 block text-[0.94rem] text-ink-3">{s.why}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
       </Container>
 
       <Section className="!pt-12">
+        {pillar && slice.length ? <h2 className="headline mb-5 text-[1.4rem] text-ink">All guides in {c.name}</h2> : null}
         {slice.length ? (
           <div className="grid gap-4 md:grid-cols-2">
             {slice.map((p) => (
@@ -99,6 +129,35 @@ export function CategoryView({ cat, posts, page, lang }: { cat: Category; posts:
           </nav>
         ) : null}
       </Section>
+
+      {pillar ? (
+        <Section className="!pt-14">
+          <div className="max-w-3xl">
+            {pillar.sections.map((sec) => (
+              <section key={sec.h2} className="mt-10 first:mt-0">
+                <h2 className="headline text-[1.6rem] text-ink sm:text-[1.9rem]">{sec.h2}</h2>
+                {sec.body.map((para, i) => (
+                  <p key={i} className="mt-4 text-[1.04rem] leading-relaxed text-ink-2">
+                    {rich(para, lang, { linkClass: "text-accent-text underline underline-offset-4" })}
+                  </p>
+                ))}
+                {sec.bullets ? (
+                  <ul className="mt-4 list-disc space-y-2 pl-6 text-[1.02rem] leading-relaxed text-ink-2">
+                    {sec.bullets.map((b) => (
+                      <li key={b}>{rich(b, lang)}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </section>
+            ))}
+            <h2 className="headline mt-12 text-[1.6rem] text-ink sm:text-[1.9rem]">Frequently asked questions</h2>
+            <div className="mt-5">
+              <FaqList faqs={pillar.faq} lang={lang} />
+            </div>
+            <JsonLd data={faqLd(pillar.faq)} />
+          </div>
+        </Section>
+      ) : null}
 
       <Section className="!pt-14">
         <div className="grid gap-4 lg:grid-cols-2">
