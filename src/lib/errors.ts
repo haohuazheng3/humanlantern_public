@@ -111,9 +111,8 @@ export async function captureError(err: unknown, opts: CaptureOptions = {}): Pro
           message: n.message.slice(0, 2000),
           stack: n.stack.slice(0, 8000) || null,
           context: opts.context ?? null,
-          // A resolved error that comes back is a regression: reopen it (and email about it again).
+          // A resolved error that comes back is a regression: reopen it (it shows up in the next digest).
           resolvedAt: null,
-          notifiedAt: sql`CASE WHEN ${errorGroups.resolvedAt} IS NULL THEN ${errorGroups.notifiedAt} ELSE NULL END`,
           severity: forcedWarn ? "warn" : sql`CASE WHEN ${errorGroups.severity} = 'error' THEN 'error' ELSE ${severity} END`,
         },
       })
@@ -124,8 +123,8 @@ export async function captureError(err: unknown, opts: CaptureOptions = {}): Pro
         severity: errorGroups.severity,
       });
 
-    // One email per severe error group when it first appears or comes back after being resolved;
-    // while it stays open it is listed in the daily digest (/api/cron/watch) instead.
+    // One email per severe error group, when it first appears; never again for that group. Open
+    // groups are listed in the daily digest (/api/cron/watch) instead.
     const row = rows[0];
     const shouldNotify = row && row.severity === "error" && !row.notifiedAt;
     if (shouldNotify) {

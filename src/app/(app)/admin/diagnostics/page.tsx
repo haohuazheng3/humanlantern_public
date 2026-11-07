@@ -16,7 +16,7 @@ export default async function DiagnosticsPage() {
       <h1 className="headline text-[1.6rem] text-ink">Diagnostics</h1>
       <p className="mt-2 max-w-2xl text-[0.95rem] text-ink-3">
         Fire a deliberate error to prove the pipeline end to end: it should appear in the error inbox and send one error email
-        (a new or reopened group), then show up in the daily digest until you resolve it. /api/health stays 200 and only counts it.
+        (first time only), then show up in the daily digest until you resolve it. /api/health stays 200 and only counts it.
       </p>
       <DiagnosticsButtons serverAction={throwServerError} />
     </div>
