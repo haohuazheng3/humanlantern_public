@@ -173,7 +173,7 @@ export async function deliverOrder(orderId: string): Promise<DeliveryResult> {
     // The buyer already has the download on the success page; page the owner once retries keep failing.
     await captureError(err, {
       route: "delivery.deliverOrder",
-      // The every-30-minutes retry gives one free pass; a second failure turns health red, which pages the owner.
+      // The every-30-minutes retry gives one free pass; a second failure is a severe error, which emails the owner.
       severity: order.emailAttempts >= 2 ? "error" : "warn",
       context: { orderId: order.id, attempt: order.emailAttempts },
     });

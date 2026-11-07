@@ -18,9 +18,10 @@ export interface HealthReport {
 }
 
 /**
- * Self-diagnosis, safe to expose: names only, never values. Not ok when the database is
- * unreachable, a required variable is missing, or the error inbox holds unresolved errors of
- * severity "error". Optional integrations that aren't switched on yet are listed, not failed.
+ * Self-diagnosis, safe to expose: names only, never values. `ok` means the site can serve: the
+ * database is reachable and every required variable is set. Unresolved errors in the inbox and
+ * optional integrations that aren't switched on yet are reported for information only and never
+ * make it fail (open errors reach the owner through the daily digest in /api/cron/watch).
  */
 export async function healthReport(): Promise<HealthReport> {
   const started = Date.now();
@@ -42,7 +43,7 @@ export async function healthReport(): Promise<HealthReport> {
   }
   const missing = missingEnv();
   return {
-    ok: dbOk && missing.length === 0 && unresolved === 0,
+    ok: dbOk && missing.length === 0,
     env: VERCEL_ENV,
     commit: (process.env.VERCEL_GIT_COMMIT_SHA ?? process.env.VERCEL_DEPLOYMENT_ID ?? "local").slice(0, 12),
     time: new Date().toISOString(),

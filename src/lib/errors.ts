@@ -60,13 +60,11 @@ export function fingerprintOf(name: string, frame: string, route: string | null 
   return createHash("sha1").update(`${name}|${anchor}|${route ?? ""}`).digest("hex");
 }
 
-const NOTIFY_EVERY_MS = 6 * 60 * 60 * 1000;
-
 /**
  * React hydration mismatches reported by browsers (#418/#423/#425, "Hydration failed").
  * React recovers by rendering on the client, and in the field they come from extensions,
  * translation tools or outdated engines rewriting the DOM before hydration. They stay in
- * the inbox as warnings instead of turning /api/health red; a real regression shows up
+ * the inbox as warnings instead of emailing the owner; a real regression shows up
  * in the CI/production smoke test, which loads pages in a current Chrome.
  */
 const HYDRATION = /Minified React error #(418|423|425)\b|Hydration failed|error while hydrating|did not match the client/i;
@@ -113,8 +111,9 @@ export async function captureError(err: unknown, opts: CaptureOptions = {}): Pro
           message: n.message.slice(0, 2000),
           stack: n.stack.slice(0, 8000) || null,
           context: opts.context ?? null,
-          // A resolved error that comes back is a regression: reopen it.
+          // A resolved error that comes back is a regression: reopen it (and email about it again).
           resolvedAt: null,
+          notifiedAt: sql`CASE WHEN ${errorGroups.resolvedAt} IS NULL THEN ${errorGroups.notifiedAt} ELSE NULL END`,
           severity: forcedWarn ? "warn" : sql`CASE WHEN ${errorGroups.severity} = 'error' THEN 'error' ELSE ${severity} END`,
         },
       })
@@ -125,11 +124,10 @@ export async function captureError(err: unknown, opts: CaptureOptions = {}): Pro
         severity: errorGroups.severity,
       });
 
+    // One email per severe error group when it first appears or comes back after being resolved;
+    // while it stays open it is listed in the daily digest (/api/cron/watch) instead.
     const row = rows[0];
-    const shouldNotify =
-      row &&
-      row.severity === "error" &&
-      (!row.notifiedAt || Date.now() - new Date(row.notifiedAt).getTime() > NOTIFY_EVERY_MS);
+    const shouldNotify = row && row.severity === "error" && !row.notifiedAt;
     if (shouldNotify) {
       await db
         .update(errorGroups)
